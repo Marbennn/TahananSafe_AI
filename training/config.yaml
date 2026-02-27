@@ -1,0 +1,83 @@
+# Training Configuration for TahananSafe AI
+
+# Model Configuration
+# Open, non-gated model chosen for a 4GB GPU
+# We use a smaller 0.5B model so training can run on GPU
+# with a tiny batch size and LoRA.
+model:
+  base_model: "Qwen/Qwen2.5-0.5B-Instruct"
+  # No 4bit/8bit quantization during training to reduce complexity.
+  use_4bit: false
+  use_8bit: false
+  device_map: "auto"
+  
+# LoRA Configuration
+lora:
+  r: 16
+  lora_alpha: 32
+  target_modules: ["q_proj", "v_proj", "k_proj", "o_proj"]
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+# Training Parameters
+training:
+  output_dir: "./models/fine_tuned"
+  num_train_epochs: 3
+  # Very small batch size so it fits on 4GB VRAM
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 2e-4
+  warmup_steps: 100
+  logging_steps: 10
+  save_steps: 500
+  eval_steps: 500
+  save_total_limit: 3
+  # Use fp16 on GPU to reduce memory
+  fp16: true
+  # Use standard AdamW instead of 8-bit optimizer
+  optim: "adamw_torch"
+  lr_scheduler_type: "cosine"
+  
+# Dataset Configuration
+dataset:
+  # You can point these either to:
+  # - a directory containing JSON/JSONL files, or
+  # - a single CSV file (like Main_Dataset.csv / Negative_Dataset.csv)
+  main_dataset_path: "./datasets/Main_Dataset.csv"
+  negative_dataset_path: "./datasets/Negative_Dataset.csv"
+  processed_path: "./datasets/processed"
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  max_length: 512
+
+# Abuse Types
+abuse_types:
+  - "Physical Abuse"
+  - "Sexual Abuse"
+  - "Psychological Abuse"
+  - "Economic Abuse"
+  - "Elder Abuse"
+  - "Neglect / Acts of Omission"
+
+# Languages
+languages:
+  - "English"
+  - "Tagalog"
+  - "Ilocano"
+  - "Pangasinan"
+  - "Mixed Language"
+
+# Risk Levels
+risk_levels:
+  - "Low"
+  - "Medium"
+  - "High"
+  - "Critical"
+
+# Priority Levels
+priority_levels:
+  - "First Priority (P1)"
+  - "Second Priority (P2)"
+  - "Third Priority (P3)"

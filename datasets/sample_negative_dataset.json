@@ -1,0 +1,46 @@
+[
+  {
+    "incident_description": "I need help with my internet connection. The WiFi is not working properly and I cannot connect to my online classes.",
+    "incident_type": "None / False Report",
+    "language": "English",
+    "risk_level": "Low",
+    "risk_percentage": 0.0,
+    "priority_level": "Third Priority (P3)",
+    "children_involved": false,
+    "weapon_mentioned": false,
+    "confidence_score": 95.0
+  },
+  {
+    "incident_description": "My car broke down and I need assistance. The engine is making strange noises and smoke is coming out.",
+    "incident_type": "None / False Report",
+    "language": "English",
+    "risk_level": "Low",
+    "risk_percentage": 5.0,
+    "priority_level": "Third Priority (P3)",
+    "children_involved": false,
+    "weapon_mentioned": false,
+    "confidence_score": 95.0
+  },
+  {
+    "incident_description": "Gusto ko lang magtanong tungkol sa aking application para sa trabaho. Kailan ko malalaman ang resulta?",
+    "incident_type": "None / False Report",
+    "language": "Tagalog",
+    "risk_level": "Low",
+    "risk_percentage": 0.0,
+    "priority_level": "Third Priority (P3)",
+    "children_involved": false,
+    "weapon_mentioned": false,
+    "confidence_score": 95.0
+  },
+  {
+    "incident_description": "I lost my wallet yesterday. It contains my ID and some cash. Can someone help me find it?",
+    "incident_type": "None / False Report",
+    "language": "English",
+    "risk_level": "Low",
+    "risk_percentage": 0.0,
+    "priority_level": "Third Priority (P3)",
+    "children_involved": false,
+    "weapon_mentioned": false,
+    "confidence_score": 95.0
+  }
+]

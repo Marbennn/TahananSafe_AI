@@ -1,0 +1,46 @@
+[
+  {
+    "incident_description": "My neighbor was shouting and hitting their spouse. I heard loud noises and crying. The victim appeared injured with visible bruises on their face.",
+    "incident_type": "Physical Abuse",
+    "language": "English",
+    "risk_level": "High",
+    "risk_percentage": 75.0,
+    "priority_level": "Second Priority (P2)",
+    "children_involved": false,
+    "weapon_mentioned": false,
+    "confidence_score": 85.0
+  },
+  {
+    "incident_description": "Narinig ko ang sigaw at suntok sa kapitbahay. May dugo sa mukha ng biktima at hindi makakilos nang maayos.",
+    "incident_type": "Physical Abuse",
+    "language": "Tagalog",
+    "risk_level": "High",
+    "risk_percentage": 80.0,
+    "priority_level": "First Priority (P1)",
+    "children_involved": false,
+    "weapon_mentioned": false,
+    "confidence_score": 88.0
+  },
+  {
+    "incident_description": "The victim was threatened with a knife and forced to give money. The perpetrator controls all financial resources.",
+    "incident_type": "Economic Abuse",
+    "language": "English",
+    "risk_level": "Medium",
+    "risk_percentage": 55.0,
+    "priority_level": "Second Priority (P2)",
+    "children_involved": false,
+    "weapon_mentioned": true,
+    "confidence_score": 82.0
+  },
+  {
+    "incident_description": "May bata na umiiyak at natatakot. Nakita ko na sinasaktan ang bata ng magulang. May sugat sa katawan ng bata.",
+    "incident_type": "Physical Abuse",
+    "language": "Tagalog",
+    "risk_level": "Critical",
+    "risk_percentage": 90.0,
+    "priority_level": "First Priority (P1)",
+    "children_involved": true,
+    "weapon_mentioned": false,
+    "confidence_score": 92.0
+  }
+]

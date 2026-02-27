@@ -1,0 +1,32 @@
+# TahananSafe AI - Python dependencies
+# Use with Python 3.8+; recommended: .venv and GPU PyTorch for training
+
+# Core ML
+torch>=2.0.0
+transformers>=4.35.0
+peft>=0.7.0
+accelerate>=0.25.0
+bitsandbytes>=0.41.0
+
+# Training & data
+datasets>=2.14.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Inference (language detection)
+langdetect>=1.0.9
+
+# API
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.5.0
+
+# Config & utils
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+pyyaml>=6.0
+
+# Optional (tokenization / compatibility)
+sentencepiece>=0.1.99
+protobuf>=4.25.0
