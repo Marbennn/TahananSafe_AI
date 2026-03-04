@@ -1,65 +1,100 @@
-# Quick Start – TahananSafe AI
+# Quick Start - TahananSafe AI
 
-Minimal steps to get the project running.
+Use this guide if you want to run the project fast on a new machine.
 
-## 1. Virtual environment and install
+## 1. Clone and open project
 
 ```powershell
-cd C:\Users\Xeium\xeium_files\TahananSafe_AI
+git clone <your-repo-url>
+cd TahananSafe_AI
+```
+
+## 2. Create and activate virtual environment
+
+```powershell
 python -m venv .venv
-.\.venv\Scripts\activate
-pip install -r requirements.txt
-pip install langdetect
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+& .\.venv\Scripts\Activate.ps1
 ```
 
-**GPU training (optional):**
+If activation fails, run directly with the venv interpreter:
 
 ```powershell
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+.\.venv\Scripts\python.exe --version
 ```
 
-## 2. Datasets
-
-Use **CSV** in `datasets/`:
-
-- `Main_Dataset.csv` – abuse incident reports  
-- `Negative_Dataset.csv` – non-abuse / irrelevant reports  
-
-Columns: `Incident_Type`, `Incident_Description`, `Language`, `Risk_Level`, `Incident_Risk_Percentage`, `Priority_Level`, `Children_Involved`, `Weapon_Mentioned`, `AI_Confidence_Score`.
-
-Config in `training/config.yaml` already points to these files. For JSON/JSONL, see SETUP.md.
-
-## 3. Prepare and train
+## 3. Install dependencies
 
 ```powershell
-python training/data_preparation.py
-python training/train.py
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-**Note:** Always run these inside the **activated .venv** to avoid version errors. Training is set for a **4GB GPU** (Qwen2.5-0.5B-Instruct). Training time depends on dataset size (e.g. 30–90 minutes for hundreds of examples).
+## 4. Create `.env`
 
-## 4. Test and run API
+```powershell
+Copy-Item .env.example .env
+```
+
+## 5. Verify interpreter and package versions
+
+```powershell
+python -c "import sys,transformers,peft,accelerate; print(sys.executable); print(transformers.__version__, peft.__version__, accelerate.__version__)"
+```
+
+Expected: `sys.executable` points to `.venv\Scripts\python.exe`.
+
+## 6. Run CLI test
 
 ```powershell
 python test_analyzer.py
+```
+
+## 7. Run API
+
+```powershell
 python inference/api.py
 ```
 
-- Docs: http://localhost:8000/docs  
-- Health: http://localhost:8000/health  
+Open:
+- `http://localhost:8000/docs`
+- `http://localhost:8000/health`
 
-## 5. Call the API
+## 8. Send a test request
 
 ```powershell
-curl -X POST "http://localhost:8000/analyze" -H "Content-Type: application/json" -d "{\"incident_description\": \"My neighbor was hitting their spouse. I heard crying.\"}"
+curl -X POST "http://localhost:8000/analyze" `
+  -H "Content-Type: application/json" `
+  -d "{\"incident_description\":\"The victim said her husband kicked her while pregnant.\"}"
 ```
 
-## Troubleshooting
+## 9. Team pull routine (every update)
 
-| Issue | Action |
-|--------|--------|
-| `No module named 'langdetect'` | `pip install langdetect` in the same env |
-| `Accelerator... dispatch_batches` | Use the project `.venv` and run `python training/train.py` from project root |
-| CUDA OOM | In `config.yaml`: batch size 1, or set `device_map: "cpu"` and `fp16: false` for CPU training |
+```powershell
+git pull
+& .\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
 
-Full setup and troubleshooting: **SETUP.md**.
+## Quick Fixes
+
+- `alora_invocation_tokens` load error:
+
+```powershell
+python -m pip install -U transformers peft accelerate
+```
+
+- `No module named dotenv`:
+
+```powershell
+python -m pip install python-dotenv
+```
+
+- `python` points to global interpreter:
+Use:
+
+```powershell
+.\.venv\Scripts\python.exe test_analyzer.py
+```
+
+For full setup/troubleshooting: [SETUP.md](./SETUP.md)

@@ -41,10 +41,22 @@ datasets/processed/
 *.parquet
 *.jsonl
 !datasets/sample_*.json
+# Keep training/example CSVs versioned for team sync.
+!datasets/Main_Dataset.csv
+!datasets/Negative_Dataset.csv
+!datasets/Ambiguous_Pairs.csv
+!datasets/Unseen_Main.csv
+!datasets/Unseen_Negative.csv
+!datasets/cleaned/Main_Dataset.cleaned.csv
+!datasets/cleaned/Negative_Dataset.cleaned.csv
+!training/audit_conflicts.csv
+!training/cleaned_audit/audit_conflicts.csv
 
 # Environment
 .env
 .env.local
+.env.*
+!.env.example
 
 # IDE
 .vscode/

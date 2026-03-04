@@ -10,6 +10,7 @@ from typing import Optional, Dict, Any
 import uvicorn
 import os
 import sys
+import time
 
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -83,6 +84,18 @@ class AnalysisResponse(BaseModel):
     children_involved: bool = Field(..., description="Whether children are involved")
     weapon_mentioned: bool = Field(..., description="Whether weapon is mentioned")
     confidence_score: float = Field(..., description="AI confidence score (0-100)")
+    processing_time_ms: Optional[float] = Field(
+        default=None,
+        description="End-to-end server-side processing time for this request in milliseconds"
+    )
+    decision_basis: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Optional retrieval/rule evidence summary used for final decision"
+    )
+    retrieved_cases: Optional[list[Dict[str, Any]]] = Field(
+        default=None,
+        description="Optional top similar historical cases used as evidence"
+    )
     
     class Config:
         json_schema_extra = {
@@ -95,7 +108,23 @@ class AnalysisResponse(BaseModel):
                 "priority_level": "Second Priority (P2)",
                 "children_involved": False,
                 "weapon_mentioned": False,
-                "confidence_score": 85.0
+                "confidence_score": 85.0,
+                "processing_time_ms": 134.27,
+                "decision_basis": {
+                    "retrieval_used": True,
+                    "retrieval_best_type": "Physical Abuse",
+                    "retrieval_best_type_ratio": 0.73,
+                    "retrieval_top_similarity": 0.61
+                },
+                "retrieved_cases": [
+                    {
+                        "similarity": 0.61,
+                        "incident_type": "Physical Abuse",
+                        "risk_percentage": 80.0,
+                        "incident_description": "Narinig ko ang sigaw at suntok...",
+                        "source": "datasets/Main_Dataset.csv"
+                    }
+                ]
             }
         }
 
@@ -173,7 +202,9 @@ async def analyze_incident(request: IncidentReportRequest):
         
         # Get analyzer and perform analysis
         analyzer_instance = get_analyzer()
+        start = time.perf_counter()
         analysis_result = analyzer_instance.analyze(request.incident_description)
+        analysis_result["processing_time_ms"] = round((time.perf_counter() - start) * 1000.0, 2)
         
         # Return response
         return AnalysisResponse(**analysis_result)
@@ -197,7 +228,36 @@ async def model_info():
             "device": analyzer_instance.device,
             "using_fine_tuned": analyzer_instance.model is not None and hasattr(
                 analyzer_instance.model, "peft_config"
-            )
+            ),
+            "retrieval_enabled": bool(
+                getattr(analyzer_instance, "enable_case_retrieval", False)
+                and getattr(analyzer_instance, "case_retriever", None) is not None
+                and getattr(analyzer_instance.case_retriever, "enabled", False)
+            ),
+            "retrieval_index_size": int(
+                len(getattr(analyzer_instance.case_retriever, "records", []))
+            ) if getattr(analyzer_instance, "case_retriever", None) else 0,
+            "analyze_cache_enabled": bool(getattr(analyzer_instance, "enable_analyze_cache", False)),
+            "analyze_cache_size": int(getattr(analyzer_instance, "analyze_cache_size", 0)),
+            "retrieval_min_similarity": float(getattr(analyzer_instance, "retrieval_min_similarity", 0.0)),
+            "model_first_mode": bool(getattr(analyzer_instance, "model_first_mode", False)),
+            "model_risk_blend_numeric": float(getattr(analyzer_instance, "model_risk_blend_numeric", 0.0)),
+            "model_risk_blend_level": float(getattr(analyzer_instance, "model_risk_blend_level", 0.0)),
+            "model_retrieval_override_similarity": float(
+                getattr(analyzer_instance, "model_retrieval_override_similarity", 0.0)
+            ),
+            "use_model_risk_percentage": bool(
+                getattr(analyzer_instance, "use_model_risk_percentage", False)
+            ),
+            "confidence_calibration_enabled": bool(
+                getattr(analyzer_instance, "enable_confidence_calibration", False)
+            ),
+            "confidence_calibration_path": str(
+                getattr(analyzer_instance, "confidence_calibration_path", "")
+            ),
+            "confidence_calibration_loaded": bool(
+                getattr(analyzer_instance, "_confidence_calibrator", None) is not None
+            ),
         }
         
         return info

@@ -1,0 +1,34 @@
+{
+  "main_csv": "datasets\\cleaned\\Main_Dataset.cleaned.csv",
+  "negative_csv": "datasets\\cleaned\\Negative_Dataset.cleaned.csv",
+  "total_rows": 12785,
+  "total_issues": 12,
+  "issues_by_code": {
+    "DUPLICATE_CONFLICT": 12
+  },
+  "issues_by_severity": {
+    "high": 12
+  },
+  "issues_by_source": {
+    "main": 7,
+    "negative": 5
+  },
+  "duplicate_conflict_groups": 4,
+  "main_label_distribution": {
+    "Physical Abuse": 2610,
+    "Sexual Abuse": 793,
+    "Psychological Abuse": 1573,
+    "Economic Abuse": 491,
+    "Elder Abuse": 491,
+    "Neglect / Acts of Omission": 465
+  },
+  "negative_label_distribution": {
+    "None / Invalid": 6362
+  },
+  "main_core_class_imbalance_ratio_max_over_min": 5.613,
+  "recommended_next_action": [
+    "Fix all HIGH severity issues first.",
+    "Fix duplicate conflicts and risk/priority mismatches before retraining.",
+    "Re-run data_audit.py until HIGH issues are 0."
+  ]
+}

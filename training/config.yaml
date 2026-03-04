@@ -46,6 +46,16 @@ dataset:
   # - a single CSV file (like Main_Dataset.csv / Negative_Dataset.csv)
   main_dataset_path: "./datasets/Main_Dataset.csv"
   negative_dataset_path: "./datasets/Negative_Dataset.csv"
+  # Optional: hard contrastive samples for confusing words/contexts.
+  ambiguous_pairs_path: "./datasets/Ambiguous_Pairs.csv"
+  # Step 4: strict unseen holdout CSVs (excluded from training if present).
+  unseen_main_path: "./datasets/Unseen_Main.csv"
+  unseen_negative_path: "./datasets/Unseen_Negative.csv"
+  exclude_unseen_from_training: true
+  # Step 3: class balancing controls (before train/val/test split).
+  class_balance_enabled: true
+  class_balance_target_ratio: 3.0
+  class_balance_seed: 42
   processed_path: "./datasets/processed"
   train_split: 0.8
   val_split: 0.1

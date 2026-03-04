@@ -1,0 +1,642 @@
+Incident_Type,Incident_Description,Language,Risk_Level,Incident_Risk_Percentage,Priority_Level,Children_Involved,Weapon_Mentioned,AI_Confidence_Score
+Economic Abuse,Kinuha niya ang ATM ko at hindi ako binibigyan ng pera para sa gatas ng bata.,Tagalog,High,78,P2,Yes,No,93
+Physical Abuse,Tinulak niya ako habang karga ko ang anak namin; muntik kaming matumba.,Tagalog,Critical,90,P1,Yes,No,96
+Elder Abuse,Inawat na so pensyon na lolo; kulang so pagkain na ipapainom ya ipapakain.,Pangasinan,High,78,P2,No,No,88
+Psychological Abuse,Lagi niyang sinasabi na wala akong silbi at mas mabuti pa raw mawala na lang ako sa bahay.,Tagalog,High,74,P2,No,No,92
+Psychological Abuse,He keeps checking my location and accuses me of cheating; I feel constantly anxious.,English,Medium,68,P2,No,No,91
+Physical Abuse,Sinampal niya ako at hinablot ang buhok ko; nakita ito ng kapatid ko.,Tagalog,High,86,P1,No,No,94
+Sexual Abuse,He used threats to pressure me into intimacy; I felt unsafe in my own home.,English,High,85,P1,No,No,93
+Sexual Abuse,Pinilit niya ako kahit paulit-ulit akong tumanggi; pagkatapos sinabi niya huwag ko daw ikwento.,Tagalog,Critical,94,P1,No,No,96
+Elder Abuse,Pinapagalitan ang lolo at pinipilit ibigay ang pension; nagiging tahimik na lang siya.,Tagalog,High,80,P1,No,No,92
+Physical Abuse,Tinulak niya ako at nagkaroon ako ng pasa; natakot ako kaya lumapit ako sa tanod.,Tagalog,High,82,P1,No,No,93
+Psychological Abuse,Agbutengak ta agtultuloy ti panangkontrol ken panagbuteng.,Ilocano,Medium,63,P2,No,No,88
+Elder Abuse,The elder is not allowed to see relatives.,English,Medium,64,P2,No,No,90
+Elder Abuse,Inawat na so pensyon ya lolo ya awan so natira para ed kanya.,Pangasinan,High,78,P2,No,No,87
+Physical Abuse,Sinampal niya ako sa harap ng kapitbahay.,Tagalog,High,83,P1,No,No,94
+Physical Abuse,He hit my shoulder and warned me not to tell anyone.,English,High,84,P1,No,No,94
+Elder Abuse,The elderly relative is left unattended and ignored for long hours.,English,Medium,66,P2,No,No,90
+Neglect / Acts of Omission,The baby was left unattended overnight.,English,High,81,P1,Yes,No,92
+Sexual Abuse,Pinilit niya ako kahit ayaw ko at natatakot akong magsumbong.,Tagalog,Critical,94,P1,No,No,96
+Economic Abuse,Pinutol niya ang sustento sa pamilya.,Tagalog,High,78,P2,Yes,No,93
+Physical Abuse,He struck my arm and warned me not to tell the barangay.,English,High,86,P1,No,No,94
+Economic Abuse,He hides the money and blames me for unpaid utilities.,English,Medium,60,P2,Yes,No,90
+Psychological Abuse,He constantly checks my phone and accuses me falsely.,English,Medium,69,P2,No,No,91
+Psychological Abuse,He isolates me from friends and constantly insults me.,English,Medium,67,P2,No,No,91
+Sexual Abuse,He repeatedly pressures me despite clear refusal.,English,High,88,P1,No,No,94
+Elder Abuse,The elderly father was denied medication and threatened with abandonment if he complained.,English,Critical,96,P1,No,No,98
+Psychological Abuse,"Pinagbawalan niya akong lumabas, makipag-usap sa pamilya, at kinuha lahat ng komunikasyon ko.",Tagalog,Critical,94,P1,No,No,96
+Physical Abuse,He pushed me against the wall during an argument and I felt pain on my shoulder.,English,High,84,P1,No,No,96
+Sexual Abuse,He continues unwanted touching despite clear refusal.,English,High,89,P1,No,No,97
+Sexual Abuse,Pinilit niya ako kahit umiiyak ako at natatakot.,Tagalog,Critical,95,P1,No,No,99
+Psychological Abuse,He constantly threatens to ruin my reputation.,English,High,81,P1,No,No,95
+Sexual Abuse,He coerced me emotionally and ignored my refusal.,English,High,88,P1,No,No,97
+Elder Abuse,The elderly man was not fed properly for days.,English,Critical,93,P1,No,No,97
+Psychological Abuse,Palagi niya akong tinatakot na ipapahiya sa barangay.,Tagalog,High,80,P1,No,No,95
+Physical + Psychological Abuse,He slapped her repeatedly while shouting threats not to report.,English,Critical,97,P1,Yes,No,99
+Physical + Economic Abuse,He beat her and demanded she hand over her savings.,English,Critical,96,P1,No,No,98
+Psychological Abuse,Palagi niya akong sinasabihang wala akong kwenta.,Tagalog,Medium,66,P2,No,No,93
+Economic Abuse,Pinutol niya ang sustento sa mga bata bilang parusa.,Tagalog,High,81,P2,Yes,No,95
+Physical Abuse,He punched the wall and then struck the victim.,English,Critical,96,P1,Yes,No,99
+Psychological Abuse,Pinagbantaan niya akong sisirain ang reputasyon ko.,Tagalog,High,80,P1,No,No,95
+Sexual Abuse,He coerced intimacy and threatened violence if I reported.,English,Critical,97,P1,No,No,99
+Elder Abuse,The elderly man was denied medical checkup despite illness.,English,High,84,P1,No,No,96
+Sexual Abuse,He forced unwanted contact despite clear refusal.,English,Critical,96,P1,No,No,99
+Physical Abuse,He struck the victim during a heated argument.,English,High,86,P1,No,No,97
+Psychological Abuse,Palagi niya akong tinatakot na kukunin ang mga anak ko.,Tagalog,High,83,P1,Yes,No,96
+Economic Abuse,He withholds money for utilities as punishment.,English,High,80,P2,Yes,No,95
+Sexual Abuse,He coerced intimacy and ignored repeated refusal.,English,Critical,97,P1,No,No,99
+Economic Abuse,Hindi nagbibigay ng panggastos kahit may trabaho.,Tagalog,High,80,P2,Yes,No,95
+Sexual Abuse,Pinilit niya ako at nagbanta na sasaktan ako.,Tagalog,Critical,97,P1,No,No,99
+Economic Abuse,Kinukuha niya ang buong sweldo ko at wala akong natitira.,Tagalog,High,81,P2,Yes,No,95
+Elder Abuse,The elderly woman was denied her daily medication.,English,High,84,P1,No,No,96
+Psychological Abuse,Pinagbantaan niya akong kukunin ang mga bata.,Tagalog,High,84,P1,Yes,No,96
+Physical Abuse,Tinulak niya ako pababa ng hagdan.,Tagalog,Critical,98,P1,No,No,99
+Physical + Economic Abuse,He assaulted her and demanded her entire salary.,English,Critical,98,P1,No,No,99
+Sexual Abuse,He forced intimacy despite clear refusal and emotional distress.,English,Critical,97,P1,No,No,99
+Neglect / Acts of Omission,Iniwan ang bata na walang pagkain buong araw.,Tagalog,High,85,P1,Yes,No,96
+Sexual Abuse,Pinilit niya ako kahit umiiyak ako.,Tagalog,Critical,97,P1,No,No,99
+Physical Abuse,Tinadyakan niya ako sa tagiliran habang galit.,Tagalog,High,86,P1,No,No,97
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may nabalian ang paa sa mukha. Sinampl ako ng asawaa ko. Abuseee talaga ito.,English,Critical,99,P1,No,Yes,97
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Narinig ko sa kapitbahayy nakita ang pasa ko.,English,Critical,96,P1,Yes,No,97
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Kapitbahay tumawag sa tanod nakita ang pasa ko.,English,Critical,95,P1,No,Yes,97
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, maraming pasa. Nakita ko sa kapitbahay.",English,Critical,98,P1,Yes,No,96
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",English,Critical,97,P1,No,Yes,99
+Physical Abuse,"Tinulak niyaa akoo pababa ng hagdan, nabalian ang paa. Nakita ko sa kapitbahay.",English,Critical,98,P1,Yes,Yes,97
+Physical Abuse,Kinuha niyaa lahat ng pera ko at sinabi na wala akoong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,English,Critical,99,P1,Yes,Yes,96
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",Tagalog,Critical,99,P1,Yes,No,99
+Sexual Abuse,Pinilittt niyaa akoo kahit umiiyak na akoo. Nakita ko sa kapitbahay tumawag sa barangay.,Tagalog,Critical,94,P1,Yes,Yes,96
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",English,Critical,99,P1,No,Yes,99
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. maraming pasa. Nakita ko sa kapitbahay.,Tagalog,Critical,99,P1,No,No,96
+Physical Abuse,Nakita ko sa kapitbahay ang sigawan. Nakita ko siya may dinala sa ospital sa likod. Sinampl ako ng asawaa ko. Abuseee talaga ito.,English,Critical,97,P1,Yes,Yes,96
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,English,Critical,94,P1,Yes,No,99
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may dinala sa ospital sa labi. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,96,P1,Yes,No,97
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Kapitbahay tumawag sa tanod nakita ang pasa ko.,English,Critical,97,P1,Yes,No,99
+Physical Abuse,Kinuha niyaa lahat ng pera ko at sinabi na wala akoong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,English,Critical,95,P1,No,Yes,97
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may nawalan ng malay sa labi. Sinampl ako ng asawaa ko. Abuseee talaga ito.,English,Critical,98,P1,Yes,No,98
+Physical Abuse,"Tinulak niyaa akoo pababa ng hagdan, nawalan ng malay. Kapitbahay tumawag sa tanod.",Tagalog,Critical,98,P1,No,Yes,99
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may nawalan ng malay sa ilong. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,94,P1,No,No,99
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Nakita ko sa kapitbahay.,Tagalog,Critical,95,P1,Yes,No,98
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. maraming pasa. Nakita ko sa kapitbahay.,English,Critical,96,P1,Yes,No,98
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,Tagalog,Critical,94,P1,Yes,No,99
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may nawalan ng malay sa mukha. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,95,P1,Yes,No,99
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. may dugo sa ilong. Narinig ko sa kapitbahayy.,English,Critical,98,P1,Yes,Yes,97
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may maraming pasa sa binti. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,99,P1,Yes,No,97
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Kapitbahay tumawag sa tanod.,English,Critical,94,P1,No,Yes,98
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may nabalian ang paa sa labi. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,94,P1,No,No,97
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Nakita ko sa kapitbahay tumawag sa barangay.,Tagalog,Critical,94,P1,Yes,Yes,99
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, may dugo sa ilong. Kapitbahay tumawag sa tanod.",English,Critical,99,P1,Yes,No,97
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, dinala sa ospital. Nakita ko sa kapitbahay.",English,Critical,96,P1,No,No,97
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Narinig ko sa kapitbahayy.,English,Critical,94,P1,Yes,No,96
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. may dugo sa ilong. Kapitbahay tumawag sa tanod.,English,Critical,97,P1,No,No,98
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",Tagalog,Critical,94,P1,No,Yes,99
+Physical Abuse,Kinuha niyaa lahat ng pera ko at sinabi na wala akoong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,English,Critical,98,P1,Yes,Yes,99
+Physical + Psychological Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. nawalan ng malay. Narinig ko sa kapitbahayy.,English,Critical,99,P1,Yes,No,97
+Physical Abuse,Kinuha niyaa lahat ng pera ko at sinabi na wala akoong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,Tagalog,Critical,95,P1,No,No,98
+Physical Abuse,"Tinulak niyaa akoo pababa ng hagdan, may dugo sa ilong. Narinig ko sa kapitbahayy.",English,Critical,95,P1,Yes,No,96
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may nabalian ang paa sa tiyan. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,98,P1,Yes,No,99
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Kapitbahay tumawag sa tanod nakita ang pasa ko.,Tagalog,Critical,94,P1,No,Yes,97
+Physical + Psychological Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. nabalian ang paa. Nakita ko sa kapitbahay.,English,Critical,96,P1,No,No,96
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Nakita ko sa kapitbahay tumawag sa barangay.,English,Critical,98,P1,No,Yes,97
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Narinig ko sa kapitbahayy tumawag sa barangay.,Tagalog,Critical,96,P1,No,No,99
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Kapitbahay tumawag sa tanod.,Tagalog,Critical,99,P1,Yes,No,98
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,Tagalog,Critical,94,P1,No,No,97
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, may dugo sa ilong. Kapitbahay tumawag sa tanod.",Tagalog,Critical,95,P1,Yes,No,96
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Kapitbahay tumawag sa tanod.,English,Critical,98,P1,Yes,Yes,99
+Physical Abuse,"Tinulak niyaa akoo pababa ng hagdan, dinala sa ospital. Nakita ko sa kapitbahay.",English,Critical,98,P1,No,No,97
+Physical Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. maraming pasa. Nakita ko sa kapitbahay.,English,Critical,95,P1,Yes,No,99
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",English,Critical,98,P1,No,No,96
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. maraming pasa. Kapitbahay tumawag sa tanod.,Tagalog,Critical,95,P1,No,Yes,97
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, maraming pasa. Nakita ko sa kapitbahay.",English,Critical,95,P1,No,Yes,99
+Physical + Psychological Abuse,Kinulong niya ako sa kwarto at hindi pinakain. nabalian ang paa. Narinig ko sa kapitbahayy.,Tagalog,Critical,94,P1,No,No,98
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, nawalan ng malay. Kapitbahay tumawag sa tanod.",English,Critical,95,P1,No,Yes,99
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Narinig ko sa kapitbahayy narinig ang iyak ng mga bata.",Tagalog,Critical,99,P1,No,Yes,97
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may maraming pasa sa labi. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,99,P1,No,No,98
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Narinig ko sa kapitbahayy.,English,Critical,99,P1,Yes,Yes,98
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Narinig ko sa kapitbahayy tumawag sa barangay.,Tagalog,Critical,98,P1,No,No,96
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",Tagalog,Critical,97,P1,Yes,No,99
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",English,Critical,96,P1,Yes,Yes,97
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Kapitbahay tumawag sa tanod nakita ang pasa ko.,English,Critical,97,P1,No,No,98
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",Tagalog,Critical,95,P1,No,No,99
+Physical Abuse,Nakita ko sa kapitbahay ang sigawan. Nakita ko siya may may dugo sa ilong sa labi. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,96,P1,No,Yes,96
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Narinig ko sa kapitbahayy nakita ang pasa ko.,Tagalog,Critical,95,P1,Yes,Yes,98
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Nakita ko sa kapitbahay tumawag sa barangay.,Tagalog,Critical,96,P1,Yes,Yes,99
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may dinala sa ospital sa likod. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,96,P1,No,Yes,97
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",Tagalog,Critical,98,P1,Yes,No,97
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Nakita ko sa kapitbahay.,English,Critical,94,P1,Yes,No,98
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",English,Critical,94,P1,Yes,Yes,98
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Narinig ko sa kapitbahayy tumawag sa barangay.,Tagalog,Critical,98,P1,No,Yes,99
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",English,Critical,97,P1,Yes,Yes,99
+Physical Abuse,"Tinulak niyaa akoo pababa ng hagdan, nabalian ang paa. Nakita ko sa kapitbahay.",Tagalog,Critical,98,P1,Yes,Yes,96
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Kapitbahay tumawag sa tanod nakita ang pasa ko.,Tagalog,Critical,99,P1,Yes,Yes,97
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Kapitbahay tumawag sa tanod.,Tagalog,Critical,96,P1,Yes,Yes,98
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",English,Critical,97,P1,Yes,Yes,99
+Physical Abuse,Nakita ko sa kapitbahay ang sigawan. Nakita ko siya may dinala sa ospital sa mukha. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,English,Critical,98,P1,No,No,97
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may nabalian ang paa sa braso. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,94,P1,Yes,Yes,96
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",English,Critical,98,P1,No,No,97
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Nakita ko sa kapitbahay.,English,Critical,95,P1,No,No,96
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, dinala sa ospital. Kapitbahay tumawag sa tanod.",Tagalog,Critical,95,P1,No,Yes,97
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Kapitbahay tumawag sa tanod.,Tagalog,Critical,96,P1,Yes,Yes,99
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Kapitbahay tumawag sa tanod.,English,Critical,98,P1,No,No,97
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, nabalian ang paa. Narinig ko sa kapitbahayy.",Tagalog,Critical,94,P1,Yes,No,96
+Physical + Psychological Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. nawalan ng malay. Narinig ko sa kapitbahayy.,English,Critical,97,P1,Yes,No,97
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Kapitbahay tumawag sa tanod tumawag sa barangay.,English,Critical,97,P1,No,Yes,98
+Physical Abuse,"Tinulak niyaa akoo pababa ng hagdan, nawalan ng malay. Narinig ko sa kapitbahayy.",Tagalog,Critical,97,P1,No,No,97
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Narinig ko sa kapitbahayy narinig ang iyak ng mga bata.",English,Critical,97,P1,Yes,Yes,99
+Sexual Abuse,Pinilittt niyaa akoo kahit umiiyak na akoo. Kapitbahay tumawag sa tanod tumawag sa barangay.,Tagalog,Critical,99,P1,Yes,Yes,99
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",English,Critical,99,P1,No,No,97
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Narinig ko sa kapitbahayy.,English,Critical,95,P1,No,Yes,99
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may nabalian ang paa sa tiyan. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,99,P1,No,No,99
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, maraming pasa. Nakita ko sa kapitbahay.",Tagalog,Critical,94,P1,No,Yes,99
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, nawalan ng malay. Kapitbahay tumawag sa tanod.",Tagalog,Critical,97,P1,No,Yes,96
+Physical Abuse,"Tinulak niyaa akoo pababa ng hagdan, may dugo sa ilong. Narinig ko sa kapitbahayy.",English,Critical,99,P1,Yes,Yes,99
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may dinala sa ospital sa tiyan. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,95,P1,Yes,Yes,96
+Sexual Abuse,Pinilittt niyaa akoo kahit umiiyak na akoo. Kapitbahay tumawag sa tanod tumawag sa barangay.,English,Critical,96,P1,No,Yes,99
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",English,Critical,95,P1,No,Yes,99
+Physical Abuse,Kinuha niyaa lahat ng pera ko at sinabi na wala akoong silbi. Kapitbahay tumawag sa tanod nakita ang pasa ko.,English,Critical,94,P1,Yes,No,97
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",Tagalog,Critical,98,P1,No,Yes,99
+Physical Abuse,Kinuha niyaa lahat ng pera ko at sinabi na wala akoong silbi. Kapitbahay tumawag sa tanod nakita ang pasa ko.,Tagalog,Critical,94,P1,Yes,Yes,98
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may nawalan ng malay sa ilong. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,98,P1,No,No,98
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Nakita ko sa kapitbahay.,English,Critical,95,P1,No,Yes,99
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may dinala sa ospital sa binti. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,99,P1,Yes,Yes,98
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may may dugo sa ilong sa likod. Sinampl ako ng asawaa ko. Abuseee talaga ito.,English,Critical,98,P1,Yes,Yes,97
+Physical Abuse,"Tinulak niyaa akoo pababa ng hagdan, may dugo sa ilong. Narinig ko sa kapitbahayy.",English,Critical,95,P1,Yes,No,97
+Physical Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. maraming pasa. Nakita ko sa kapitbahay.,Tagalog,Critical,96,P1,No,Yes,97
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",English,Critical,96,P1,Yes,No,99
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, may dugo sa ilong. Kapitbahay tumawag sa tanod.",Tagalog,Critical,99,P1,Yes,Yes,97
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. may dugo sa ilong. Kapitbahay tumawag sa tanod.,Tagalog,Critical,94,P1,Yes,No,96
+Physical + Psychological Abuse,Kinulong niya ako sa kwarto at hindi pinakain. dinala sa ospital. Narinig ko sa kapitbahayy.,English,Critical,95,P1,Yes,Yes,96
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may may dugo sa ilong sa braso. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,94,P1,Yes,No,96
+Physical Abuse,Nakita ko sa kapitbahay ang sigawan. Nakita ko siya may maraming pasa sa ilong. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,96,P1,No,No,97
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Kapitbahay tumawag sa tanod tumawag sa barangay.,Tagalog,Critical,97,P1,Yes,Yes,98
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,Tagalog,Critical,98,P1,No,No,98
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. maraming pasa. Narinig ko sa kapitbahayy.,Tagalog,Critical,96,P1,Yes,No,99
+Physical + Psychological Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. nawalan ng malay. Narinig ko sa kapitbahayy.,English,Critical,99,P1,No,No,98
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may may dugo sa ilong sa likod. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,95,P1,Yes,Yes,96
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,English,Critical,95,P1,No,No,99
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",English,Critical,96,P1,No,No,96
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, nabalian ang paa. Narinig ko sa kapitbahayy.",Tagalog,Critical,96,P1,Yes,Yes,99
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, may dugo sa ilong. Narinig ko sa kapitbahayy.",Tagalog,Critical,99,P1,No,No,99
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Narinig ko sa kapitbahayy.,English,Critical,94,P1,No,Yes,99
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. maraming pasa. Narinig ko sa kapitbahayy.,Tagalog,Critical,95,P1,Yes,No,99
+Physical + Psychological Abuse,Kinulong niya ako sa kwarto at hindi pinakain. nabalian ang paa. Narinig ko sa kapitbahayy.,English,Critical,97,P1,Yes,No,98
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Kapitbahay tumawag sa tanod tumawag sa barangay.,Tagalog,Critical,94,P1,No,Yes,96
+Physical + Psychological Abuse,Kinulong niya ako sa kwarto at hindi pinakain. nabalian ang paa. Kapitbahay tumawag sa tanod.,English,Critical,97,P1,No,Yes,99
+Physical + Psychological Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. nawalan ng malay. Nakita ko sa kapitbahay.,English,Critical,96,P1,Yes,No,99
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Narinig ko sa kapitbahayy tumawag sa barangay.,Tagalog,Critical,95,P1,No,No,98
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. maraming pasa. Narinig ko sa kapitbahayy.,Tagalog,Critical,95,P1,Yes,No,99
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, nawalan ng malay. Narinig ko sa kapitbahayy.",English,Critical,96,P1,No,No,98
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, dinala sa ospital. Kapitbahay tumawag sa tanod.",Tagalog,Critical,97,P1,No,Yes,96
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",Tagalog,Critical,96,P1,Yes,No,96
+Physical Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. may dugo sa ilong. Narinig ko sa kapitbahayy.,English,Critical,96,P1,No,Yes,98
+Physical Abuse,Nakita ko sa kapitbahay ang sigawan. Nakita ko siya may may dugo sa ilong sa likod. Sinampl ako ng asawaa ko. Abuseee talaga ito.,English,Critical,95,P1,Yes,Yes,97
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Kapitbahay tumawag sa tanod tumawag sa barangay.,Tagalog,Critical,96,P1,No,Yes,99
+Physical Abuse,Nakita ko sa kapitbahay ang sigawan. Nakita ko siya may nabalian ang paa sa binti. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,English,Critical,94,P1,No,No,98
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",Tagalog,Critical,96,P1,No,Yes,98
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may may dugo sa ilong sa tiyan. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,98,P1,No,No,96
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, maraming pasa. Kapitbahay tumawag sa tanod.",English,Critical,98,P1,No,No,97
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",Tagalog,Critical,96,P1,Yes,No,96
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Nakita ko sa kapitbahay tumawag sa barangay.,English,Critical,99,P1,Yes,No,99
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",Tagalog,Critical,96,P1,Yes,No,96
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Narinig ko sa kapitbahayy.,Tagalog,Critical,98,P1,No,No,99
+Physical + Psychological Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. nawalan ng malay. Nakita ko sa kapitbahay.,Tagalog,Critical,97,P1,No,Yes,97
+Physical Abuse,Nakita ko sa kapitbahay ang sigawan. Nakita ko siya may nawalan ng malay sa labi. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,English,Critical,97,P1,Yes,No,98
+Sexual Abuse,Pinilittt niyaa akoo kahit umiiyak na akoo. Nakita ko sa kapitbahay tumawag sa barangay.,Tagalog,Critical,94,P1,No,Yes,97
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",Tagalog,Critical,99,P1,Yes,No,96
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may nabalian ang paa sa labi. Sinampl ako ng asawaa ko. Abuseee talaga ito.,English,Critical,96,P1,Yes,No,97
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may dinala sa ospital sa tiyan. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,96,P1,No,No,96
+Physical Abuse,"Tinulak niyaa akoo pababa ng hagdan, nabalian ang paa. Kapitbahay tumawag sa tanod.",Tagalog,Critical,95,P1,Yes,Yes,97
+Physical + Psychological Abuse,Kinulong niya ako sa kwarto at hindi pinakain. nawalan ng malay. Nakita ko sa kapitbahay.,English,Critical,95,P1,No,No,98
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Kapitbahay tumawag sa tanod tumawag sa barangay.,English,Critical,95,P1,No,No,99
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. may dugo sa ilong. Nakita ko sa kapitbahay.,English,Critical,98,P1,No,No,96
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Nakita ko sa kapitbahay nakita ang pasa ko.,Tagalog,Critical,94,P1,No,Yes,96
+Sexual Abuse,Pinilittt niyaa akoo kahit umiiyak na akoo. Narinig ko sa kapitbahayy tumawag sa barangay.,Tagalog,Critical,97,P1,Yes,Yes,96
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Nakita ko sa kapitbahay tumawag sa barangay.,English,Critical,95,P1,No,Yes,97
+Sexual Abuse,Pinilittt niyaa akoo kahit umiiyak na akoo. Kapitbahay tumawag sa tanod tumawag sa barangay.,Tagalog,Critical,96,P1,No,No,99
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Kapitbahay tumawag sa tanod tumawag sa barangay.,English,Critical,97,P1,Yes,No,99
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Narinig ko sa kapitbahayy narinig ang iyak ng mga bata.",English,Critical,98,P1,No,No,98
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Narinig ko sa kapitbahayy narinig ang iyak ng mga bata.",English,Critical,97,P1,Yes,No,98
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may dinala sa ospital sa labi. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,96,P1,Yes,No,99
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may nawalan ng malay sa mukha. Sinampl ako ng asawaa ko. Abuseee talaga ito.,Tagalog,Critical,96,P1,Yes,Yes,98
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Narinig ko sa kapitbahayy narinig ang iyak ng mga bata.",English,Critical,98,P1,No,No,97
+Physical + Psychological Abuse,Kinulong niya ako sa kwarto at hindi pinakain. nawalan ng malay. Kapitbahay tumawag sa tanod.,English,Critical,99,P1,No,Yes,98
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Kapitbahay tumawag sa tanod nakita ang pasa ko.,English,Critical,95,P1,Yes,No,98
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Nakita ko sa kapitbahay tumawag sa barangay.,English,Critical,98,P1,No,Yes,97
+Sexual Abuse,Pinilittt niyaa akoo kahit umiiyak na akoo. Nakita ko sa kapitbahay tumawag sa barangay.,English,Critical,98,P1,No,Yes,96
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Narinig ko sa kapitbahayy narinig ang iyak ng mga bata.",Tagalog,Critical,96,P1,No,Yes,98
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Narinig ko sa kapitbahayy.,Tagalog,Critical,94,P1,Yes,Yes,96
+Physical + Psychological Abuse,Kinulong niya ako sa kwarto at hindi pinakain. nawalan ng malay. Kapitbahay tumawag sa tanod.,English,Critical,97,P1,No,No,96
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Nakita ko sa kapitbahay.,Tagalog,Critical,96,P1,No,Yes,98
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Nakita ko sa kapitbahay narinig ang iyak ng mga bata.",Tagalog,Critical,98,P1,No,Yes,96
+Physical + Psychological Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. dinala sa ospital. Narinig ko sa kapitbahayy.,Tagalog,Critical,97,P1,Yes,No,96
+Physical Abuse,Tinadyakan niya ako sa tiyan habang galittt. Narinig ko sa kapitbahayy.,Tagalog,Critical,98,P1,Yes,Yes,99
+Physical + Psychological Abuse,Kinulong niya ako sa kwarto at hindi pinakain. nawalan ng malay. Nakita ko sa kapitbahay.,Tagalog,Critical,97,P1,Yes,No,98
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, nawalan ng malay. Nakita ko sa kapitbahay.",Tagalog,Critical,95,P1,No,No,99
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Narinig ko sa kapitbahayy narinig ang iyak ng mga bata.",Tagalog,Critical,94,P1,Yes,Yes,96
+Physical Abuse,Kinuha niyaa lahat ng pera ko at sinabi na wala akoong silbi. Narinig ko sa kapitbahayy nakita ang pasa ko.,Tagalog,Critical,97,P1,Yes,Yes,99
+Physical Abuse,Kinuha niyaa lahat ng pera ko at sinabi na wala akoong silbi. Narinig ko sa kapitbahayy nakita ang pasa ko.,Tagalog,Critical,94,P1,Yes,No,96
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Kapitbahay tumawag sa tanod.,English,Critical,95,P1,No,Yes,99
+Physical Abuse,Tinadyakan niyaa akoo sa tiyan habang galittttt. Kapitbahay tumawag sa tanod.,English,Critical,98,P1,No,Yes,98
+Physical + Psychological Abuse,Kinulong niya ako sa kwarto at hindi pinakain. nabalian ang paa. Narinig ko sa kapitbahayy.,Tagalog,Critical,98,P1,Yes,No,98
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Narinig ko sa kapitbahayy nakita ang pasa ko.,English,Critical,98,P1,No,Yes,96
+Physical Abuse,"Tinulak niya ako pababa ng hagdan, nabalian ang paa. Kapitbahay tumawag sa tanod.",Tagalog,Critical,99,P1,Yes,No,98
+Sexual Abuse,Pinilittt niya ako kahit umiiyak na ako. Narinig ko sa kapitbahayy tumawag sa barangay.,English,Critical,95,P1,Yes,Yes,99
+Physical Abuse,Nakita ko sa kapitbahay ang sigawan. Nakita ko siya may maraming pasa sa braso. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,English,Critical,96,P1,No,Yes,98
+Physical Abuse,Kinulong niya ako sa kwarto at hindi pinakain. may dugo sa ilong. Kapitbahay tumawag sa tanod.,English,Critical,96,P1,Yes,Yes,98
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",Tagalog,Critical,95,P1,Yes,Yes,96
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Narinig ko sa kapitbahayy narinig ang iyak ng mga bata.",Tagalog,Critical,99,P1,Yes,Yes,97
+Physical Abuse,"Sinakal niya ako, may pasa sa leeg. Narinig ko sa kapitbahayy narinig ang iyak ng mga bata.",Tagalog,Critical,98,P1,Yes,Yes,99
+Physical Abuse,"Sinakal niyaa akoo, may pasa sa leeg. Kapitbahay tumawag sa tanod narinig ang iyak ng mga bata.",Tagalog,Critical,94,P1,Yes,No,99
+Physical Abuse,Narinig ko sa kapitbahayy ang sigawan. Nakita ko siya may nabalian ang paa sa ilong. Sinampl ako ng asawaa ko. Abuseee talaga ito.,English,Critical,98,P1,No,No,99
+Physical Abuse,Kapitbahay tumawag sa tanod ang sigawan. Nakita ko siya may dinala sa ospital sa ilong. Sinampl akoo ng asawaa ko. Abuseee talaga ito.,English,Critical,97,P1,No,No,98
+Physical Abuse,Kinuha niya lahat ng pera ko at sinabi na wala akong silbi. Kapitbahay tumawag sa tanod nakita ang pasa ko.,English,Critical,95,P1,No,No,99
+Physical Abuse,Kinulong niyaa akoo sa kwarto at hindi pinakain. maraming pasa. Narinig ko sa kapitbahayy.,English,Critical,95,P1,No,No,97
+Sexual Abuse,Yung asawa kong lasinggero ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa may hagdanan kaninang umaga bago pumasok kasi umiiyak ang bata at naingayan siya.,Tagalog,High,84,P2,Yes,No,88
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinulak ako pababa mula sa ikalawang palapag sa kusina habang nagluluto kaninang alas-tres ng madaling araw dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,99,P1,No,No,86
+Physical Abuse,Yung ex-live-in partner ko ay tinulak ako pababa mula sa ikalawang palapag sa garahe habang kumakain kami ng hapunan dahil natalo siya sa sugal.,Tagalog,Critical,86,P1,No,No,88
+Psychological Abuse,Yung ex-live-in partner ko ay pinunit ang mga damit ko at pinalayas ako sa kwarto ng mga bata kahapon ng hapon kasi wala daw kaming maiulam.,Tagalog,High,82,P2,Yes,No,88
+Physical + Psychological Abuse,Yung landlord naming nanghaharass ay tinutukan ako ng tinidor at sinabing papatayin ako sa harap ng sari-sari store noong kasagsagan ng ulan kasi humingi ako ng pambili ng gamot.,Tagalog,High,84,P2,No,Yes,93
+Psychological Abuse,Ang step-father ng anak ko ay pinunit ang mga damit ko at pinalayas ako sa tapat ng kapitbahay kaninang umaga bago pumasok kasi lasing na lasing siya.,Tagalog,Critical,95,P1,Yes,No,88
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinulak ako pababa mula sa ikalawang palapag sa loob ng banyo kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,82,P1,Yes,No,99
+Physical + Psychological Abuse,Yung tiyuhin naming nakikitira ay tinulak ako pababa mula sa ikalawang palapag sa kusina habang nagluluto noong araw ng sweldo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,77,P2,No,No,90
+Physical Abuse,Yung tiyuhin naming nakikitira ay biglang hinampas ang ulo ko ng payong sa tapat ng kapitbahay noong kasagsagan ng ulan kasi lasing na lasing siya.,Tagalog,Critical,90,P1,No,Yes,99
+Physical Abuse,Yung tiyuhin naming nakikitira ay biglang hinampas ang ulo ko ng bato sa may hagdanan kaninang alas-tres ng madaling araw kasi humingi ako ng pambili ng gamot.,Tagalog,High,79,P2,No,Yes,94
+Elder Abuse,Ang step-father ng anak ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa harap ng sari-sari store kahapon ng hapon kasi lasing na lasing siya.,Tagalog,Critical,90,P1,Yes,No,98
+Physical + Psychological Abuse,Ang kuya ko ay biglang hinampas ang ulo ko ng kawali sa loob ng banyo kaninang umaga bago pumasok kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,88,P1,No,Yes,91
+Physical Abuse,Ang lolo ng mga bata ay sinakal ako hanggang sa mawalan ako ng hininga sa garahe kagabi bago matulog dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,98,P2,Yes,No,88
+Physical Abuse,Yung landlord naming nanghaharass ay tinulak ako pababa mula sa ikalawang palapag sa likod ng bahay noong nakaraang linggo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,92,P1,No,No,88
+Physical + Psychological Abuse,Ang kinakasama ko ay sinakal ako hanggang sa mawalan ako ng hininga sa kwarto ng mga bata noong kasagsagan ng ulan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,76,P1,Yes,No,89
+Physical + Psychological Abuse,Ang step-father ng anak ko ay tinulak ako pababa mula sa ikalawang palapag sa gitna ng kalsada kaninang alas-tres ng madaling araw kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,75,P1,Yes,No,97
+Elder Abuse,Yung tiyuhin naming nakikitira ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa tapat ng kapitbahay kaninang alas-tres ng madaling araw dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,94,P2,No,No,85
+Physical Abuse,Ang step-father ng anak ko ay binato ako ng tinidor nang ubod ng lakas sa harap ng sari-sari store kaninang alas-tres ng madaling araw kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,97,P1,Yes,Yes,95
+Elder Abuse,Ang step-father ng anak ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa loob ng banyo kahapon ng hapon dahil sa hinala niyang may iba ako.,Tagalog,High,88,P2,Yes,No,99
+Physical + Psychological Abuse,Yung landlord naming nanghaharass ay biglang hinampas ang ulo ko ng kutsara sa kusina habang nagluluto habang kumakain kami ng hapunan dahil sa hinala niyang may iba ako.,Tagalog,Critical,75,P1,No,Yes,99
+Physical + Psychological Abuse,Yung landlord naming nanghaharass ay binato ako ng makapal na libro nang ubod ng lakas sa kwarto ng mga bata habang kumakain kami ng hapunan dahil sa hinala niyang may iba ako.,Tagalog,High,97,P2,Yes,Yes,94
+Economic Abuse,Ang kuya ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa garahe noong kasagsagan ng ulan dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,89,P2,No,No,90
+Physical + Psychological Abuse,Yung tiyuhin naming nakikitira ay sinakal ako hanggang sa mawalan ako ng hininga sa harap ng sari-sari store noong nakaraang linggo kasi wala daw kaming maiulam.,Tagalog,Critical,84,P1,No,No,96
+Economic Abuse,Yung asawa kong lasinggero ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa kwarto ng mga bata kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,High,94,P2,Yes,No,88
+Elder Abuse,Yung ex-live-in partner ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa likod ng bahay kaninang alas-tres ng madaling araw kasi umiiyak ang bata at naingayan siya.,Tagalog,High,90,P2,Yes,No,91
+Psychological Abuse,Yung asawa kong lasinggero ay pinunit ang mga damit ko at pinalayas ako sa harap ng sari-sari store kagabi bago matulog kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,91,P1,No,No,91
+Physical Abuse,Ang step-father ng anak ko ay binato ako ng makapal na libro nang ubod ng lakas sa harap ng sari-sari store noong araw ng sweldo dahil natalo siya sa sugal.,Tagalog,High,98,P2,Yes,Yes,87
+Economic Abuse,Ang biyenan kong malupit ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa kwarto ng mga bata kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,80,P1,Yes,No,86
+Physical + Psychological Abuse,Ang lolo ng mga bata ay binato ako ng makapal na libro nang ubod ng lakas sa may hagdanan noong kasagsagan ng ulan kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,77,P1,Yes,Yes,95
+Elder Abuse,Yung tiyuhin naming nakikitira ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa kusina habang nagluluto kagabi bago matulog kasi humingi ako ng pambili ng gamot.,Tagalog,High,98,P2,No,No,90
+Physical + Psychological Abuse,Ang kuya ko ay binato ako ng kord ng kuryente nang ubod ng lakas sa kusina habang nagluluto kaninang alas-tres ng madaling araw dahil natalo siya sa sugal.,Tagalog,High,84,P2,No,Yes,89
+Economic Abuse,Ang biyenan kong malupit ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa kusina habang nagluluto noong nakaraang linggo kasi lasing na lasing siya.,Tagalog,High,78,P2,No,No,98
+Psychological Abuse,Ang step-father ng anak ko ay pinunit ang mga damit ko at pinalayas ako sa loob ng banyo kaninang alas-tres ng madaling araw kasi lasing na lasing siya.,Tagalog,High,84,P2,Yes,No,88
+Physical Abuse,Ang kuya ko ay biglang hinampas ang ulo ko ng payong sa gitna ng kalsada kaninang umaga bago pumasok dahil sa hinala niyang may iba ako.,Tagalog,Critical,95,P1,No,Yes,87
+Physical Abuse,Yung landlord naming nanghaharass ay biglang hinampas ang ulo ko ng bakal na tubo sa likod ng bahay kahapon ng hapon dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,83,P1,No,Yes,97
+Psychological Abuse,Ang lolo ng mga bata ay pinunit ang mga damit ko at pinalayas ako sa likod ng bahay kahapon ng hapon dahil natalo siya sa sugal.,Tagalog,Critical,85,P1,Yes,No,89
+Physical Abuse,Ang kinakasama ko ay sinakal ako hanggang sa mawalan ako ng hininga sa gitna ng kalsada kagabi bago matulog kasi umiiyak ang bata at naingayan siya.,Tagalog,High,80,P2,Yes,No,87
+Sexual Abuse,Ang step-father ng anak ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa loob ng banyo habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,77,P1,Yes,No,98
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinulak ako pababa mula sa ikalawang palapag sa may hagdanan kagabi bago matulog dahil sa hinala niyang may iba ako.,Tagalog,High,90,P2,No,No,93
+Physical Abuse,Ang kuya ko ay tinulak ako pababa mula sa ikalawang palapag sa loob ng banyo kaninang alas-tres ng madaling araw kasi umiiyak ang bata at naingayan siya.,Tagalog,High,89,P2,Yes,No,90
+Physical Abuse,Ang kuya ko ay biglang hinampas ang ulo ko ng plantsa sa harap ng sari-sari store kaninang tanghaling tapat kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,91,P1,No,Yes,90
+Elder Abuse,Ang biyenan kong malupit ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa harap ng sari-sari store kaninang umaga bago pumasok kasi wala daw kaming maiulam.,Tagalog,Critical,91,P1,No,No,89
+Physical + Psychological Abuse,Ang biyenan kong malupit ay biglang hinampas ang ulo ko ng tinidor sa likod ng bahay noong kasagsagan ng ulan dahil sa hinala niyang may iba ako.,Tagalog,Critical,96,P1,No,Yes,87
+Physical + Psychological Abuse,Ang biyenan kong malupit ay tinutukan ako ng walis tambo at sinabing papatayin ako sa tapat ng kapitbahay noong araw ng sweldo kasi lasing na lasing siya.,Tagalog,Critical,75,P1,No,Yes,90
+Elder Abuse,Yung landlord naming nanghaharass ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa kusina habang nagluluto kaninang alas-tres ng madaling araw dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,79,P2,No,No,89
+Neglect / Acts of Omission,Yung ex-live-in partner ko ay ikinulong ang mga bata sa madilim na bodega sa loob ng banyo kaninang umaga bago pumasok dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,84,P2,Yes,No,89
+Elder Abuse,Yung ex-live-in partner ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa loob ng banyo kaninang umaga bago pumasok kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,92,P1,No,No,91
+Sexual Abuse,Ang lolo ng mga bata ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa kusina habang nagluluto kaninang umaga bago pumasok dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,96,P2,Yes,No,91
+Neglect / Acts of Omission,Ang lolo ng mga bata ay ikinulong ang mga bata sa madilim na bodega sa kwarto ng mga bata noong araw ng sweldo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,98,P1,Yes,No,95
+Economic Abuse,Yung ex-live-in partner ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa garahe kagabi bago matulog kasi humingi ako ng pambili ng gamot.,Tagalog,High,87,P2,No,No,89
+Neglect / Acts of Omission,Ang lolo ng mga bata ay ikinulong ang mga bata sa madilim na bodega sa harap ng sari-sari store kahapon ng hapon dahil sa hinala niyang may iba ako.,Tagalog,Critical,87,P1,Yes,No,88
+Physical Abuse,Ang biyenan kong malupit ay tinutukan ako ng martilyo at sinabing papatayin ako sa may hagdanan kaninang umaga bago pumasok kasi wala daw kaming maiulam.,Tagalog,High,89,P2,No,Yes,85
+Economic Abuse,Yung landlord naming nanghaharass ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa loob ng banyo noong kasagsagan ng ulan kasi lasing na lasing siya.,Tagalog,High,79,P2,No,No,89
+Physical + Psychological Abuse,Ang step-father ng anak ko ay binato ako ng kord ng kuryente nang ubod ng lakas sa garahe noong araw ng sweldo kasi wala daw kaming maiulam.,Tagalog,High,87,P2,Yes,Yes,88
+Physical + Psychological Abuse,Ang step-father ng anak ko ay tinutukan ako ng payong at sinabing papatayin ako sa tapat ng kapitbahay kagabi bago matulog dahil natalo siya sa sugal.,Tagalog,Critical,97,P1,Yes,Yes,96
+Physical Abuse,Yung ex-live-in partner ko ay tinulak ako pababa mula sa ikalawang palapag sa gitna ng kalsada kaninang alas-tres ng madaling araw dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,90,P2,No,No,95
+Physical + Psychological Abuse,Ang biyenan kong malupit ay binato ako ng basag na bote nang ubod ng lakas sa likod ng bahay noong araw ng sweldo kasi lasing na lasing siya.,Tagalog,Critical,76,P1,No,Yes,89
+Physical Abuse,Ang kuya ko ay binato ako ng kord ng kuryente nang ubod ng lakas sa harap ng sari-sari store kaninang umaga bago pumasok kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,88,P1,No,Yes,90
+Psychological Abuse,Yung tiyuhin naming nakikitira ay pinunit ang mga damit ko at pinalayas ako sa kwarto ng mga bata kahapon ng hapon kasi wala daw kaming maiulam.,Tagalog,High,98,P2,Yes,No,95
+Neglect / Acts of Omission,Ang kinakasama ko ay ikinulong ang mga bata sa madilim na bodega sa kusina habang nagluluto kagabi bago matulog dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,98,P2,Yes,No,92
+Sexual Abuse,Ang kuya ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa harap ng sari-sari store noong kasagsagan ng ulan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,87,P1,No,No,97
+Neglect / Acts of Omission,Yung tiyuhin naming nakikitira ay ikinulong ang mga bata sa madilim na bodega sa kwarto ng mga bata noong kasagsagan ng ulan dahil natalo siya sa sugal.,Tagalog,High,92,P2,Yes,No,92
+Physical + Psychological Abuse,Ang kuya ko ay binato ako ng bato nang ubod ng lakas sa harap ng sari-sari store kagabi bago matulog dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,78,P1,No,Yes,87
+Neglect / Acts of Omission,Yung ex-live-in partner ko ay ikinulong ang mga bata sa madilim na bodega sa kwarto ng mga bata kagabi bago matulog dahil natalo siya sa sugal.,Tagalog,Critical,75,P1,Yes,No,94
+Psychological Abuse,Yung tiyuhin naming nakikitira ay pinunit ang mga damit ko at pinalayas ako sa garahe noong araw ng sweldo dahil natalo siya sa sugal.,Tagalog,High,82,P2,No,No,87
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa harap ng sari-sari store kagabi bago matulog kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,86,P1,Yes,No,89
+Physical + Psychological Abuse,Ang biyenan kong malupit ay sinakal ako hanggang sa mawalan ako ng hininga sa loob ng banyo kahapon ng hapon dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,90,P2,No,No,87
+Physical Abuse,Ang step-father ng anak ko ay tinulak ako pababa mula sa ikalawang palapag sa garahe noong araw ng sweldo kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,97,P1,Yes,No,92
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay biglang hinampas ang ulo ko ng kutsara sa kwarto ng mga bata noong araw ng sweldo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,78,P1,Yes,Yes,88
+Neglect / Acts of Omission,Yung ex-live-in partner ko ay ikinulong ang mga bata sa madilim na bodega sa garahe noong araw ng sweldo kasi lasing na lasing siya.,Tagalog,High,99,P2,Yes,No,98
+Psychological Abuse,Yung ex-live-in partner ko ay pinunit ang mga damit ko at pinalayas ako sa may hagdanan kaninang tanghaling tapat kasi humingi ako ng pambili ng gamot.,Tagalog,High,93,P2,No,No,97
+Economic Abuse,Ang biyenan kong malupit ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa loob ng banyo noong kasagsagan ng ulan kasi wala daw kaming maiulam.,Tagalog,Critical,81,P1,No,No,89
+Elder Abuse,Yung tiyuhin naming nakikitira ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa may hagdanan noong araw ng sweldo kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,96,P1,Yes,No,96
+Physical + Psychological Abuse,Ang kuya ko ay binato ako ng kawali nang ubod ng lakas sa kwarto ng mga bata kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,88,P1,Yes,Yes,89
+Physical + Psychological Abuse,Ang kinakasama ko ay biglang hinampas ang ulo ko ng basag na bote sa kusina habang nagluluto kahapon ng hapon dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,91,P2,No,Yes,98
+Psychological Abuse,Yung landlord naming nanghaharass ay pinunit ang mga damit ko at pinalayas ako sa tapat ng kapitbahay kaninang alas-tres ng madaling araw dahil sa hinala niyang may iba ako.,Tagalog,High,95,P2,No,No,94
+Psychological Abuse,Ang step-father ng anak ko ay pinunit ang mga damit ko at pinalayas ako sa likod ng bahay kaninang tanghaling tapat kasi wala daw kaming maiulam.,Tagalog,Critical,96,P1,Yes,No,96
+Physical + Psychological Abuse,Ang step-father ng anak ko ay tinutukan ako ng basag na bote at sinabing papatayin ako sa may hagdanan kahapon ng hapon dahil sa hinala niyang may iba ako.,Tagalog,High,84,P2,Yes,Yes,97
+Physical Abuse,Ang biyenan kong malupit ay sinakal ako hanggang sa mawalan ako ng hininga sa tapat ng kapitbahay kaninang tanghaling tapat dahil sa hinala niyang may iba ako.,Tagalog,Critical,93,P1,No,No,89
+Sexual Abuse,Ang biyenan kong malupit ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa tapat ng kapitbahay noong kasagsagan ng ulan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,90,P2,No,No,85
+Physical + Psychological Abuse,Yung asawa kong lasinggero ay tinutukan ako ng gunting at sinabing papatayin ako sa harap ng sari-sari store kaninang alas-tres ng madaling araw dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,88,P1,No,Yes,91
+Psychological Abuse,Ang step-father ng anak ko ay pinunit ang mga damit ko at pinalayas ako sa kwarto ng mga bata noong nakaraang linggo kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,84,P1,Yes,No,91
+Physical + Psychological Abuse,Ang biyenan kong malupit ay tinulak ako pababa mula sa ikalawang palapag sa gitna ng kalsada habang kumakain kami ng hapunan kasi wala daw kaming maiulam.,Tagalog,High,91,P2,No,No,90
+Physical + Psychological Abuse,Ang step-father ng anak ko ay binato ako ng tinidor nang ubod ng lakas sa harap ng sari-sari store kaninang alas-tres ng madaling araw dahil natalo siya sa sugal.,Tagalog,Critical,78,P1,Yes,Yes,96
+Economic Abuse,Ang step-father ng anak ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa may hagdanan habang kumakain kami ng hapunan dahil sa hinala niyang may iba ako.,Tagalog,High,75,P2,Yes,No,90
+Psychological Abuse,Ang step-father ng anak ko ay pinunit ang mga damit ko at pinalayas ako sa tapat ng kapitbahay kaninang umaga bago pumasok dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,87,P1,Yes,No,98
+Physical Abuse,Yung tiyuhin naming nakikitira ay binato ako ng martilyo nang ubod ng lakas sa loob ng banyo kaninang umaga bago pumasok dahil sa hinala niyang may iba ako.,Tagalog,High,86,P2,No,Yes,94
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinulak ako pababa mula sa ikalawang palapag sa kwarto ng mga bata noong araw ng sweldo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,92,P1,Yes,No,94
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinulak ako pababa mula sa ikalawang palapag sa likod ng bahay noong araw ng sweldo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,99,P2,No,No,94
+Physical Abuse,Ang kuya ko ay tinulak ako pababa mula sa ikalawang palapag sa kusina habang nagluluto kahapon ng hapon kasi humingi ako ng pambili ng gamot.,Tagalog,High,88,P2,No,No,99
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinulak ako pababa mula sa ikalawang palapag sa loob ng banyo noong araw ng sweldo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,89,P1,No,No,92
+Neglect / Acts of Omission,Yung ex-live-in partner ko ay ikinulong ang mga bata sa madilim na bodega sa gitna ng kalsada noong nakaraang linggo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,91,P1,Yes,No,97
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa likod ng bahay noong nakaraang linggo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,77,P1,Yes,No,97
+Economic Abuse,Yung ex-live-in partner ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa loob ng banyo kaninang tanghaling tapat dahil sa hinala niyang may iba ako.,Tagalog,High,75,P2,No,No,89
+Physical Abuse,Yung asawa kong lasinggero ay tinulak ako pababa mula sa ikalawang palapag sa gitna ng kalsada noong kasagsagan ng ulan kasi wala daw kaming maiulam.,Tagalog,High,78,P2,No,No,87
+Psychological Abuse,Ang step-father ng anak ko ay pinunit ang mga damit ko at pinalayas ako sa likod ng bahay kagabi bago matulog kasi lasing na lasing siya.,Tagalog,Critical,90,P1,Yes,No,87
+Sexual Abuse,Yung asawa kong lasinggero ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa gitna ng kalsada habang kumakain kami ng hapunan dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,96,P1,No,No,93
+Sexual Abuse,Yung asawa kong lasinggero ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa loob ng banyo kaninang umaga bago pumasok kasi lasing na lasing siya.,Tagalog,Critical,85,P1,No,No,93
+Economic Abuse,Yung asawa kong lasinggero ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa kwarto ng mga bata kagabi bago matulog kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,76,P1,Yes,No,93
+Neglect / Acts of Omission,Ang kinakasama ko ay ikinulong ang mga bata sa madilim na bodega sa gitna ng kalsada kaninang umaga bago pumasok kasi lasing na lasing siya.,Tagalog,Critical,86,P1,Yes,No,94
+Physical + Psychological Abuse,Yung asawa kong lasinggero ay tinutukan ako ng tinidor at sinabing papatayin ako sa tapat ng kapitbahay noong kasagsagan ng ulan kasi lasing na lasing siya.,Tagalog,Critical,95,P1,No,Yes,87
+Physical Abuse,Ang step-father ng anak ko ay tinulak ako pababa mula sa ikalawang palapag sa garahe noong nakaraang linggo kasi lasing na lasing siya.,Tagalog,Critical,93,P1,Yes,No,92
+Economic Abuse,Ang biyenan kong malupit ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa may hagdanan noong nakaraang linggo dahil natalo siya sa sugal.,Tagalog,Critical,93,P1,No,No,86
+Physical Abuse,Ang kinakasama ko ay biglang hinampas ang ulo ko ng makapal na libro sa gitna ng kalsada kagabi bago matulog kasi wala daw kaming maiulam.,Tagalog,Critical,90,P1,No,Yes,98
+Elder Abuse,Ang biyenan kong malupit ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa likod ng bahay noong araw ng sweldo kasi wala daw kaming maiulam.,Tagalog,High,85,P2,No,No,93
+Physical Abuse,Ang kinakasama ko ay binato ako ng payong nang ubod ng lakas sa tapat ng kapitbahay kaninang umaga bago pumasok dahil natalo siya sa sugal.,Tagalog,High,97,P2,No,Yes,99
+Physical Abuse,Yung tiyuhin naming nakikitira ay binato ako ng kutsilyo nang ubod ng lakas sa tapat ng kapitbahay kaninang umaga bago pumasok kasi lasing na lasing siya.,Tagalog,Critical,92,P1,No,Yes,87
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay tinutukan ako ng plantsa at sinabing papatayin ako sa kwarto ng mga bata kagabi bago matulog kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,86,P1,Yes,Yes,99
+Economic Abuse,Ang biyenan kong malupit ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa loob ng banyo kahapon ng hapon kasi humingi ako ng pambili ng gamot.,Tagalog,High,84,P2,No,No,98
+Physical + Psychological Abuse,Ang step-father ng anak ko ay tinulak ako pababa mula sa ikalawang palapag sa kwarto ng mga bata kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,High,98,P2,Yes,No,90
+Physical + Psychological Abuse,Yung asawa kong lasinggero ay binato ako ng kord ng kuryente nang ubod ng lakas sa gitna ng kalsada noong araw ng sweldo kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,95,P1,Yes,Yes,89
+Elder Abuse,Yung ex-live-in partner ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa harap ng sari-sari store noong araw ng sweldo kasi humingi ako ng pambili ng gamot.,Tagalog,High,85,P2,No,No,96
+Psychological Abuse,Yung asawa kong lasinggero ay pinunit ang mga damit ko at pinalayas ako sa may hagdanan kaninang tanghaling tapat dahil sa hinala niyang may iba ako.,Tagalog,Critical,75,P1,No,No,96
+Sexual Abuse,Ang step-father ng anak ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa tapat ng kapitbahay kaninang umaga bago pumasok kasi lasing na lasing siya.,Tagalog,Critical,86,P1,Yes,No,91
+Physical Abuse,Yung landlord naming nanghaharass ay tinulak ako pababa mula sa ikalawang palapag sa loob ng banyo noong araw ng sweldo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,94,P2,No,No,87
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinulak ako pababa mula sa ikalawang palapag sa harap ng sari-sari store kaninang alas-tres ng madaling araw dahil natalo siya sa sugal.,Tagalog,High,84,P2,No,No,99
+Physical + Psychological Abuse,Ang kuya ko ay biglang hinampas ang ulo ko ng plantsa sa likod ng bahay kaninang alas-tres ng madaling araw kasi wala daw kaming maiulam.,Tagalog,Critical,88,P1,No,Yes,97
+Economic Abuse,Ang kinakasama ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa gitna ng kalsada noong kasagsagan ng ulan dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,81,P1,No,No,94
+Psychological Abuse,Ang lolo ng mga bata ay pinunit ang mga damit ko at pinalayas ako sa may hagdanan kagabi bago matulog dahil natalo siya sa sugal.,Tagalog,Critical,80,P1,Yes,No,96
+Physical + Psychological Abuse,Yung asawa kong lasinggero ay tinulak ako pababa mula sa ikalawang palapag sa likod ng bahay kaninang alas-tres ng madaling araw dahil sa hinala niyang may iba ako.,Tagalog,High,87,P2,No,No,94
+Physical + Psychological Abuse,Ang biyenan kong malupit ay tinutukan ako ng bakal na tubo at sinabing papatayin ako sa gitna ng kalsada kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,96,P1,Yes,Yes,95
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay sinakal ako hanggang sa mawalan ako ng hininga sa kwarto ng mga bata kaninang tanghaling tapat kasi humingi ako ng pambili ng gamot.,Tagalog,High,99,P2,Yes,No,88
+Physical + Psychological Abuse,Yung asawa kong lasinggero ay sinakal ako hanggang sa mawalan ako ng hininga sa gitna ng kalsada noong nakaraang linggo kasi umiiyak ang bata at naingayan siya.,Tagalog,High,82,P2,Yes,No,90
+Physical Abuse,Yung landlord naming nanghaharass ay biglang hinampas ang ulo ko ng gunting sa harap ng sari-sari store kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,79,P1,Yes,Yes,90
+Elder Abuse,Yung tiyuhin naming nakikitira ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa kusina habang nagluluto noong nakaraang linggo kasi umiiyak ang bata at naingayan siya.,Tagalog,High,98,P2,Yes,No,94
+Physical Abuse,Ang kinakasama ko ay tinutukan ako ng makapal na libro at sinabing papatayin ako sa kwarto ng mga bata kagabi bago matulog kasi lasing na lasing siya.,Tagalog,High,96,P2,Yes,Yes,96
+Physical Abuse,Ang kinakasama ko ay tinulak ako pababa mula sa ikalawang palapag sa likod ng bahay noong kasagsagan ng ulan dahil sa hinala niyang may iba ako.,Tagalog,High,77,P2,No,No,92
+Physical + Psychological Abuse,Ang biyenan kong malupit ay tinutukan ako ng kutsilyo at sinabing papatayin ako sa harap ng sari-sari store noong araw ng sweldo kasi wala daw kaming maiulam.,Tagalog,High,92,P2,No,Yes,91
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay binato ako ng gunting nang ubod ng lakas sa gitna ng kalsada kaninang umaga bago pumasok kasi wala daw kaming maiulam.,Tagalog,High,78,P2,No,Yes,85
+Elder Abuse,Ang lolo ng mga bata ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa tapat ng kapitbahay noong araw ng sweldo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,86,P2,Yes,No,98
+Psychological Abuse,Yung asawa kong lasinggero ay pinunit ang mga damit ko at pinalayas ako sa gitna ng kalsada noong kasagsagan ng ulan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,86,P1,No,No,92
+Sexual Abuse,Yung landlord naming nanghaharass ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa likod ng bahay kagabi bago matulog kasi lasing na lasing siya.,Tagalog,Critical,80,P1,No,No,98
+Psychological Abuse,Ang kinakasama ko ay pinunit ang mga damit ko at pinalayas ako sa gitna ng kalsada noong nakaraang linggo kasi wala daw kaming maiulam.,Tagalog,High,99,P2,No,No,93
+Economic Abuse,Yung ex-live-in partner ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa likod ng bahay habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,93,P2,No,No,92
+Sexual Abuse,Ang step-father ng anak ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa tapat ng kapitbahay kaninang tanghaling tapat dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,86,P1,Yes,No,86
+Psychological Abuse,Yung ex-live-in partner ko ay pinunit ang mga damit ko at pinalayas ako sa gitna ng kalsada kaninang alas-tres ng madaling araw kasi humingi ako ng pambili ng gamot.,Tagalog,High,77,P2,No,No,94
+Economic Abuse,Yung asawa kong lasinggero ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa garahe kagabi bago matulog dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,98,P2,No,No,93
+Physical Abuse,Yung landlord naming nanghaharass ay biglang hinampas ang ulo ko ng martilyo sa likod ng bahay kagabi bago matulog kasi umiiyak ang bata at naingayan siya.,Tagalog,High,76,P2,Yes,Yes,88
+Physical + Psychological Abuse,Ang kuya ko ay binato ako ng walis tambo nang ubod ng lakas sa tapat ng kapitbahay kaninang umaga bago pumasok dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,86,P2,No,Yes,97
+Physical + Psychological Abuse,Ang step-father ng anak ko ay binato ako ng makapal na libro nang ubod ng lakas sa harap ng sari-sari store kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,75,P1,Yes,Yes,89
+Physical + Psychological Abuse,Ang kuya ko ay biglang hinampas ang ulo ko ng payong sa loob ng banyo kaninang alas-tres ng madaling araw kasi wala daw kaming maiulam.,Tagalog,High,90,P2,No,Yes,99
+Sexual Abuse,Ang step-father ng anak ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa gitna ng kalsada kaninang umaga bago pumasok kasi lasing na lasing siya.,Tagalog,High,99,P2,Yes,No,91
+Psychological Abuse,Yung tiyuhin naming nakikitira ay pinunit ang mga damit ko at pinalayas ako sa garahe kaninang alas-tres ng madaling araw dahil sa hinala niyang may iba ako.,Tagalog,High,87,P2,No,No,94
+Physical Abuse,Ang lolo ng mga bata ay biglang hinampas ang ulo ko ng kutsara sa likod ng bahay noong nakaraang linggo dahil natalo siya sa sugal.,Tagalog,High,76,P2,Yes,Yes,87
+Physical Abuse,Yung ex-live-in partner ko ay tinulak ako pababa mula sa ikalawang palapag sa gitna ng kalsada habang kumakain kami ng hapunan kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,79,P1,No,No,88
+Physical Abuse,Ang biyenan kong malupit ay sinakal ako hanggang sa mawalan ako ng hininga sa kwarto ng mga bata noong araw ng sweldo kasi wala daw kaming maiulam.,Tagalog,High,98,P2,Yes,No,98
+Physical Abuse,Ang kuya ko ay sinakal ako hanggang sa mawalan ako ng hininga sa kwarto ng mga bata noong nakaraang linggo dahil natalo siya sa sugal.,Tagalog,High,81,P2,Yes,No,88
+Physical Abuse,Ang kinakasama ko ay tinulak ako pababa mula sa ikalawang palapag sa garahe kahapon ng hapon dahil sa hinala niyang may iba ako.,Tagalog,High,86,P2,No,No,90
+Elder Abuse,Yung landlord naming nanghaharass ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa tapat ng kapitbahay habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,83,P1,No,No,86
+Psychological Abuse,Ang kinakasama ko ay pinunit ang mga damit ko at pinalayas ako sa likod ng bahay kahapon ng hapon dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,95,P2,No,No,86
+Elder Abuse,Yung ex-live-in partner ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa likod ng bahay kagabi bago matulog dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,86,P1,No,No,96
+Physical + Psychological Abuse,Yung tiyuhin naming nakikitira ay tinulak ako pababa mula sa ikalawang palapag sa likod ng bahay kaninang tanghaling tapat kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,78,P1,No,No,92
+Physical Abuse,Yung asawa kong lasinggero ay binato ako ng gunting nang ubod ng lakas sa gitna ng kalsada kaninang umaga bago pumasok dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,84,P2,No,Yes,97
+Elder Abuse,Ang step-father ng anak ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa may hagdanan kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,78,P1,Yes,No,91
+Economic Abuse,Ang biyenan kong malupit ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa tapat ng kapitbahay kahapon ng hapon dahil natalo siya sa sugal.,Tagalog,High,84,P2,No,No,95
+Neglect / Acts of Omission,Yung tiyuhin naming nakikitira ay ikinulong ang mga bata sa madilim na bodega sa kusina habang nagluluto habang kumakain kami ng hapunan kasi humingi ako ng pambili ng gamot.,Tagalog,High,86,P2,Yes,No,94
+Sexual Abuse,Yung asawa kong lasinggero ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa harap ng sari-sari store noong kasagsagan ng ulan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,80,P1,No,No,90
+Physical + Psychological Abuse,Yung tiyuhin naming nakikitira ay tinutukan ako ng bato at sinabing papatayin ako sa garahe kahapon ng hapon kasi wala daw kaming maiulam.,Tagalog,Critical,78,P1,No,Yes,88
+Physical + Psychological Abuse,Yung tiyuhin naming nakikitira ay biglang hinampas ang ulo ko ng gunting sa gitna ng kalsada noong nakaraang linggo kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,78,P1,Yes,Yes,93
+Physical + Psychological Abuse,Ang lolo ng mga bata ay binato ako ng walis tambo nang ubod ng lakas sa kwarto ng mga bata kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,High,77,P2,Yes,Yes,90
+Neglect / Acts of Omission,Yung tiyuhin naming nakikitira ay ikinulong ang mga bata sa madilim na bodega sa tapat ng kapitbahay kahapon ng hapon dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,75,P2,Yes,No,96
+Neglect / Acts of Omission,Yung landlord naming nanghaharass ay ikinulong ang mga bata sa madilim na bodega sa kwarto ng mga bata noong kasagsagan ng ulan kasi lasing na lasing siya.,Tagalog,High,95,P2,Yes,No,86
+Elder Abuse,Ang kuya ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa may hagdanan kaninang tanghaling tapat kasi humingi ako ng pambili ng gamot.,Tagalog,High,80,P2,No,No,95
+Physical + Psychological Abuse,Ang step-father ng anak ko ay tinutukan ako ng bato at sinabing papatayin ako sa gitna ng kalsada noong araw ng sweldo kasi wala daw kaming maiulam.,Tagalog,High,83,P2,Yes,Yes,98
+Neglect / Acts of Omission,Ang lolo ng mga bata ay ikinulong ang mga bata sa madilim na bodega sa tapat ng kapitbahay habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,97,P2,Yes,No,93
+Physical Abuse,Ang lolo ng mga bata ay binato ako ng kord ng kuryente nang ubod ng lakas sa kwarto ng mga bata kagabi bago matulog dahil sa hinala niyang may iba ako.,Tagalog,Critical,92,P1,Yes,Yes,91
+Physical + Psychological Abuse,Yung landlord naming nanghaharass ay tinutukan ako ng bato at sinabing papatayin ako sa kwarto ng mga bata habang kumakain kami ng hapunan kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,91,P1,Yes,Yes,88
+Sexual Abuse,Yung tiyuhin naming nakikitira ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa kusina habang nagluluto kaninang tanghaling tapat kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,92,P1,No,No,85
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa gitna ng kalsada kahapon ng hapon kasi wala daw kaming maiulam.,Tagalog,Critical,78,P1,Yes,No,96
+Physical Abuse,Yung asawa kong lasinggero ay sinakal ako hanggang sa mawalan ako ng hininga sa tapat ng kapitbahay habang kumakain kami ng hapunan dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,81,P1,No,No,89
+Physical + Psychological Abuse,Ang step-father ng anak ko ay binato ako ng kawali nang ubod ng lakas sa tapat ng kapitbahay noong nakaraang linggo dahil natalo siya sa sugal.,Tagalog,High,84,P2,Yes,Yes,87
+Sexual Abuse,Yung tiyuhin naming nakikitira ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa may hagdanan kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,82,P1,Yes,No,98
+Psychological Abuse,Yung landlord naming nanghaharass ay pinunit ang mga damit ko at pinalayas ako sa loob ng banyo kagabi bago matulog dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,99,P1,No,No,97
+Economic Abuse,Yung landlord naming nanghaharass ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa tapat ng kapitbahay kahapon ng hapon dahil sa hinala niyang may iba ako.,Tagalog,Critical,97,P1,No,No,92
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa tapat ng kapitbahay kaninang alas-tres ng madaling araw kasi humingi ako ng pambili ng gamot.,Tagalog,High,89,P2,Yes,No,87
+Economic Abuse,Ang step-father ng anak ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa gitna ng kalsada habang kumakain kami ng hapunan dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,79,P2,Yes,No,89
+Physical Abuse,Ang kinakasama ko ay tinutukan ako ng dos por dos at sinabing papatayin ako sa may hagdanan noong araw ng sweldo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,87,P2,No,Yes,88
+Psychological Abuse,Ang biyenan kong malupit ay pinunit ang mga damit ko at pinalayas ako sa gitna ng kalsada habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,98,P1,No,No,88
+Elder Abuse,Ang lolo ng mga bata ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa tapat ng kapitbahay kagabi bago matulog dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,93,P1,Yes,No,97
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay tinutukan ako ng kord ng kuryente at sinabing papatayin ako sa kwarto ng mga bata kagabi bago matulog dahil natalo siya sa sugal.,Tagalog,High,98,P2,Yes,Yes,89
+Physical Abuse,Ang lolo ng mga bata ay sinakal ako hanggang sa mawalan ako ng hininga sa kwarto ng mga bata kaninang alas-tres ng madaling araw kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,86,P1,Yes,No,93
+Physical + Psychological Abuse,Ang step-father ng anak ko ay biglang hinampas ang ulo ko ng martilyo sa kusina habang nagluluto kahapon ng hapon kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,91,P1,Yes,Yes,90
+Physical + Psychological Abuse,Yung tiyuhin naming nakikitira ay sinakal ako hanggang sa mawalan ako ng hininga sa tapat ng kapitbahay kaninang umaga bago pumasok kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,75,P1,Yes,No,92
+Physical Abuse,Ang lolo ng mga bata ay sinakal ako hanggang sa mawalan ako ng hininga sa kwarto ng mga bata kaninang umaga bago pumasok dahil natalo siya sa sugal.,Tagalog,Critical,99,P1,Yes,No,99
+Sexual Abuse,Yung tiyuhin naming nakikitira ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa tapat ng kapitbahay noong kasagsagan ng ulan kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,97,P1,Yes,No,97
+Physical + Psychological Abuse,Ang biyenan kong malupit ay tinutukan ako ng bato at sinabing papatayin ako sa garahe kahapon ng hapon dahil natalo siya sa sugal.,Tagalog,Critical,99,P1,No,Yes,86
+Neglect / Acts of Omission,Ang lolo ng mga bata ay ikinulong ang mga bata sa madilim na bodega sa loob ng banyo noong kasagsagan ng ulan kasi lasing na lasing siya.,Tagalog,Critical,82,P1,Yes,No,98
+Psychological Abuse,Ang lolo ng mga bata ay pinunit ang mga damit ko at pinalayas ako sa may hagdanan kaninang umaga bago pumasok dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,75,P1,Yes,No,96
+Psychological Abuse,Ang step-father ng anak ko ay pinunit ang mga damit ko at pinalayas ako sa may hagdanan noong araw ng sweldo kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,95,P1,Yes,No,96
+Sexual Abuse,Ang kuya ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa may hagdanan kaninang alas-tres ng madaling araw dahil sa hinala niyang may iba ako.,Tagalog,High,88,P2,No,No,87
+Sexual Abuse,Yung asawa kong lasinggero ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa garahe noong kasagsagan ng ulan kasi lasing na lasing siya.,Tagalog,High,80,P2,No,No,94
+Neglect / Acts of Omission,Yung tiyuhin naming nakikitira ay ikinulong ang mga bata sa madilim na bodega sa gitna ng kalsada kaninang umaga bago pumasok dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,90,P2,Yes,No,87
+Physical Abuse,Yung ex-live-in partner ko ay biglang hinampas ang ulo ko ng tinidor sa kwarto ng mga bata noong kasagsagan ng ulan kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,90,P1,Yes,Yes,86
+Economic Abuse,Ang lolo ng mga bata ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa harap ng sari-sari store kagabi bago matulog dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,98,P1,Yes,No,86
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay tinulak ako pababa mula sa ikalawang palapag sa harap ng sari-sari store habang kumakain kami ng hapunan dahil natalo siya sa sugal.,Tagalog,Critical,78,P1,No,No,97
+Sexual Abuse,Ang biyenan kong malupit ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa loob ng banyo habang kumakain kami ng hapunan kasi umiiyak ang bata at naingayan siya.,Tagalog,High,85,P2,Yes,No,85
+Physical Abuse,Ang biyenan kong malupit ay tinutukan ako ng basag na bote at sinabing papatayin ako sa likod ng bahay habang kumakain kami ng hapunan kasi humingi ako ng pambili ng gamot.,Tagalog,High,77,P2,No,Yes,86
+Neglect / Acts of Omission,Ang step-father ng anak ko ay ikinulong ang mga bata sa madilim na bodega sa may hagdanan habang kumakain kami ng hapunan kasi wala daw kaming maiulam.,Tagalog,Critical,99,P1,Yes,No,91
+Economic Abuse,Ang kuya ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa garahe kagabi bago matulog dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,76,P2,No,No,86
+Elder Abuse,Yung tiyuhin naming nakikitira ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa gitna ng kalsada kaninang alas-tres ng madaling araw dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,98,P2,No,No,90
+Neglect / Acts of Omission,Ang kuya ko ay ikinulong ang mga bata sa madilim na bodega sa likod ng bahay kaninang alas-tres ng madaling araw dahil natalo siya sa sugal.,Tagalog,Critical,85,P1,Yes,No,87
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay tinutukan ako ng kutsilyo at sinabing papatayin ako sa gitna ng kalsada noong kasagsagan ng ulan kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,75,P1,No,Yes,91
+Economic Abuse,Ang lolo ng mga bata ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa loob ng banyo kagabi bago matulog dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,78,P2,Yes,No,93
+Sexual Abuse,Ang lolo ng mga bata ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa kusina habang nagluluto noong nakaraang linggo kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,92,P1,Yes,No,89
+Sexual Abuse,Ang biyenan kong malupit ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa harap ng sari-sari store kahapon ng hapon dahil natalo siya sa sugal.,Tagalog,High,95,P2,No,No,92
+Neglect / Acts of Omission,Yung tiyuhin naming nakikitira ay ikinulong ang mga bata sa madilim na bodega sa likod ng bahay habang kumakain kami ng hapunan dahil sa hinala niyang may iba ako.,Tagalog,Critical,86,P1,Yes,No,95
+Sexual Abuse,Yung tiyuhin naming nakikitira ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa may hagdanan kagabi bago matulog dahil sa hinala niyang may iba ako.,Tagalog,High,75,P2,No,No,87
+Elder Abuse,Yung asawa kong lasinggero ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa kwarto ng mga bata noong araw ng sweldo kasi lasing na lasing siya.,Tagalog,High,83,P2,Yes,No,97
+Economic Abuse,Yung ex-live-in partner ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa loob ng banyo noong kasagsagan ng ulan dahil sa hinala niyang may iba ako.,Tagalog,Critical,94,P1,No,No,86
+Physical + Psychological Abuse,Yung landlord naming nanghaharass ay sinakal ako hanggang sa mawalan ako ng hininga sa garahe kahapon ng hapon dahil sa hinala niyang may iba ako.,Tagalog,High,96,P2,No,No,88
+Sexual Abuse,Ang biyenan kong malupit ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa gitna ng kalsada noong nakaraang linggo dahil sa hinala niyang may iba ako.,Tagalog,High,88,P2,No,No,89
+Sexual Abuse,Ang biyenan kong malupit ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa garahe noong araw ng sweldo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,96,P2,No,No,91
+Neglect / Acts of Omission,Ang kinakasama ko ay ikinulong ang mga bata sa madilim na bodega sa may hagdanan habang kumakain kami ng hapunan dahil sa hinala niyang may iba ako.,Tagalog,High,96,P2,Yes,No,87
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinutukan ako ng tinidor at sinabing papatayin ako sa kusina habang nagluluto kaninang alas-tres ng madaling araw kasi lasing na lasing siya.,Tagalog,High,93,P2,No,Yes,93
+Physical Abuse,Yung asawa kong lasinggero ay tinutukan ako ng bato at sinabing papatayin ako sa gitna ng kalsada noong nakaraang linggo kasi lasing na lasing siya.,Tagalog,High,97,P2,No,Yes,86
+Neglect / Acts of Omission,Ang step-father ng anak ko ay ikinulong ang mga bata sa madilim na bodega sa gitna ng kalsada habang kumakain kami ng hapunan kasi lasing na lasing siya.,Tagalog,Critical,95,P1,Yes,No,88
+Sexual Abuse,Ang kinakasama ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa garahe kahapon ng hapon dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,76,P1,No,No,85
+Physical + Psychological Abuse,Ang kuya ko ay biglang hinampas ang ulo ko ng kutsara sa may hagdanan kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,98,P1,Yes,Yes,93
+Physical Abuse,Yung landlord naming nanghaharass ay binato ako ng dos por dos nang ubod ng lakas sa gitna ng kalsada kahapon ng hapon dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,92,P2,No,Yes,85
+Physical + Psychological Abuse,Ang biyenan kong malupit ay binato ako ng payong nang ubod ng lakas sa may hagdanan kaninang alas-tres ng madaling araw dahil natalo siya sa sugal.,Tagalog,Critical,84,P1,No,Yes,90
+Sexual Abuse,Ang kinakasama ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa may hagdanan kagabi bago matulog kasi humingi ako ng pambili ng gamot.,Tagalog,High,85,P2,No,No,90
+Physical Abuse,Ang step-father ng anak ko ay biglang hinampas ang ulo ko ng kutsara sa harap ng sari-sari store kaninang tanghaling tapat kasi wala daw kaming maiulam.,Tagalog,High,77,P2,Yes,Yes,91
+Economic Abuse,Yung asawa kong lasinggero ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa garahe habang kumakain kami ng hapunan kasi lasing na lasing siya.,Tagalog,High,96,P2,No,No,85
+Physical + Psychological Abuse,Ang kuya ko ay biglang hinampas ang ulo ko ng kawali sa gitna ng kalsada kaninang tanghaling tapat kasi wala daw kaming maiulam.,Tagalog,Critical,86,P1,No,Yes,94
+Physical Abuse,Ang kinakasama ko ay tinulak ako pababa mula sa ikalawang palapag sa may hagdanan kahapon ng hapon dahil natalo siya sa sugal.,Tagalog,High,75,P2,No,No,98
+Physical + Psychological Abuse,Yung asawa kong lasinggero ay tinutukan ako ng payong at sinabing papatayin ako sa kwarto ng mga bata noong araw ng sweldo kasi lasing na lasing siya.,Tagalog,High,89,P2,Yes,Yes,88
+Elder Abuse,Yung landlord naming nanghaharass ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa tapat ng kapitbahay habang kumakain kami ng hapunan kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,88,P1,Yes,No,91
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinutukan ako ng walis tambo at sinabing papatayin ako sa gitna ng kalsada kaninang umaga bago pumasok dahil sa hinala niyang may iba ako.,Tagalog,Critical,96,P1,No,Yes,98
+Economic Abuse,Yung landlord naming nanghaharass ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa likod ng bahay kaninang alas-tres ng madaling araw kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,83,P1,Yes,No,97
+Physical Abuse,Ang lolo ng mga bata ay sinakal ako hanggang sa mawalan ako ng hininga sa loob ng banyo kaninang alas-tres ng madaling araw dahil natalo siya sa sugal.,Tagalog,High,86,P2,Yes,No,98
+Psychological Abuse,Ang kinakasama ko ay pinunit ang mga damit ko at pinalayas ako sa loob ng banyo noong nakaraang linggo kasi umiiyak ang bata at naingayan siya.,Tagalog,High,98,P2,Yes,No,85
+Economic Abuse,Yung ex-live-in partner ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa kwarto ng mga bata kahapon ng hapon dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,99,P2,Yes,No,94
+Economic Abuse,Ang kinakasama ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa loob ng banyo noong kasagsagan ng ulan kasi lasing na lasing siya.,Tagalog,High,94,P2,No,No,95
+Physical Abuse,Ang step-father ng anak ko ay tinutukan ako ng plantsa at sinabing papatayin ako sa likod ng bahay kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,89,P1,Yes,Yes,98
+Physical Abuse,Yung asawa kong lasinggero ay biglang hinampas ang ulo ko ng basag na bote sa garahe kaninang umaga bago pumasok dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,81,P1,No,Yes,94
+Physical Abuse,Ang step-father ng anak ko ay biglang hinampas ang ulo ko ng kutsilyo sa kusina habang nagluluto noong nakaraang linggo kasi wala daw kaming maiulam.,Tagalog,High,92,P2,Yes,Yes,85
+Elder Abuse,Ang kinakasama ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa tapat ng kapitbahay kaninang umaga bago pumasok kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,78,P1,Yes,No,97
+Economic Abuse,Ang lolo ng mga bata ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa harap ng sari-sari store kagabi bago matulog dahil natalo siya sa sugal.,Tagalog,Critical,88,P1,Yes,No,90
+Neglect / Acts of Omission,Ang kinakasama ko ay ikinulong ang mga bata sa madilim na bodega sa likod ng bahay kaninang umaga bago pumasok dahil sa hinala niyang may iba ako.,Tagalog,Critical,98,P1,Yes,No,88
+Economic Abuse,Ang step-father ng anak ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa gitna ng kalsada habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,99,P2,Yes,No,92
+Sexual Abuse,Yung asawa kong lasinggero ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa garahe kaninang alas-tres ng madaling araw kasi umiiyak ang bata at naingayan siya.,Tagalog,High,95,P2,Yes,No,91
+Physical Abuse,Ang lolo ng mga bata ay tinutukan ako ng plantsa at sinabing papatayin ako sa likod ng bahay kaninang tanghaling tapat dahil sa hinala niyang may iba ako.,Tagalog,Critical,77,P1,Yes,Yes,88
+Sexual Abuse,Yung landlord naming nanghaharass ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa likod ng bahay kaninang umaga bago pumasok kasi lasing na lasing siya.,Tagalog,Critical,79,P1,No,No,93
+Neglect / Acts of Omission,Yung landlord naming nanghaharass ay ikinulong ang mga bata sa madilim na bodega sa gitna ng kalsada kaninang alas-tres ng madaling araw dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,77,P2,Yes,No,95
+Physical Abuse,Yung landlord naming nanghaharass ay tinutukan ako ng gunting at sinabing papatayin ako sa likod ng bahay kaninang alas-tres ng madaling araw kasi lasing na lasing siya.,Tagalog,Critical,81,P1,No,Yes,94
+Elder Abuse,Yung tiyuhin naming nakikitira ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa likod ng bahay noong nakaraang linggo dahil sa hinala niyang may iba ako.,Tagalog,Critical,87,P1,No,No,89
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinutukan ako ng bato at sinabing papatayin ako sa loob ng banyo kagabi bago matulog kasi umiiyak ang bata at naingayan siya.,Tagalog,High,88,P2,Yes,Yes,95
+Physical + Psychological Abuse,Yung landlord naming nanghaharass ay biglang hinampas ang ulo ko ng plantsa sa gitna ng kalsada kaninang alas-tres ng madaling araw kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,84,P1,No,Yes,99
+Physical + Psychological Abuse,Ang kinakasama ko ay tinutukan ako ng dos por dos at sinabing papatayin ako sa kwarto ng mga bata kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,86,P1,Yes,Yes,94
+Physical Abuse,Yung ex-live-in partner ko ay binato ako ng kord ng kuryente nang ubod ng lakas sa loob ng banyo kaninang umaga bago pumasok kasi lasing na lasing siya.,Tagalog,Critical,95,P1,No,Yes,93
+Physical Abuse,Yung asawa kong lasinggero ay tinutukan ako ng kord ng kuryente at sinabing papatayin ako sa likod ng bahay habang kumakain kami ng hapunan kasi humingi ako ng pambili ng gamot.,Tagalog,High,77,P2,No,Yes,97
+Sexual Abuse,Ang kinakasama ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa likod ng bahay kagabi bago matulog dahil sa hinala niyang may iba ako.,Tagalog,High,81,P2,No,No,94
+Physical + Psychological Abuse,Ang lolo ng mga bata ay tinutukan ako ng walis tambo at sinabing papatayin ako sa tapat ng kapitbahay kaninang umaga bago pumasok kasi lasing na lasing siya.,Tagalog,High,75,P2,Yes,Yes,93
+Neglect / Acts of Omission,Ang step-father ng anak ko ay ikinulong ang mga bata sa madilim na bodega sa kwarto ng mga bata kaninang alas-tres ng madaling araw kasi wala daw kaming maiulam.,Tagalog,High,89,P2,Yes,No,93
+Physical Abuse,Yung landlord naming nanghaharass ay binato ako ng kawali nang ubod ng lakas sa garahe kahapon ng hapon dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,75,P2,No,Yes,89
+Physical + Psychological Abuse,Ang step-father ng anak ko ay sinakal ako hanggang sa mawalan ako ng hininga sa likod ng bahay noong nakaraang linggo kasi wala daw kaming maiulam.,Tagalog,Critical,97,P1,Yes,No,85
+Physical Abuse,Ang lolo ng mga bata ay biglang hinampas ang ulo ko ng kawali sa garahe kaninang umaga bago pumasok kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,77,P1,Yes,Yes,96
+Physical + Psychological Abuse,Yung tiyuhin naming nakikitira ay sinakal ako hanggang sa mawalan ako ng hininga sa kusina habang nagluluto kaninang alas-tres ng madaling araw dahil natalo siya sa sugal.,Tagalog,Critical,96,P1,No,No,89
+Elder Abuse,Ang step-father ng anak ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa garahe kahapon ng hapon dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,75,P1,Yes,No,93
+Physical + Psychological Abuse,Ang biyenan kong malupit ay tinulak ako pababa mula sa ikalawang palapag sa gitna ng kalsada kagabi bago matulog kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,85,P1,Yes,No,92
+Psychological Abuse,Ang step-father ng anak ko ay pinunit ang mga damit ko at pinalayas ako sa tapat ng kapitbahay noong nakaraang linggo kasi umiiyak ang bata at naingayan siya.,Tagalog,High,94,P2,Yes,No,94
+Physical Abuse,Ang kuya ko ay tinulak ako pababa mula sa ikalawang palapag sa likod ng bahay kaninang alas-tres ng madaling araw kasi lasing na lasing siya.,Tagalog,High,91,P2,No,No,85
+Sexual Abuse,Yung ex-live-in partner ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa tapat ng kapitbahay kahapon ng hapon dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,93,P1,No,No,94
+Physical + Psychological Abuse,Ang kuya ko ay sinakal ako hanggang sa mawalan ako ng hininga sa gitna ng kalsada kaninang alas-tres ng madaling araw dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,83,P1,No,No,86
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa kusina habang nagluluto kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,96,P1,Yes,No,94
+Sexual Abuse,Yung tiyuhin naming nakikitira ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa harap ng sari-sari store kahapon ng hapon dahil sa hinala niyang may iba ako.,Tagalog,High,96,P2,No,No,90
+Physical Abuse,Yung landlord naming nanghaharass ay biglang hinampas ang ulo ko ng martilyo sa gitna ng kalsada kahapon ng hapon dahil sa hinala niyang may iba ako.,Tagalog,Critical,89,P1,No,Yes,97
+Physical + Psychological Abuse,Ang biyenan kong malupit ay biglang hinampas ang ulo ko ng martilyo sa tapat ng kapitbahay kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,High,88,P2,Yes,Yes,93
+Physical Abuse,Yung asawa kong lasinggero ay tinutukan ako ng basag na bote at sinabing papatayin ako sa garahe noong nakaraang linggo kasi wala daw kaming maiulam.,Tagalog,Critical,80,P1,No,Yes,94
+Elder Abuse,Yung tiyuhin naming nakikitira ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa may hagdanan noong nakaraang linggo kasi umiiyak ang bata at naingayan siya.,Tagalog,High,98,P2,Yes,No,98
+Physical Abuse,Ang lolo ng mga bata ay tinutukan ako ng basag na bote at sinabing papatayin ako sa kwarto ng mga bata kahapon ng hapon dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,85,P1,Yes,Yes,98
+Physical Abuse,Ang kinakasama ko ay binato ako ng dos por dos nang ubod ng lakas sa garahe kaninang umaga bago pumasok dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,80,P1,No,Yes,88
+Elder Abuse,Ang biyenan kong malupit ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa kwarto ng mga bata kahapon ng hapon kasi wala daw kaming maiulam.,Tagalog,Critical,81,P1,Yes,No,89
+Psychological Abuse,Yung asawa kong lasinggero ay pinunit ang mga damit ko at pinalayas ako sa harap ng sari-sari store kaninang umaga bago pumasok dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,88,P2,No,No,99
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay tinutukan ako ng payong at sinabing papatayin ako sa gitna ng kalsada kahapon ng hapon dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,88,P2,No,Yes,87
+Neglect / Acts of Omission,Ang biyenan kong malupit ay ikinulong ang mga bata sa madilim na bodega sa likod ng bahay kaninang umaga bago pumasok dahil sa hinala niyang may iba ako.,Tagalog,Critical,92,P1,Yes,No,95
+Physical + Psychological Abuse,Ang kuya ko ay tinutukan ako ng makapal na libro at sinabing papatayin ako sa loob ng banyo kaninang tanghaling tapat kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,79,P1,No,Yes,89
+Elder Abuse,Yung ex-live-in partner ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa loob ng banyo noong araw ng sweldo kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,84,P1,No,No,96
+Physical Abuse,Ang kinakasama ko ay biglang hinampas ang ulo ko ng gunting sa loob ng banyo kaninang alas-tres ng madaling araw kasi lasing na lasing siya.,Tagalog,Critical,77,P1,No,Yes,95
+Economic Abuse,Yung asawa kong lasinggero ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa gitna ng kalsada kaninang alas-tres ng madaling araw kasi umiiyak ang bata at naingayan siya.,Tagalog,High,81,P2,Yes,No,95
+Physical + Psychological Abuse,Ang kuya ko ay binato ako ng plantsa nang ubod ng lakas sa harap ng sari-sari store kaninang tanghaling tapat dahil natalo siya sa sugal.,Tagalog,Critical,79,P1,No,Yes,93
+Physical Abuse,Yung tiyuhin naming nakikitira ay sinakal ako hanggang sa mawalan ako ng hininga sa tapat ng kapitbahay kaninang tanghaling tapat dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,80,P2,No,No,93
+Psychological Abuse,Ang step-father ng anak ko ay pinunit ang mga damit ko at pinalayas ako sa gitna ng kalsada habang kumakain kami ng hapunan dahil natalo siya sa sugal.,Tagalog,Critical,77,P1,Yes,No,86
+Elder Abuse,Yung tiyuhin naming nakikitira ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa kwarto ng mga bata kagabi bago matulog kasi lasing na lasing siya.,Tagalog,High,98,P2,Yes,No,86
+Psychological Abuse,Yung tiyuhin naming nakikitira ay pinunit ang mga damit ko at pinalayas ako sa may hagdanan kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,92,P1,Yes,No,89
+Sexual Abuse,Yung tiyuhin naming nakikitira ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa garahe kahapon ng hapon dahil natalo siya sa sugal.,Tagalog,Critical,84,P1,No,No,89
+Economic Abuse,Ang lolo ng mga bata ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa kusina habang nagluluto kaninang tanghaling tapat dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,95,P1,Yes,No,94
+Economic Abuse,Yung asawa kong lasinggero ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa may hagdanan noong araw ng sweldo kasi umiiyak ang bata at naingayan siya.,Tagalog,High,98,P2,Yes,No,92
+Physical Abuse,Yung tiyuhin naming nakikitira ay tinutukan ako ng payong at sinabing papatayin ako sa harap ng sari-sari store noong nakaraang linggo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,95,P2,No,Yes,97
+Sexual Abuse,Ang kuya ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa loob ng banyo kaninang umaga bago pumasok dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,98,P1,No,No,98
+Elder Abuse,Yung ex-live-in partner ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa gitna ng kalsada noong araw ng sweldo dahil sa hinala niyang may iba ako.,Tagalog,High,80,P2,No,No,96
+Physical Abuse,Yung ex-live-in partner ko ay binato ako ng bakal na tubo nang ubod ng lakas sa gitna ng kalsada kaninang alas-tres ng madaling araw dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,82,P1,No,Yes,98
+Elder Abuse,Ang biyenan kong malupit ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa may hagdanan noong nakaraang linggo dahil sa hinala niyang may iba ako.,Tagalog,High,99,P2,No,No,97
+Sexual Abuse,Ang kinakasama ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa harap ng sari-sari store noong araw ng sweldo kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,76,P1,Yes,No,97
+Elder Abuse,Ang biyenan kong malupit ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa kusina habang nagluluto habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,85,P1,No,No,98
+Physical + Psychological Abuse,Yung asawa kong lasinggero ay binato ako ng dos por dos nang ubod ng lakas sa kwarto ng mga bata kaninang alas-tres ng madaling araw kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,85,P1,Yes,Yes,97
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay binato ako ng kutsilyo nang ubod ng lakas sa kusina habang nagluluto kaninang tanghaling tapat dahil sa hinala niyang may iba ako.,Tagalog,Critical,77,P1,No,Yes,90
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa kusina habang nagluluto habang kumakain kami ng hapunan kasi humingi ako ng pambili ng gamot.,Tagalog,High,97,P2,Yes,No,94
+Physical Abuse,Yung asawa kong lasinggero ay tinutukan ako ng payong at sinabing papatayin ako sa garahe noong kasagsagan ng ulan dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,98,P2,No,Yes,86
+Sexual Abuse,Yung landlord naming nanghaharass ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa harap ng sari-sari store kaninang alas-tres ng madaling araw dahil sa hinala niyang may iba ako.,Tagalog,High,78,P2,No,No,88
+Sexual Abuse,Yung landlord naming nanghaharass ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa kwarto ng mga bata kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,90,P1,Yes,No,96
+Sexual Abuse,Ang kuya ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa tapat ng kapitbahay noong kasagsagan ng ulan dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,79,P2,No,No,92
+Physical Abuse,Ang lolo ng mga bata ay biglang hinampas ang ulo ko ng payong sa loob ng banyo kagabi bago matulog dahil sa hinala niyang may iba ako.,Tagalog,High,77,P2,Yes,Yes,97
+Physical + Psychological Abuse,Ang step-father ng anak ko ay sinakal ako hanggang sa mawalan ako ng hininga sa harap ng sari-sari store noong araw ng sweldo dahil sa hinala niyang may iba ako.,Tagalog,Critical,84,P1,Yes,No,98
+Psychological Abuse,Yung landlord naming nanghaharass ay pinunit ang mga damit ko at pinalayas ako sa harap ng sari-sari store kaninang alas-tres ng madaling araw kasi umiiyak ang bata at naingayan siya.,Tagalog,High,91,P2,Yes,No,95
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa gitna ng kalsada kaninang alas-tres ng madaling araw dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,96,P2,Yes,No,95
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay binato ako ng makapal na libro nang ubod ng lakas sa garahe kaninang tanghaling tapat kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,76,P1,No,Yes,89
+Economic Abuse,Yung asawa kong lasinggero ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa kwarto ng mga bata habang kumakain kami ng hapunan dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,99,P1,Yes,No,96
+Sexual Abuse,Ang biyenan kong malupit ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa kwarto ng mga bata habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,76,P1,Yes,No,90
+Psychological Abuse,Yung asawa kong lasinggero ay pinunit ang mga damit ko at pinalayas ako sa garahe kaninang alas-tres ng madaling araw kasi humingi ako ng pambili ng gamot.,Tagalog,High,81,P2,No,No,89
+Physical Abuse,Yung landlord naming nanghaharass ay biglang hinampas ang ulo ko ng kord ng kuryente sa kwarto ng mga bata kahapon ng hapon kasi umiiyak ang bata at naingayan siya.,Tagalog,High,93,P2,Yes,Yes,86
+Physical Abuse,Ang biyenan kong malupit ay sinakal ako hanggang sa mawalan ako ng hininga sa kusina habang nagluluto kagabi bago matulog dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,77,P2,No,No,85
+Economic Abuse,Ang kinakasama ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa tapat ng kapitbahay kaninang tanghaling tapat dahil natalo siya sa sugal.,Tagalog,High,77,P2,No,No,95
+Economic Abuse,Ang lolo ng mga bata ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa tapat ng kapitbahay habang kumakain kami ng hapunan kasi lasing na lasing siya.,Tagalog,Critical,98,P1,Yes,No,95
+Physical Abuse,Ang kinakasama ko ay sinakal ako hanggang sa mawalan ako ng hininga sa garahe kaninang umaga bago pumasok dahil natalo siya sa sugal.,Tagalog,Critical,90,P1,No,No,90
+Elder Abuse,Yung ex-live-in partner ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa gitna ng kalsada noong kasagsagan ng ulan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,77,P2,No,No,94
+Elder Abuse,Yung landlord naming nanghaharass ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa kwarto ng mga bata kaninang alas-tres ng madaling araw kasi lasing na lasing siya.,Tagalog,Critical,76,P1,Yes,No,92
+Physical Abuse,Yung ex-live-in partner ko ay sinakal ako hanggang sa mawalan ako ng hininga sa loob ng banyo habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,99,P2,No,No,87
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa garahe noong kasagsagan ng ulan kasi lasing na lasing siya.,Tagalog,Critical,77,P1,Yes,No,90
+Neglect / Acts of Omission,Ang step-father ng anak ko ay ikinulong ang mga bata sa madilim na bodega sa may hagdanan noong araw ng sweldo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,96,P1,Yes,No,87
+Neglect / Acts of Omission,Ang biyenan kong malupit ay ikinulong ang mga bata sa madilim na bodega sa kwarto ng mga bata habang kumakain kami ng hapunan kasi wala daw kaming maiulam.,Tagalog,Critical,79,P1,Yes,No,91
+Psychological Abuse,Ang kuya ko ay pinunit ang mga damit ko at pinalayas ako sa kwarto ng mga bata kaninang umaga bago pumasok dahil natalo siya sa sugal.,Tagalog,Critical,89,P1,Yes,No,93
+Economic Abuse,Ang step-father ng anak ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa loob ng banyo kahapon ng hapon dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,92,P1,Yes,No,86
+Physical + Psychological Abuse,Ang kuya ko ay binato ako ng dos por dos nang ubod ng lakas sa gitna ng kalsada habang kumakain kami ng hapunan kasi humingi ako ng pambili ng gamot.,Tagalog,High,83,P2,No,Yes,92
+Physical + Psychological Abuse,Ang step-father ng anak ko ay tinutukan ako ng kord ng kuryente at sinabing papatayin ako sa tapat ng kapitbahay noong kasagsagan ng ulan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,83,P1,Yes,Yes,98
+Physical Abuse,Yung asawa kong lasinggero ay biglang hinampas ang ulo ko ng makapal na libro sa tapat ng kapitbahay noong nakaraang linggo kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,85,P1,No,Yes,99
+Economic Abuse,Ang step-father ng anak ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa garahe kaninang alas-tres ng madaling araw dahil sa hinala niyang may iba ako.,Tagalog,Critical,76,P1,Yes,No,93
+Psychological Abuse,Ang kuya ko ay pinunit ang mga damit ko at pinalayas ako sa tapat ng kapitbahay noong nakaraang linggo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,77,P2,No,No,85
+Neglect / Acts of Omission,Ang biyenan kong malupit ay ikinulong ang mga bata sa madilim na bodega sa tapat ng kapitbahay noong araw ng sweldo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,80,P2,Yes,No,92
+Sexual Abuse,Yung ex-live-in partner ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa loob ng banyo kaninang tanghaling tapat dahil sa hinala niyang may iba ako.,Tagalog,Critical,81,P1,No,No,88
+Physical Abuse,Yung asawa kong lasinggero ay tinutukan ako ng payong at sinabing papatayin ako sa kusina habang nagluluto kaninang alas-tres ng madaling araw kasi lasing na lasing siya.,Tagalog,Critical,83,P1,No,Yes,99
+Physical + Psychological Abuse,Ang kinakasama ko ay biglang hinampas ang ulo ko ng kutsilyo sa tapat ng kapitbahay kaninang umaga bago pumasok kasi wala daw kaming maiulam.,Tagalog,Critical,94,P1,No,Yes,96
+Physical + Psychological Abuse,Ang lolo ng mga bata ay biglang hinampas ang ulo ko ng basag na bote sa kwarto ng mga bata noong araw ng sweldo kasi umiiyak ang bata at naingayan siya.,Tagalog,High,82,P2,Yes,Yes,95
+Physical Abuse,Yung landlord naming nanghaharass ay tinulak ako pababa mula sa ikalawang palapag sa may hagdanan kahapon ng hapon dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,94,P1,No,No,97
+Neglect / Acts of Omission,Ang lolo ng mga bata ay ikinulong ang mga bata sa madilim na bodega sa loob ng banyo noong kasagsagan ng ulan dahil sa hinala niyang may iba ako.,Tagalog,Critical,90,P1,Yes,No,86
+Elder Abuse,Yung landlord naming nanghaharass ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa may hagdanan kagabi bago matulog kasi lasing na lasing siya.,Tagalog,Critical,76,P1,No,No,93
+Elder Abuse,Ang step-father ng anak ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa kwarto ng mga bata habang kumakain kami ng hapunan dahil sa hinala niyang may iba ako.,Tagalog,Critical,89,P1,Yes,No,86
+Physical Abuse,Ang kuya ko ay tinutukan ako ng kutsilyo at sinabing papatayin ako sa gitna ng kalsada noong kasagsagan ng ulan kasi umiiyak ang bata at naingayan siya.,Tagalog,High,94,P2,Yes,Yes,86
+Physical Abuse,Yung asawa kong lasinggero ay tinutukan ako ng basag na bote at sinabing papatayin ako sa kusina habang nagluluto kahapon ng hapon dahil sa hinala niyang may iba ako.,Tagalog,High,75,P2,No,Yes,87
+Physical + Psychological Abuse,Yung landlord naming nanghaharass ay biglang hinampas ang ulo ko ng bato sa kusina habang nagluluto kaninang umaga bago pumasok kasi wala daw kaming maiulam.,Tagalog,Critical,87,P1,No,Yes,92
+Elder Abuse,Ang lolo ng mga bata ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa gitna ng kalsada noong araw ng sweldo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,75,P1,Yes,No,86
+Physical + Psychological Abuse,Ang lolo ng mga bata ay biglang hinampas ang ulo ko ng kutsara sa loob ng banyo noong kasagsagan ng ulan kasi wala daw kaming maiulam.,Tagalog,Critical,81,P1,Yes,Yes,91
+Sexual Abuse,Ang kinakasama ko ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa kwarto ng mga bata kaninang umaga bago pumasok dahil natalo siya sa sugal.,Tagalog,High,96,P2,Yes,No,93
+Physical Abuse,Ang lolo ng mga bata ay sinakal ako hanggang sa mawalan ako ng hininga sa loob ng banyo kagabi bago matulog kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,91,P1,Yes,No,88
+Physical + Psychological Abuse,Yung asawa kong lasinggero ay tinulak ako pababa mula sa ikalawang palapag sa kusina habang nagluluto habang kumakain kami ng hapunan kasi humingi ako ng pambili ng gamot.,Tagalog,High,87,P2,No,No,95
+Psychological Abuse,Yung asawa kong lasinggero ay pinunit ang mga damit ko at pinalayas ako sa may hagdanan noong araw ng sweldo kasi wala daw kaming maiulam.,Tagalog,Critical,77,P1,No,No,93
+Physical + Psychological Abuse,Ang step-father ng anak ko ay binato ako ng basag na bote nang ubod ng lakas sa kusina habang nagluluto kagabi bago matulog kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,85,P1,Yes,Yes,87
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa loob ng banyo kaninang tanghaling tapat kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,79,P1,Yes,No,95
+Physical Abuse,Ang kinakasama ko ay tinutukan ako ng payong at sinabing papatayin ako sa loob ng banyo kaninang alas-tres ng madaling araw dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,Critical,94,P1,No,Yes,94
+Physical Abuse,Yung asawa kong lasinggero ay tinutukan ako ng makapal na libro at sinabing papatayin ako sa kwarto ng mga bata kagabi bago matulog kasi humingi ako ng pambili ng gamot.,Tagalog,High,85,P2,Yes,Yes,89
+Psychological Abuse,Ang kuya ko ay pinunit ang mga damit ko at pinalayas ako sa tapat ng kapitbahay kaninang umaga bago pumasok kasi wala daw kaming maiulam.,Tagalog,Critical,83,P1,No,No,96
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay sinakal ako hanggang sa mawalan ako ng hininga sa gitna ng kalsada kaninang alas-tres ng madaling araw kasi humingi ako ng pambili ng gamot.,Tagalog,High,80,P2,No,No,85
+Physical + Psychological Abuse,Yung landlord naming nanghaharass ay binato ako ng kawali nang ubod ng lakas sa gitna ng kalsada kaninang tanghaling tapat kasi wala daw kaming maiulam.,Tagalog,Critical,78,P1,No,Yes,91
+Elder Abuse,Yung asawa kong lasinggero ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa garahe habang kumakain kami ng hapunan dahil natalo siya sa sugal.,Tagalog,Critical,89,P1,No,No,95
+Psychological Abuse,Yung ex-live-in partner ko ay pinunit ang mga damit ko at pinalayas ako sa likod ng bahay noong nakaraang linggo kasi lasing na lasing siya.,Tagalog,Critical,86,P1,No,No,87
+Neglect / Acts of Omission,Ang biyenan kong malupit ay ikinulong ang mga bata sa madilim na bodega sa loob ng banyo kahapon ng hapon kasi lasing na lasing siya.,Tagalog,High,93,P2,Yes,No,87
+Elder Abuse,Ang step-father ng anak ko ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa loob ng banyo noong kasagsagan ng ulan kasi lasing na lasing siya.,Tagalog,Critical,95,P1,Yes,No,92
+Sexual Abuse,Ang lolo ng mga bata ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa harap ng sari-sari store kaninang umaga bago pumasok dahil sa hinala niyang may iba ako.,Tagalog,Critical,77,P1,Yes,No,90
+Physical + Psychological Abuse,Ang biyenan kong malupit ay binato ako ng dos por dos nang ubod ng lakas sa gitna ng kalsada kaninang tanghaling tapat kasi lasing na lasing siya.,Tagalog,High,98,P2,No,Yes,98
+Physical + Psychological Abuse,Ang step-father ng anak ko ay binato ako ng martilyo nang ubod ng lakas sa likod ng bahay noong nakaraang linggo dahil natalo siya sa sugal.,Tagalog,High,79,P2,Yes,Yes,94
+Physical Abuse,Ang kinakasama ko ay tinulak ako pababa mula sa ikalawang palapag sa gitna ng kalsada kagabi bago matulog kasi lasing na lasing siya.,Tagalog,Critical,92,P1,No,No,97
+Psychological Abuse,Yung landlord naming nanghaharass ay pinunit ang mga damit ko at pinalayas ako sa may hagdanan habang kumakain kami ng hapunan dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,94,P2,No,No,88
+Neglect / Acts of Omission,Ang kinakasama ko ay ikinulong ang mga bata sa madilim na bodega sa tapat ng kapitbahay noong kasagsagan ng ulan kasi humingi ako ng pambili ng gamot.,Tagalog,High,80,P2,Yes,No,88
+Elder Abuse,Yung landlord naming nanghaharass ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa loob ng banyo kagabi bago matulog kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,79,P1,No,No,86
+Neglect / Acts of Omission,Ang step-father ng anak ko ay ikinulong ang mga bata sa madilim na bodega sa may hagdanan noong nakaraang linggo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,97,P2,Yes,No,95
+Sexual Abuse,Ang biyenan kong malupit ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa tapat ng kapitbahay kagabi bago matulog dahil sa hinala niyang may iba ako.,Tagalog,Critical,93,P1,No,No,93
+Economic Abuse,Yung asawa kong lasinggero ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa may hagdanan noong araw ng sweldo kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,75,P1,No,No,85
+Physical + Psychological Abuse,Ang step-father ng anak ko ay sinakal ako hanggang sa mawalan ako ng hininga sa may hagdanan kaninang alas-tres ng madaling araw kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,79,P1,Yes,No,87
+Economic Abuse,Yung asawa kong lasinggero ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa kwarto ng mga bata noong nakaraang linggo kasi lasing na lasing siya.,Tagalog,High,98,P2,Yes,No,97
+Neglect / Acts of Omission,Yung asawa kong lasinggero ay ikinulong ang mga bata sa madilim na bodega sa kusina habang nagluluto kaninang tanghaling tapat dahil sa hinala niyang may iba ako.,Tagalog,High,93,P2,Yes,No,90
+Physical + Psychological Abuse,Yung ex-live-in partner ko ay biglang hinampas ang ulo ko ng bakal na tubo sa harap ng sari-sari store noong nakaraang linggo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,84,P2,No,Yes,94
+Sexual Abuse,Yung asawa kong lasinggero ay pinilit akong gumawa ng malalaswang bagay kahit ayaw ko sa kusina habang nagluluto noong araw ng sweldo dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,95,P2,No,No,88
+Physical Abuse,Ang biyenan kong malupit ay biglang hinampas ang ulo ko ng bakal na tubo sa may hagdanan habang kumakain kami ng hapunan dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,Critical,82,P1,No,Yes,91
+Physical + Psychological Abuse,Ang lolo ng mga bata ay tinutukan ako ng bakal na tubo at sinabing papatayin ako sa kusina habang nagluluto noong kasagsagan ng ulan kasi wala daw kaming maiulam.,Tagalog,Critical,99,P1,Yes,Yes,94
+Physical + Psychological Abuse,Ang biyenan kong malupit ay sinakal ako hanggang sa mawalan ako ng hininga sa tapat ng kapitbahay noong kasagsagan ng ulan dahil sa hinala niyang may iba ako.,Tagalog,Critical,93,P1,No,No,89
+Physical + Psychological Abuse,Ang kinakasama ko ay biglang hinampas ang ulo ko ng dos por dos sa likod ng bahay kaninang umaga bago pumasok kasi umiiyak ang bata at naingayan siya.,Tagalog,High,85,P2,Yes,Yes,92
+Physical + Psychological Abuse,Yung asawa kong lasinggero ay sinakal ako hanggang sa mawalan ako ng hininga sa kwarto ng mga bata kagabi bago matulog kasi humingi ako ng pambili ng gamot.,Tagalog,High,97,P2,Yes,No,93
+Physical + Psychological Abuse,Yung tiyuhin naming nakikitira ay sinakal ako hanggang sa mawalan ako ng hininga sa loob ng banyo noong kasagsagan ng ulan kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,75,P1,Yes,No,87
+Physical Abuse,Yung landlord naming nanghaharass ay tinutukan ako ng bakal na tubo at sinabing papatayin ako sa harap ng sari-sari store kaninang alas-tres ng madaling araw dahil sa hinala niyang may iba ako.,Tagalog,Critical,90,P1,No,Yes,93
+Physical + Psychological Abuse,Ang kinakasama ko ay sinakal ako hanggang sa mawalan ako ng hininga sa harap ng sari-sari store noong nakaraang linggo kasi umiiyak ang bata at naingayan siya.,Tagalog,High,78,P2,Yes,No,96
+Physical Abuse,Ang kinakasama ko ay tinutukan ako ng dos por dos at sinabing papatayin ako sa kwarto ng mga bata kaninang umaga bago pumasok dahil hindi ko naibigay ang password ng cellphone ko.,Tagalog,High,95,P2,Yes,Yes,94
+Neglect / Acts of Omission,Ang kuya ko ay ikinulong ang mga bata sa madilim na bodega sa may hagdanan noong kasagsagan ng ulan kasi humingi ako ng pambili ng gamot.,Tagalog,Critical,96,P1,Yes,No,98
+Physical Abuse,Ang biyenan kong malupit ay tinulak ako pababa mula sa ikalawang palapag sa likod ng bahay kahapon ng hapon kasi lasing na lasing siya.,Tagalog,Critical,89,P1,No,No,97
+Neglect / Acts of Omission,Yung tiyuhin naming nakikitira ay ikinulong ang mga bata sa madilim na bodega sa tapat ng kapitbahay habang kumakain kami ng hapunan kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,80,P1,Yes,No,88
+Economic Abuse,Ang kuya ko ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa tapat ng kapitbahay kahapon ng hapon kasi humingi ako ng pambili ng gamot.,Tagalog,High,96,P2,No,No,86
+Physical Abuse,Ang lolo ng mga bata ay sinakal ako hanggang sa mawalan ako ng hininga sa harap ng sari-sari store noong nakaraang linggo dahil sa hinala niyang may iba ako.,Tagalog,Critical,96,P1,Yes,No,95
+Physical Abuse,Ang kinakasama ko ay tinutukan ako ng kutsilyo at sinabing papatayin ako sa loob ng banyo noong araw ng sweldo kasi umiiyak ang bata at naingayan siya.,Tagalog,Critical,89,P1,Yes,Yes,98
+Economic Abuse,Yung tiyuhin naming nakikitira ay kinuha lahat ng ipon ko sa bangko nang walang paalam sa harap ng sari-sari store kaninang tanghaling tapat kasi umiiyak ang bata at naingayan siya.,Tagalog,High,95,P2,Yes,No,92
+Elder Abuse,Ang lolo ng mga bata ay hindi pinakain ang bedridden kong nanay sa loob ng tatlong araw sa loob ng banyo noong araw ng sweldo dahil pinagsabihan ko siyang maghanap ng trabaho.,Tagalog,High,93,P2,Yes,No,97
+Neglect / Acts of Omission,Yung ex-live-in partner ko ay ikinulong ang mga bata sa madilim na bodega sa garahe kaninang umaga bago pumasok dahil natalo siya sa sugal.,Tagalog,High,91,P2,Yes,No,95

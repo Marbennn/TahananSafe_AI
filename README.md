@@ -1,134 +1,204 @@
-# TahananSafe AI - Incident Report Analysis System
+# TahananSafe AI
 
-An AI-powered system for analyzing domestic violence and abuse incident reports with multilingual support and comprehensive risk assessment.
+AI-powered incident report analyzer for barangay abuse reporting and escalation support.
 
-## 🎯 Features
+The system analyzes a report and returns:
+- `incident_type`
+- `language`
+- `risk_level`
+- `risk_percentage`
+- `priority_level`
+- `children_involved`
+- `weapon_mentioned`
+- `confidence_score`
 
-- **Multilingual Analysis**: English, Tagalog, Ilocano, Pangasinan, and Mixed Language
-- **Abuse Classification**: Physical, Sexual, Psychological, Economic, Elder Abuse, Neglect / Acts of Omission
-- **Risk Assessment**: Risk percentage (0–100%), risk level (Low/Medium/High/Critical), priority (P1/P2/P3)
-- **Context Detection**: Children involved, weapon mentioned, AI confidence score
-- **Fine-tuned Model**: Qwen/Qwen2.5-0.5B-Instruct with LoRA (fits 4GB GPU)
+## Incident Categories
 
-## 📁 Project Structure
+Core abuse categories:
+- `Physical Abuse`
+- `Sexual Abuse`
+- `Psychological Abuse`
+- `Economic Abuse`
+- `Elder Abuse`
+- `Neglect / Acts of Omission`
 
-```
+Negative/non-abuse categories:
+- `None / Invalid`
+- `None / False Report`
+
+## Repository Structure
+
+```text
 TahananSafe_AI/
-├── datasets/
-│   ├── Main_Dataset.csv       # Legitimate incident reports (CSV)
-│   ├── Negative_Dataset.csv   # False / irrelevant reports (CSV)
-│   └── processed/             # Processed training data (from data_preparation.py)
-├── models/
-│   └── fine_tuned/            # Fine-tuned LoRA adapter output
-├── training/
-│   ├── train.py               # Training script
-│   ├── data_preparation.py    # Dataset preparation (CSV or JSON/JSONL)
-│   └── config.yaml            # Training and model config
-├── inference/
-│   ├── api.py                 # FastAPI inference server
-│   ├── analyzer.py            # Core analysis logic
-│   └── language_detector.py   # Language detection
-├── utils/
-│   ├── risk_scorer.py         # Risk percentage and level
-│   └── validators.py          # Data validation
-├── test_analyzer.py           # Quick test script
-├── requirements.txt
-├── README.md
-├── SETUP.md                   # Detailed setup guide
-└── QUICKSTART.md              # Short quick start
+  datasets/
+    Main_Dataset.csv
+    Negative_Dataset.csv
+    Ambiguous_Pairs.csv
+  inference/
+    analyzer.py
+    api.py
+    language_detector.py
+  training/
+    config.yaml
+    data_preparation.py
+    train.py
+    evaluate_analyzer.py
+    fit_confidence_calibrator.py
+  utils/
+    risk_scorer.py
+    validators.py
+    case_retriever.py
+  test_analyzer.py
+  requirements.txt
+  .env.example
+  QUICKSTART.md
+  SETUP.md
 ```
 
-## 🚀 Quick Start
+## Team Setup (Windows, First Time)
 
-### 1. Virtual environment (recommended)
+1. Clone and enter project:
 
-```bash
+```powershell
+git clone <your-repo-url>
+cd TahananSafe_AI
+```
+
+2. Create and activate virtual environment:
+
+```powershell
 python -m venv .venv
-.venv\Scripts\activate          # Windows
-# source .venv/bin/activate     # Linux/macOS
-pip install -r requirements.txt
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+& .\.venv\Scripts\Activate.ps1
 ```
 
-### 2. Prepare data and train
+3. Install dependencies:
 
-Datasets can be **CSV** or **JSON/JSONL**:
-
-- **CSV**: Put `Main_Dataset.csv` and `Negative_Dataset.csv` in `datasets/`.  
-  Columns: `Incident_Type`, `Incident_Description`, `Language`, `Risk_Level`, `Incident_Risk_Percentage`, `Priority_Level`, `Children_Involved`, `Weapon_Mentioned`, `AI_Confidence_Score`
-- **JSON/JSONL**: Put files in `datasets/main_dataset/` and `datasets/negative_dataset/` (see SETUP.md for schema).
-
-Then:
-
-```bash
-python training/data_preparation.py
-python training/train.py
+```powershell
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-**Note:** Use the **activated .venv** when running training to avoid `accelerate`/`transformers` version mismatches. Training is set for a **4GB GPU** (Qwen2.5-0.5B-Instruct, batch size 1, fp16).
+4. Create local environment file:
 
-### 3. Run API
-
-```bash
-python inference/api.py
+```powershell
+Copy-Item .env.example .env
 ```
 
-- API: http://localhost:8000  
-- Docs: http://localhost:8000/docs  
-- Health: http://localhost:8000/health  
+5. Verify you are using the project interpreter (very important):
 
-### 4. Test analyzer
+```powershell
+python -c "import sys,transformers,peft,accelerate; print(sys.executable); print(transformers.__version__, peft.__version__, accelerate.__version__)"
+```
 
-```bash
+Expected executable path must end with:
+`...\TahananSafe_AI\.venv\Scripts\python.exe`
+
+## Daily Workflow (After Pull)
+
+```powershell
+git pull
+& .\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+## Run the System
+
+### 1. CLI Analyzer
+
+```powershell
 python test_analyzer.py
 ```
 
-## 📊 Dataset Format (CSV)
+### 2. API Server
 
-CSV files must have a header and these columns:
+```powershell
+python inference/api.py
+```
 
-| Column | Description |
-|--------|-------------|
-| Incident_Type | e.g. Physical Abuse, Sexual Abuse, None / Invalid |
-| Incident_Description | Full text of the report |
-| Language | English, Tagalog, Ilocano, Pangasinan, Mixed Language |
-| Risk_Level | Low, Medium, High, Critical |
-| Incident_Risk_Percentage | 0–100 |
-| Priority_Level | P1, P2, or P3 |
-| Children_Involved | Yes / No |
-| Weapon_Mentioned | Yes / No |
-| AI_Confidence_Score | 0–100 |
+API endpoints:
+- Swagger docs: `http://localhost:8000/docs`
+- Health: `http://localhost:8000/health`
+- Analyze: `POST http://localhost:8000/analyze`
 
-Multi-type labels (e.g. `Physical + Psychological Abuse`) are supported in the CSV; the model learns from them as single labels.
+### 3. Sample API Call
 
-## 🔧 Configuration
+```powershell
+curl -X POST "http://localhost:8000/analyze" `
+  -H "Content-Type: application/json" `
+  -d "{\"incident_description\":\"The husband dragged the victim by the hair and she had broken bones.\"}"
+```
 
-- **Model and training:** `training/config.yaml`  
-  - `model.base_model`, `model.use_4bit`, `model.device_map`  
-  - `training.per_device_train_batch_size`, `training.fp16`, etc.  
-  - `dataset.main_dataset_path`, `dataset.negative_dataset_path` (file or directory)
-- **Environment (optional):** Copy `.env.example` to `.env` and set `MODEL_PATH`, `BASE_MODEL`, `PORT`, `HF_TOKEN` if needed.
+## Training and Evaluation
 
-## 📝 API Endpoints
+### Prepare data
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | /analyze | Analyze an incident report (body: incident_description, optional witness_name, witness_relationship, photo_urls) |
-| GET | /health | Health and model-loaded status |
-| GET | /model/info | Model path and device info |
-| GET | /docs | Swagger UI |
+```powershell
+python training/data_preparation.py
+```
 
-## 🤖 Model Details
+### Train
 
-- **Base model:** Qwen/Qwen2.5-0.5B-Instruct
-- **Fine-tuning:** PEFT (LoRA); adapter saved under `models/fine_tuned/`
-- **Task:** Causal LM fine-tuned for structured incident analysis (type, language, risk, priority, children, weapon, confidence)
-- **Hardware:** Tuned for 4GB GPU; can run on CPU with config changes (see SETUP.md).
+```powershell
+python training/train.py
+```
 
-## 📚 Documentation
+### Evaluate
 
-- **SETUP.md** – Full setup, prerequisites, dataset formats, troubleshooting  
-- **QUICKSTART.md** – Minimal steps to install, train, and run the API  
+```powershell
+python training/evaluate_analyzer.py --output training/evaluation_report.json
+```
 
-## License & Support
+### Fit confidence calibrator
 
-Use and modify as needed for your project. For errors, check logs and SETUP.md troubleshooting section.
+```powershell
+python training/fit_confidence_calibrator.py --main-csv datasets/Main_Dataset.csv --negative-csv datasets/Negative_Dataset.csv --load-model --output models/confidence_calibrator.json
+```
+
+## `.env` Notes
+
+Start from `.env.example`.
+
+Common keys:
+- `MODEL_PATH=./models/fine_tuned`
+- `MAIN_DATASET_PATH=./datasets/Main_Dataset.csv`
+- `NEGATIVE_DATASET_PATH=./datasets/Negative_Dataset.csv`
+- `ENABLE_CASE_RETRIEVAL=true`
+- `USE_MODEL_RISK_PERCENTAGE=false`
+
+## Most Common Issues
+
+1. Wrong Python interpreter (global Python instead of `.venv`)
+- Symptom: model load errors or old package versions.
+- Fix: activate `.venv` and re-run using `python` from `.venv`.
+
+2. `alora_invocation_tokens` error
+- Cause: outdated `peft`/`transformers` in current interpreter.
+- Fix:
+
+```powershell
+python -m pip install -U transformers peft accelerate
+```
+
+3. Activation opens Notepad
+- Use PowerShell command exactly:
+
+```powershell
+& .\.venv\Scripts\Activate.ps1
+```
+
+4. Red `.venv` files in VS Code Git view
+- This is Git tracking state, not runtime failure.
+- See `SETUP.md` for safe cleanup steps.
+
+## Team Recommendation
+
+For consistency, all members should:
+- use the same Python major/minor version
+- always run from project root
+- always use `.venv` interpreter
+- run `pip install -r requirements.txt` after each `git pull`
+
+For full details and troubleshooting, see:
+- [QUICKSTART.md](./QUICKSTART.md)
+- [SETUP.md](./SETUP.md)

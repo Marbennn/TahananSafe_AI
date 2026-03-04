@@ -5,6 +5,7 @@ Lets you type an incident description and see the analysis.
 
 import sys
 import os
+import time
 
 # Add current directory to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -37,7 +38,9 @@ def run_cli():
             break
 
         try:
+            start = time.perf_counter()
             result = analyzer.analyze(text)
+            elapsed_ms = (time.perf_counter() - start) * 1000.0
         except Exception as e:
             print(f"\nERROR while analyzing: {e}")
             continue
@@ -51,6 +54,7 @@ def run_cli():
         print(f"Children Involved : {'Yes' if result.get('children_involved') else 'No'}")
         print(f"Weapon Mentioned  : {'Yes' if result.get('weapon_mentioned') else 'No'}")
         print(f"Confidence Score  : {result.get('confidence_score')}%")
+        print(f"Response Time     : {elapsed_ms:.2f} ms")
 
 
 if __name__ == "__main__":

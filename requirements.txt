@@ -3,9 +3,11 @@
 
 # Core ML
 torch>=2.0.0
-transformers>=4.35.0
-peft>=0.7.0
-accelerate>=0.25.0
+# Keep PEFT/Transformers modern enough to load recent LoRA adapter configs
+# (e.g., adapters containing `alora_invocation_tokens`).
+transformers>=4.46.0
+peft>=0.18.1
+accelerate>=0.34.0
 bitsandbytes>=0.41.0
 
 # Training & data

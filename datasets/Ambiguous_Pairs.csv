@@ -1,0 +1,41 @@
+Incident_Type,Incident_Description,Language,Risk_Level,Incident_Risk_Percentage,Priority_Level,Children_Involved,Weapon_Mentioned,AI_Confidence_Score
+Physical Abuse,"Sinaksak ako ng tatay ko at puro ako duguan sa sala.",Tagalog,Critical,92,P1,No,Yes,96
+None / Invalid,"Sinaksak ko yung phone ko para mag charge kasi lowbat.",Tagalog,Low,4,P3,No,No,94
+Physical Abuse,"Nasaksak ang kapatid ko sa dibdib habang natutulog.",Tagalog,Critical,90,P1,No,Yes,95
+None / Invalid,"Isinaksak ko sa saksakan ang charger ng tablet.",Tagalog,Low,3,P3,No,No,95
+Physical Abuse,"Tinaga niya ang braso ko gamit ang itak sa bukid.",Tagalog,Critical,91,P1,No,Yes,95
+None / Invalid,"Tinaga ko ang damo sa bakuran gamit ang itak.",Tagalog,Low,6,P3,No,No,92
+Physical Abuse,"Binaril ako ng kapitbahay sa may gate kagabi.",Tagalog,Critical,94,P1,No,Yes,97
+None / Invalid,"Nag shoot kami ng video para sa school project.",Mixed Language,Low,5,P3,No,No,92
+Psychological Abuse,"Pinagbantaan niya akong barilin kapag nagsumbong ako.",Tagalog,High,74,P2,No,Yes,94
+None / Invalid,"Nag shoot ako ng tres sa basketball game.",English,Low,4,P3,No,No,91
+Psychological Abuse,"Sinabi niyang papatayin niya ako kung iiwan ko siya.",Tagalog,High,72,P2,No,No,95
+None / Invalid,"Pinatay ko ang ilaw bago matulog kagabi.",Tagalog,Low,3,P3,No,No,95
+Physical Abuse,"Hinampas niya ako ng plato sa ulo sa kusina.",Tagalog,High,78,P2,No,Yes,94
+None / Invalid,"Hinampas ko ang unan para maalis ang alikabok.",Tagalog,Low,2,P3,No,No,90
+Physical Abuse,"Sinuntok niya ako sa mukha habang may nag aawat.",Tagalog,High,76,P2,No,No,94
+None / Invalid,"Sinuntok ko ang punching bag sa gym training.",English,Low,6,P3,No,No,92
+Physical Abuse,"Sinipa niya ang anak ko sa binti dahil umiiyak.",Tagalog,High,79,P2,Yes,No,95
+None / Invalid,"Sinipa ko ang bola papunta sa goal.",Tagalog,Low,4,P3,No,No,91
+Physical Abuse,"Tinulak niya ako pababa sa hagdan at nahulog ako.",Tagalog,Critical,89,P1,No,No,96
+None / Invalid,"Tinulak ko ang pinto dahil naiwan ang susi sa loob.",Tagalog,Low,5,P3,No,No,91
+Physical Abuse,"Hinila niya ang buhok ko at sinampal ako sa harap ng anak namin.",Tagalog,High,77,P2,Yes,No,95
+None / Invalid,"Hinila ko ang extension cord para ilipat ang electric fan.",Tagalog,Low,5,P3,No,No,90
+Psychological Abuse,"Minura niya ako at sinabi niyang sasaksakin niya ako mamaya.",Tagalog,High,71,P2,No,Yes,93
+None / Invalid,"Sabi niya isaksak muna yung rice cooker bago magluto.",Tagalog,Low,4,P3,No,No,94
+Economic Abuse,"Kinuha niya ang ATM ko at ayaw ibalik kahit pambili ng gatas.",Tagalog,High,68,P2,Yes,No,94
+None / Invalid,"Kinuha ko ang ATM card ko para mag withdraw ng sahod.",Tagalog,Low,7,P3,No,No,89
+Psychological Abuse,"Pinagbantaan niya ang nanay ko na papatayin kapag tumawag kami sa pulis.",Tagalog,High,75,P2,No,No,95
+None / Invalid,"Pinatay ko ang machine pagkatapos ng shift sa pabrika.",English,Low,6,P3,No,No,90
+Physical Abuse,"Ginamitan niya ako ng tinidor at sumugat sa kamay ko.",Tagalog,High,73,P2,No,Yes,94
+None / Invalid,"Ginamitan ko ng tinidor ang pansit habang kumakain.",Tagalog,Low,2,P3,No,No,89
+Physical Abuse,"Binato niya ako ng bote at dumugo ang noo ko.",Tagalog,Critical,83,P1,No,Yes,93
+None / Invalid,"Binato ko ang basura sa tamang basurahan.",Tagalog,Low,2,P3,No,No,88
+Neglect / Acts of Omission,"Iniwan ang bata mag isa buong gabi at walang pagkain.",Tagalog,High,66,P2,Yes,No,93
+None / Invalid,"Iniwan ko muna ang phone ko sa mesa habang naliligo.",Tagalog,Low,3,P3,No,No,88
+Elder Abuse,"Pinagsisigawan at tinulak ang lolo namin tuwing humihingi ng gamot.",Tagalog,High,70,P2,No,No,94
+None / Invalid,"Tinulak ko ang wheelchair ng lolo para maihatid sa clinic.",Tagalog,Low,9,P3,No,No,90
+Psychological Abuse,"Sinabi niyang i shoot niya ako sa kalsada kapag nakita niya ulit ako.",Mixed Language,High,69,P2,No,Yes,92
+None / Invalid,"Photo shoot namin sa kalsada para sa class requirement.",Mixed Language,Low,4,P3,No,No,91
+Physical Abuse,"Sinasakal niya ako kapag nag aaway kami sa bahay.",Tagalog,High,74,P2,No,No,94
+None / Invalid,"Sinasakal ng damit ang hanger kaya inayos ko lang.",Tagalog,Low,1,P3,No,No,87
