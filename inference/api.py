@@ -11,6 +11,7 @@ import uvicorn
 import os
 import sys
 import time
+import json
 
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -136,6 +137,35 @@ class HealthResponse(BaseModel):
     message: str
 
 
+def print_analysis_result(result: Dict[str, Any]) -> None:
+    """Pretty print analysis result in terminal"""
+    print("\n" + "=" * 80)
+    print("TahananSafe AI Analysis Result")
+    print("=" * 80)
+    print(f"Incident Type     : {result.get('incident_type')}")
+    print(f"Incident Types    : {', '.join(result.get('incident_types', []))}")
+    print(f"Language          : {result.get('language')}")
+    print(f"Risk Level        : {result.get('risk_level')}")
+    print(f"Risk Percentage   : {result.get('risk_percentage')}%")
+    print(f"Priority Level    : {result.get('priority_level')}")
+    print(f"Children Involved : {result.get('children_involved')}")
+    print(f"Weapon Mentioned  : {result.get('weapon_mentioned')}")
+    print(f"Confidence Score  : {result.get('confidence_score')}%")
+    print(f"Processing Time   : {result.get('processing_time_ms')} ms")
+
+    decision_basis = result.get("decision_basis")
+    if decision_basis:
+        print("\nDecision Basis:")
+        print(json.dumps(decision_basis, indent=2, ensure_ascii=False))
+
+    retrieved_cases = result.get("retrieved_cases")
+    if retrieved_cases:
+        print(f"\nRetrieved Cases ({len(retrieved_cases)}):")
+        print(json.dumps(retrieved_cases, indent=2, ensure_ascii=False))
+
+    print("=" * 80 + "\n")
+
+
 # API Endpoints
 @app.get("/", tags=["General"])
 async def root():
@@ -187,6 +217,12 @@ async def analyze_incident(request: IncidentReportRequest):
     - AI confidence score
     """
     try:
+        print("\nReceived /analyze request")
+        print(f"Incident Description: {request.incident_description}")
+        print(f"Witness Name        : {request.witness_name}")
+        print(f"Witness Relationship: {request.witness_relationship}")
+        print(f"Photo URLs          : {request.photo_urls}")
+
         # Validate input
         validator = IncidentValidator()
         valid, error = validator.validate_incident_description(request.incident_description)
@@ -205,13 +241,18 @@ async def analyze_incident(request: IncidentReportRequest):
         start = time.perf_counter()
         analysis_result = analyzer_instance.analyze(request.incident_description)
         analysis_result["processing_time_ms"] = round((time.perf_counter() - start) * 1000.0, 2)
+
+        # Show full analyzed result in terminal
+        print_analysis_result(analysis_result)
         
         # Return response
         return AnalysisResponse(**analysis_result)
         
     except ValueError as e:
+        print(f"ValueError during analysis: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
+        print(f"Unexpected analysis error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Analysis error: {str(e)}")
 
 
