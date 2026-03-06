@@ -267,7 +267,7 @@ async def model_info():
 
 if __name__ == "__main__":
     # Run the API server
-    port = int(os.getenv("PORT", 8000))
+    port = int(os.getenv("PORT", 8001))
     host = os.getenv("HOST", "0.0.0.0")
     
     uvicorn.run(

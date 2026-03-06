@@ -115,6 +115,7 @@ python test_analyzer.py
 ```powershell
 python inference/api.py
 ```
+python inference/api.py
 
 API endpoints:
 - Swagger docs: `http://localhost:8000/docs`
