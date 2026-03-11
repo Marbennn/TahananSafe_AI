@@ -131,7 +131,6 @@ class CaseRetriever:
         labels: List[str] = []
         seen = set()
 
-        # First pass: detect known labels directly.
         for label in IncidentValidator.ABUSE_TYPES:
             if re.search(rf"(?<!\w){re.escape(label)}(?!\w)", raw, re.IGNORECASE):
                 if label not in seen:
@@ -140,7 +139,6 @@ class CaseRetriever:
         if labels:
             return labels
 
-        # Second pass: split on safe separators (avoid plain "/" split for Neglect label).
         parts = re.split(r"\s*(?:\+|,|;|\band\b)\s*", raw, flags=re.IGNORECASE)
         fuzzy_map = [
             ("sexual", "Sexual Abuse"),
@@ -197,6 +195,27 @@ class CaseRetriever:
         risk_pct = row.get("risk_percentage")
         if risk_pct is None:
             risk_pct = row.get("Incident_Risk_Percentage")
+
+        risk_level = row.get("risk_level")
+        if risk_level is None:
+            risk_level = row.get("Risk_Level")
+
+        priority_level = row.get("priority_level")
+        if priority_level is None:
+            priority_level = row.get("Priority_Level")
+
+        language = row.get("language")
+        if language is None:
+            language = row.get("Language")
+
+        children_involved = row.get("children_involved")
+        if children_involved is None:
+            children_involved = row.get("Children_Involved")
+
+        weapon_mentioned = row.get("weapon_mentioned")
+        if weapon_mentioned is None:
+            weapon_mentioned = row.get("Weapon_Mentioned")
+
         incident_types = self._normalize_incident_types(incident_type_raw)
         primary_incident_type = incident_types[0] if incident_types else "None / Invalid"
 
@@ -205,8 +224,22 @@ class CaseRetriever:
             "incident_type": primary_incident_type,
             "incident_types": incident_types,
             "risk_percentage": self._safe_float(risk_pct, default=0.0),
+            "risk_level": str(risk_level).strip() if risk_level is not None else "",
+            "priority_level": str(priority_level).strip() if priority_level is not None else "",
+            "language": str(language).strip() if language is not None else "",
+            "children_involved": self._to_bool(children_involved),
+            "weapon_mentioned": self._to_bool(weapon_mentioned),
             "source": source,
         }
+
+    @staticmethod
+    def _to_bool(value: Any) -> bool:
+        if isinstance(value, bool):
+            return value
+        if value is None:
+            return False
+        v = str(value).strip().lower()
+        return v in {"true", "1", "yes", "y", "oo", "opo"}
 
     def _load_json(self, path: Path) -> List[Dict[str, Any]]:
         rows: List[Dict[str, Any]] = []
@@ -313,7 +346,7 @@ class CaseRetriever:
         return t
 
     @staticmethod
-    def _compact_text(text: str, max_chars: int = 140) -> str:
+    def _compact_text(text: str, max_chars: int = 180) -> str:
         t = " ".join(str(text).split())
         if len(t) <= max_chars:
             return t
@@ -352,16 +385,86 @@ class CaseRetriever:
                     "incident_type": rec["incident_type"],
                     "incident_types": rec.get("incident_types", [rec["incident_type"]]),
                     "risk_percentage": float(rec["risk_percentage"]),
+                    "risk_level": rec.get("risk_level", ""),
+                    "priority_level": rec.get("priority_level", ""),
+                    "language": rec.get("language", ""),
+                    "children_involved": bool(rec.get("children_involved", False)),
+                    "weapon_mentioned": bool(rec.get("weapon_mentioned", False)),
                     "incident_description": self._compact_text(rec["incident_description"]),
+                    "full_incident_description": str(rec["incident_description"]),
                     "source": rec["source"],
                 }
             )
         self._query_cache[cache_key] = copy.deepcopy(out)
         if len(self._query_cache) > self._query_cache_limit:
-            # Drop oldest inserted key (dict preserves insertion order in py3.7+).
             oldest_key = next(iter(self._query_cache))
             self._query_cache.pop(oldest_key, None)
         return out
+
+    def retrieve_for_prompt(
+        self,
+        query: str,
+        top_k: Optional[int] = None,
+        min_similarity: float = 0.08,
+    ) -> List[Dict[str, Any]]:
+        """
+        Return cleaned retrieval results intended for prompt grounding.
+        Slightly stricter than generic retrieve().
+        """
+        matches = self.retrieve(query=query, top_k=top_k, min_similarity=min_similarity)
+        cleaned: List[Dict[str, Any]] = []
+        for m in matches:
+            cleaned.append(
+                {
+                    "similarity": float(m.get("similarity", 0.0)),
+                    "incident_type": str(m.get("incident_type", "Unknown")),
+                    "incident_types": list(m.get("incident_types", [])),
+                    "risk_percentage": float(m.get("risk_percentage", 0.0)),
+                    "risk_level": str(m.get("risk_level", "")),
+                    "priority_level": str(m.get("priority_level", "")),
+                    "language": str(m.get("language", "")),
+                    "children_involved": bool(m.get("children_involved", False)),
+                    "weapon_mentioned": bool(m.get("weapon_mentioned", False)),
+                    "incident_description": str(m.get("full_incident_description") or m.get("incident_description") or "").strip(),
+                    "source": str(m.get("source", "")),
+                }
+            )
+        return cleaned
+
+    def build_prompt_context(
+        self,
+        query: str,
+        top_k: Optional[int] = None,
+        min_similarity: float = 0.08,
+        max_case_chars: int = 220,
+    ) -> str:
+        """
+        Build a compact retrieval context block for the generation prompt.
+        """
+        matches = self.retrieve_for_prompt(query=query, top_k=top_k, min_similarity=min_similarity)
+        if not matches:
+            return ""
+
+        lines: List[str] = []
+        for i, m in enumerate(matches[: max(1, int(top_k or 3))], start=1):
+            desc = self._compact_text(m.get("incident_description", ""), max_chars=max_case_chars)
+            lines.append(
+                "\n".join(
+                    [
+                        f"Case {i}:",
+                        f"- Similarity: {float(m.get('similarity', 0.0)):.4f}",
+                        f"- Incident Type: {m.get('incident_type', 'Unknown')}",
+                        f"- Risk Percentage: {float(m.get('risk_percentage', 0.0)):.2f}",
+                        f"- Risk Level: {m.get('risk_level', '') or 'Unknown'}",
+                        f"- Priority Level: {m.get('priority_level', '') or 'Unknown'}",
+                        f"- Children Involved: {'Yes' if bool(m.get('children_involved', False)) else 'No'}",
+                        f"- Weapon Mentioned: {'Yes' if bool(m.get('weapon_mentioned', False)) else 'No'}",
+                        f"- Description: {desc}",
+                    ]
+                )
+            )
+
+        return "\n\n".join(lines)
 
     def summarize_consensus(
         self,
@@ -451,7 +554,13 @@ class CaseRetriever:
                     "incident_type": rec.get("incident_type", "Unknown"),
                     "incident_types": rec.get("incident_types", [rec.get("incident_type", "Unknown")]),
                     "risk_percentage": float(rec.get("risk_percentage", 0.0)),
+                    "risk_level": rec.get("risk_level", ""),
+                    "priority_level": rec.get("priority_level", ""),
+                    "language": rec.get("language", ""),
+                    "children_involved": bool(rec.get("children_involved", False)),
+                    "weapon_mentioned": bool(rec.get("weapon_mentioned", False)),
                     "incident_description": self._compact_text(rec.get("incident_description", "")),
+                    "full_incident_description": str(rec.get("incident_description", "")),
                     "source": rec.get("source", ""),
                     "exact_match": True,
                 }

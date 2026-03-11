@@ -4,7 +4,7 @@ Calculates risk percentage and determines risk level based on incident descripti
 """
 
 import re
-from typing import Dict, List, Tuple
+from typing import Any
 
 
 class RiskScorer:
@@ -76,7 +76,26 @@ class RiskScorer:
         "suntok", "sinuntok", "sinusuntok", "sampal", "sinampal",
         "hampas", "hinampas", "hinampasan", "sipa", "sinipa",
         "hila", "hinila", "kinaladkad", "kaladkad",
+        "bugbog", "binugbog", "saktan", "sinaktan",
+        "tulak", "tinulak", "itinulak", "push", "pushed",
     }
+
+    CHILD_TERMS = {
+        "baby", "infant", "newborn", "toddler", "child", "children",
+        "kid", "kids", "minor", "minors",
+        "bata", "mga bata", "anak", "mga anak",
+        "sanggol", "apo", "binata", "dalagita",
+        "ubing", "mga ubing",
+        "ugaw", "mga ugaw",
+    }
+
+    CHILD_VIOLENCE_TERMS = (
+        IMPACT_TERMS
+        .union(SAKSAK_TERMS)
+        .union(SHOOT_TERMS)
+        .union({"choke", "strangle", "sinakal", "sakal", "kill", "patayin", "papatayin"})
+    )
+
     NON_VIOLENT_SAKSAK_TARGETS = {
         "phone", "cellphone", "cp", "charger", "charge", "charging",
         "usb", "cable", "kable", "socket", "outlet", "extension", "saksakan",
@@ -189,15 +208,21 @@ class RiskScorer:
     ) -> bool:
         if not text:
             return False
-        text_lower = text.lower()
-        for a in terms_a:
-            for b in terms_b:
-                pattern = (
-                    rf'(?<!\w){re.escape(a.lower())}(?!\w).{{0,{max_gap_chars}}}(?<!\w){re.escape(b.lower())}(?!\w)|'
-                    rf'(?<!\w){re.escape(b.lower())}(?!\w).{{0,{max_gap_chars}}}(?<!\w){re.escape(a.lower())}(?!\w)'
-                )
-                if re.search(pattern, text_lower):
-                    return True
+
+        variants = [text.lower()]
+        text_norm = self._normalize_noisy_text(text)
+        if text_norm and text_norm not in variants:
+            variants.append(text_norm)
+
+        for text_lower in variants:
+            for a in terms_a:
+                for b in terms_b:
+                    pattern = (
+                        rf'(?<!\w){re.escape(a.lower())}(?!\w).{{0,{max_gap_chars}}}(?<!\w){re.escape(b.lower())}(?!\w)|'
+                        rf'(?<!\w){re.escape(b.lower())}(?!\w).{{0,{max_gap_chars}}}(?<!\w){re.escape(a.lower())}(?!\w)'
+                    )
+                    if re.search(pattern, text_lower):
+                        return True
         return False
 
     def _is_nonviolent_action_context(
@@ -268,6 +293,75 @@ class RiskScorer:
             nonviolent_phrases=self.NON_VIOLENT_IMPACT_PHRASES,
             max_gap_chars=35,
         )
+
+    def _child_victim_violence_boost(self, text: str) -> float:
+        """
+        Strong risk boost when violent actions are directed at a child/baby.
+        Example:
+        - may sinuntok na baby
+        - sinipa ang bata
+        - hinampas ang anak
+        """
+        if not text:
+            return 0.0
+
+        text_lower = text.lower()
+        boost = 0.0
+
+        has_child = any(self._contains_keyword(text_lower, term) for term in self.CHILD_TERMS)
+        if not has_child:
+            return 0.0
+
+        nonviolent_saksak = self._is_nonviolent_saksak_context(text_lower)
+        nonviolent_shoot = self._is_nonviolent_shoot_context(text_lower)
+        nonviolent_impact = self._is_nonviolent_impact_context(text_lower)
+        nonviolent_kill = self._is_nonviolent_kill_context(text_lower)
+
+        violent_near_child = self._has_proximity_match(
+            text_lower,
+            self.CHILD_VIOLENCE_TERMS,
+            self.CHILD_TERMS,
+            max_gap_chars=45,
+        )
+
+        explicit_child_attack_patterns = [
+            r"(sinuntok|suntok|binugbog|bugbog|sinipa|sipa|sinampal|sampal|hinampas|hampas|sinaktan|saktan).{0,45}(baby|bata|anak|sanggol|child|kid|minor|infant|toddler)",
+            r"(baby|bata|anak|sanggol|child|kid|minor|infant|toddler).{0,45}(sinuntok|suntok|binugbog|bugbog|sinipa|sipa|sinampal|sampal|hinampas|hampas|sinaktan|saktan)",
+            r"(sinaksak|saksak|tinaga|stab|stabbed|binaril|barilin|shoot|shot).{0,45}(baby|bata|anak|sanggol|child|kid|minor|infant|toddler)",
+            r"(baby|bata|anak|sanggol|child|kid|minor|infant|toddler).{0,45}(sinaksak|saksak|tinaga|stab|stabbed|binaril|barilin|shoot|shot)",
+        ]
+        has_explicit_pattern = any(re.search(pattern, text_lower) for pattern in explicit_child_attack_patterns)
+
+        if violent_near_child or has_explicit_pattern:
+            boost += 28.0
+
+        # Stronger for very young children.
+        infant_terms = {"baby", "sanggol", "infant", "newborn", "toddler"}
+        if any(self._contains_keyword(text_lower, term) for term in infant_terms) and (violent_near_child or has_explicit_pattern):
+            boost += 10.0
+
+        # Extra severity for extreme violence against a child.
+        severe_terms = self.SAKSAK_TERMS.union(self.SHOOT_TERMS).union({"choke", "strangle", "sinakal", "patayin", "papatayin"})
+        severe_near_child = self._has_proximity_match(
+            text_lower,
+            severe_terms,
+            self.CHILD_TERMS,
+            max_gap_chars=45,
+        )
+        if severe_near_child:
+            boost += 12.0
+
+        # Remove accidental boosts from clearly non-violent contexts.
+        if nonviolent_impact and not severe_near_child:
+            boost = max(0.0, boost - 18.0)
+        if nonviolent_saksak:
+            boost = max(0.0, boost - 20.0)
+        if nonviolent_shoot:
+            boost = max(0.0, boost - 20.0)
+        if nonviolent_kill:
+            boost = max(0.0, boost - 15.0)
+
+        return boost
 
     def _severe_risk_boost(self, text: str) -> float:
         """Add extra risk for high-danger physical contexts not captured by simple keywords."""
@@ -390,13 +484,16 @@ class RiskScorer:
         # Add pattern-based severity boosts for dangerous physical contexts.
         if not (nonviolent_saksak or nonviolent_kill or nonviolent_shoot):
             risk_score += self._severe_risk_boost(text_lower)
+
+        # Strong extra boost when a child/baby is the victim of violence.
+        risk_score += self._child_victim_violence_boost(text_lower)
         
         # Normalize to 0-100 range
         # Base risk should be 0 so negative/irrelevant reports stay near 0.
         base_risk = 0.0
         
         # Cap maximum score contribution
-        max_contribution = 90.0
+        max_contribution = 95.0
         risk_score = min(risk_score, max_contribution)
         
         total_risk = base_risk + risk_score
@@ -477,6 +574,10 @@ class RiskScorer:
         # Weapons significantly increase risk
         if weapon_mentioned:
             risk += 15.0
+
+        # Extra floor for physical abuse involving children
+        if incident_type == "Physical Abuse" and children_involved:
+            risk = max(risk, 72.0)
 
         # Clamp to 0-100
         risk = max(0.0, min(risk, 100.0))
