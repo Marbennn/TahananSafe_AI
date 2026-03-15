@@ -1,37 +1,40 @@
 {
   "main_csv": "datasets\\Main_Dataset.csv",
   "negative_csv": "datasets\\Negative_Dataset.csv",
-  "total_rows": 12785,
-  "total_issues": 10855,
+  "total_rows": 15454,
+  "total_issues": 15789,
   "issues_by_code": {
-    "RISK_LEVEL_MISMATCH": 5363,
-    "PRIORITY_MISMATCH": 2185,
+    "RISK_LEVEL_MISMATCH": 5628,
+    "MAIN_ABUSE_WITHOUT_DOMESTIC_CONTEXT": 3127,
+    "PRIORITY_MISMATCH": 2499,
     "INVALID_LANGUAGE": 2,
-    "INVALID_INCIDENT_TYPE": 3305
+    "INVALID_INCIDENT_TYPE": 3792,
+    "DUPLICATE_CONFLICT": 741
   },
   "issues_by_severity": {
-    "high": 10853,
+    "high": 15787,
     "medium": 2
   },
   "issues_by_source": {
-    "main": 4238,
-    "negative": 6617
+    "main": 7948,
+    "negative": 7841
   },
-  "duplicate_conflict_groups": 0,
+  "duplicate_conflict_groups": 195,
   "main_label_distribution": {
-    "Physical Abuse": 2610,
-    "Sexual Abuse": 793,
-    "Psychological Abuse": 1573,
-    "Economic Abuse": 491,
-    "Elder Abuse": 491,
+    "Physical Abuse": 2908,
+    "Sexual Abuse": 918,
+    "Psychological Abuse": 2053,
+    "Economic Abuse": 1107,
+    "Elder Abuse": 593,
     "Neglect / Acts of Omission": 465
   },
   "negative_label_distribution": {
-    "None / Invalid": 3057
+    "None / Invalid": 3618
   },
-  "main_core_class_imbalance_ratio_max_over_min": 5.613,
+  "main_core_class_imbalance_ratio_max_over_min": 6.254,
   "recommended_next_action": [
     "Fix all HIGH severity issues first.",
+    "Remove MAIN_ABUSE_WITHOUT_DOMESTIC_CONTEXT rows for domestic-only training scope.",
     "Fix duplicate conflicts and risk/priority mismatches before retraining.",
     "Re-run data_audit.py until HIGH issues are 0."
   ]

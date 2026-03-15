@@ -5,18 +5,33 @@ Provides REST API endpoints for incident report analysis
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Optional, Dict, Any
 import uvicorn
 import os
 import sys
 import time
+import logging
 
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from inference.analyzer import IncidentAnalyzer
 from utils.validators import IncidentValidator
+
+logger = logging.getLogger(__name__)
+
+INTERNAL_CATEGORY_FIELDS = {
+    "barangay_category",
+    "barangay_category_internal",
+    "barangay_category_confidence",
+    "abuse_related",
+    "case_group",
+    "case_priority_band",
+    "case_priority_rank",
+    "case_priority_action",
+    "routing_recommendation",
+}
 
 
 # Initialize FastAPI app
@@ -27,10 +42,27 @@ app = FastAPI(
 )
 
 # CORS middleware
+def _parse_cors_origins() -> list[str]:
+    raw = os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost,http://127.0.0.1,http://localhost:3000,http://127.0.0.1:3000",
+    )
+    origins = [o.strip() for o in raw.split(",") if o.strip()]
+    return origins or ["http://localhost"]
+
+
+cors_origins = _parse_cors_origins()
+allow_credentials = os.getenv("CORS_ALLOW_CREDENTIALS", "true").strip().lower() not in {
+    "0", "false", "no", "off"
+}
+if "*" in cors_origins and allow_credentials:
+    # Browsers reject wildcard origins with credentials; force-safe behavior.
+    allow_credentials = False
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure appropriately for production
-    allow_credentials=True,
+    allow_origins=cors_origins,
+    allow_credentials=allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -84,6 +116,22 @@ class AnalysisResponse(BaseModel):
     children_involved: bool = Field(..., description="Whether children are involved")
     weapon_mentioned: bool = Field(..., description="Whether weapon is mentioned")
     confidence_score: float = Field(..., description="AI confidence score (0-100)")
+    allow_submission: bool = Field(
+        ...,
+        description="Whether this report should proceed to intake/escalation workflow"
+    )
+    submission_decision: str = Field(
+        ...,
+        description="Workflow decision label: ALLOW or BLOCKED"
+    )
+    validation_reason: str = Field(
+        ...,
+        description="Short reason for submission decision"
+    )
+    incident_tip: Optional[str] = Field(
+        default=None,
+        description="One short safety tip based on the final incident type"
+    )
     processing_time_ms: Optional[float] = Field(
         default=None,
         description="End-to-end server-side processing time for this request in milliseconds"
@@ -109,6 +157,10 @@ class AnalysisResponse(BaseModel):
                 "children_involved": False,
                 "weapon_mentioned": False,
                 "confidence_score": 85.0,
+                "allow_submission": True,
+                "submission_decision": "ALLOW",
+                "validation_reason": "Report contains coherent abuse-related context and may proceed.",
+                "incident_tip": "Prioritize immediate physical safety and seek medical help if there are injuries.",
                 "processing_time_ms": 134.27,
                 "decision_basis": {
                     "retrieval_used": True,
@@ -131,6 +183,7 @@ class AnalysisResponse(BaseModel):
 
 class HealthResponse(BaseModel):
     """Health check response"""
+    model_config = ConfigDict(protected_namespaces=())
     status: str
     model_loaded: bool
     message: str
@@ -165,10 +218,11 @@ async def health_check():
             message="API is operational" + (" (Model loaded)" if model_loaded else " (Using rule-based analysis)")
         )
     except Exception as e:
+        logger.exception("Health check failed")
         return HealthResponse(
             status="error",
             model_loaded=False,
-            message=f"Error: {str(e)}"
+            message="API encountered an internal error"
         )
 
 
@@ -204,6 +258,8 @@ async def analyze_incident(request: IncidentReportRequest):
         analyzer_instance = get_analyzer()
         start = time.perf_counter()
         analysis_result = analyzer_instance.analyze(request.incident_description)
+        for key in INTERNAL_CATEGORY_FIELDS:
+            analysis_result.pop(key, None)
         analysis_result["processing_time_ms"] = round((time.perf_counter() - start) * 1000.0, 2)
         
         # Return response
@@ -212,7 +268,8 @@ async def analyze_incident(request: IncidentReportRequest):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Analysis error: {str(e)}")
+        logger.exception("Incident analysis failed")
+        raise HTTPException(status_code=500, detail="Internal analysis error")
 
 
 @app.get("/model/info", tags=["Model"])
@@ -262,18 +319,22 @@ async def model_info():
         
         return info
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error getting model info: {str(e)}")
+        logger.exception("Failed to gather model info")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 
 if __name__ == "__main__":
     # Run the API server
     port = int(os.getenv("PORT", 8000))
     host = os.getenv("HOST", "0.0.0.0")
+    reload_enabled = os.getenv("UVICORN_RELOAD", "false").strip().lower() not in {
+        "0", "false", "no", "off"
+    }
     
     uvicorn.run(
-        "api:app",
+        "inference.api:app",
         host=host,
         port=port,
-        reload=True,
+        reload=reload_enabled,
         log_level="info"
     )

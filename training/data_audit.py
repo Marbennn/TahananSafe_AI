@@ -52,6 +52,37 @@ PRIORITY_MAP = {
 YES_VALUES = {"yes", "y", "true", "1"}
 NO_VALUES = {"no", "n", "false", "0"}
 
+DOMESTIC_RELATIONSHIP_TERMS = {
+    "asawa", "husband", "wife", "partner", "boyfriend", "girlfriend", "kinakasama",
+    "live-in", "live in", "mag-asawa", "mag asawa", "pamilya", "family",
+    "tatay", "nanay", "ama", "ina", "magulang", "parent", "parents",
+    "anak", "child", "children", "minor", "stepfather", "stepmother",
+    "lolo", "lola", "elder", "elderly", "senior", "senior citizen",
+    "kapatid", "kuya", "ate", "brother", "sister", "tiyo", "tiya", "tiyuhin", "tiyahin",
+}
+
+HOUSEHOLD_CONTEXT_TERMS = {
+    "bahay", "loob ng bahay", "sa bahay", "bahay namin", "bahay nila",
+    "kwarto", "tahanan", "home", "inside the house", "household",
+}
+
+CHILD_TERMS = {
+    "bata", "mga bata", "child", "children", "minor", "menor de edad", "sanggol", "baby", "anak",
+}
+
+ELDER_TERMS = {
+    "lolo", "lola", "elder", "elderly", "senior", "senior citizen", "matanda", "bedridden",
+}
+
+ABUSE_ACTION_TERMS = {
+    "sinaktan", "sinasaktan", "nanakit", "nananakit",
+    "sinuntok", "sinipa", "binugbog", "sinakal", "tinulak", "hinampas", "sinampal",
+    "pinilit", "ginahasa", "nirape", "rape", "raped", "sexual",
+    "pinagbantaan", "binantaan", "threat", "threatened",
+    "pinapabayaan", "pinabayaan", "neglect", "neglected",
+    "kinuha ang pera", "walang sustento", "hindi nagbibigay ng pera", "economic abuse",
+}
+
 
 def _read_config_paths(config_path: Path) -> tuple[str, str]:
     with open(config_path, "r", encoding="utf-8") as f:
@@ -128,6 +159,39 @@ def _parse_bool_text(raw: Any) -> Optional[bool]:
 
 def _normalize_space(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
+
+
+def _contains_keyword(text: str, keyword: str) -> bool:
+    if not text or not keyword:
+        return False
+    pattern = rf"(?<!\w){re.escape(keyword.lower())}(?!\w)"
+    return re.search(pattern, text.lower()) is not None
+
+
+def _count_keyword_hits(text: str, keywords: set[str]) -> int:
+    if not text:
+        return 0
+    return sum(1 for kw in keywords if _contains_keyword(text, kw))
+
+
+def _has_domestic_relationship_context(text: str) -> bool:
+    t = _normalize_space(text or "").lower()
+    if not t:
+        return False
+
+    rel_hits = _count_keyword_hits(t, DOMESTIC_RELATIONSHIP_TERMS)
+    household_hits = _count_keyword_hits(t, HOUSEHOLD_CONTEXT_TERMS)
+    child_hits = _count_keyword_hits(t, CHILD_TERMS)
+    elder_hits = _count_keyword_hits(t, ELDER_TERMS)
+    abuse_hits = _count_keyword_hits(t, ABUSE_ACTION_TERMS)
+
+    if rel_hits > 0:
+        return True
+    if child_hits > 0 and (household_hits > 0 or abuse_hits > 0):
+        return True
+    if elder_hits > 0 and (household_hits > 0 or abuse_hits > 0):
+        return True
+    return False
 
 
 def _canonical_incident_labels(raw: Any) -> List[str]:
@@ -373,6 +437,17 @@ def _audit_rows(rows: List[Dict[str, Any]], issues: List[Dict[str, Any]]) -> Dic
         # Dataset-role consistency.
         core_labels = [x for x in labels if x in IncidentValidator.ABUSE_CORE_TYPES]
         non_abuse_labels = [x for x in labels if x in {"None / Invalid", "None / False Report", "Unknown"}]
+        if row["source"] == "main" and core_labels and not _has_domestic_relationship_context(desc):
+            _issue(
+                issues,
+                row,
+                "MAIN_ABUSE_WITHOUT_DOMESTIC_CONTEXT",
+                "high",
+                (
+                    "Main dataset abuse row has no clear household/intimate/family context; "
+                    "it should be removed for domestic-only retraining scope."
+                ),
+            )
         if row["source"] == "negative" and core_labels:
             _issue(
                 issues,
@@ -476,6 +551,7 @@ def run_audit(
         "main_core_class_imbalance_ratio_max_over_min": imbalance_ratio,
         "recommended_next_action": [
             "Fix all HIGH severity issues first.",
+            "Remove MAIN_ABUSE_WITHOUT_DOMESTIC_CONTEXT rows for domestic-only training scope.",
             "Fix duplicate conflicts and risk/priority mismatches before retraining.",
             "Re-run data_audit.py until HIGH issues are 0.",
         ],

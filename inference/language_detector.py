@@ -16,7 +16,11 @@ class LanguageDetector:
         'ako', 'ikaw', 'siya', 'kami', 'kayo', 'sila',
         'ng', 'na', 'sa', 'ang', 'mga', 'ay', 'at', 'o',
         'hindi', 'oo', 'hindi', 'po', 'opo', 'hindi po',
-        'kumusta', 'salamat', 'magandang', 'umaga', 'hapon', 'gabi'
+        'kumusta', 'salamat', 'magandang', 'umaga', 'hapon', 'gabi',
+        'asawa', 'tatay', 'nanay', 'lolo', 'lola', 'kapitbahay',
+        'binubugbog', 'bugbog', 'sinuntok', 'tinulak', 'papatayin',
+        'ginahasa', 'nirape', 'hinalay', 'ninakaw', 'pinagbantaan',
+        'sakin', 'niya', 'naman',
     ]
     
     ILOCANO_KEYWORDS = [

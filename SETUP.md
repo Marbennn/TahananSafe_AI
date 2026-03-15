@@ -146,8 +146,8 @@ console.log(data);
 ## 10. Optional training pipeline
 
 ```powershell
-python training/data_preparation.py
-python training/train.py
+python -c "from training.data_preparation import DataPreparator; DataPreparator('config_retrain.yaml').prepare_datasets()"
+python training/run_retrain.py --config config_retrain.yaml
 python training/evaluate_analyzer.py --output training/evaluation_report.json
 ```
 
@@ -232,6 +232,31 @@ git commit -m "Stop tracking .venv"
 - Ensure server is running with host `0.0.0.0`.
 - Check firewall allows port `8000`.
 - Use machine IP, not `localhost`, from remote device.
+
+### F. Tagalog sentence shows `Language: English`
+
+- Stop old running process and start a fresh one.
+- Verify latest pull includes language-arbitration logic.
+- Retest:
+
+```powershell
+python test_analyzer.py
+```
+
+### G. Elder-neglect or child-neglect report gets blocked incorrectly
+
+- Ensure latest code is pulled (medicine/food deprivation patterns were expanded).
+- Retrain if you changed datasets:
+
+```powershell
+python -c "from training.data_preparation import DataPreparator; DataPreparator('config_retrain.yaml').prepare_datasets()"
+python training/run_retrain.py --config config_retrain.yaml
+```
+
+### H. Confusing report with `doesn't hit` still classified as Physical Abuse
+
+- Latest logic includes negation-aware physical detection.
+- Restart CLI/API process and retest.
 
 ## 14. Defense-day checklist
 

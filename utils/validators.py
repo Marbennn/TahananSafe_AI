@@ -18,7 +18,20 @@ class IncidentValidator:
         "Neglect / Acts of Omission",
     ]
 
-    # All allowed incident types, including negative/unknown buckets.
+    # Non-abuse but valid barangay/community report types.
+    COMMUNITY_REPORT_TYPES = [
+        "Theft / Robbery",
+        "Physical Altercation / Assault",
+        "Community or Neighbor Disputes",
+        "Public Disturbance",
+        "Missing Person",
+        "Property Damage / Vandalism",
+        "Fraud / Scams",
+        "Suspicious Activity",
+        "Out-of-Scope Reports",
+    ]
+
+    # Allowed model/report output types for abuse-focused workflow.
     ABUSE_TYPES = ABUSE_CORE_TYPES + [
         # Negative / non-abuse bucket (from Negative_Dataset)
         "None / Invalid",
@@ -41,6 +54,21 @@ class IncidentValidator:
         "First Priority (P1)",
         "Second Priority (P2)",
         "Third Priority (P3)"
+    ]
+    
+    BARANGAY_CATEGORIES = [
+        "Domestic Violence / Family Violence",
+        "Child Abuse / Child Neglect",
+        "Harassment / Threats",
+        "Theft / Robbery",
+        "Physical Altercation / Assault",
+        "Community or Neighbor Disputes",
+        "Public Disturbance",
+        "Missing Person",
+        "Property Damage / Vandalism",
+        "Fraud / Scams",
+        "Suspicious Activity",
+        "Out-of-Scope Reports",
     ]
     
     @staticmethod
@@ -70,8 +98,9 @@ class IncidentValidator:
         Validate a list of incident types (multi-label).
         Rules:
         - Must be a non-empty list of allowed types.
-        - If more than one type is present, they must all be from ABUSE_CORE_TYPES
-          (no mixing 'None / Invalid' or 'Unknown' with real abuse labels).
+        - Multi-label is only for abuse-core combinations.
+        - Community report types are single-label only.
+        - Do not mix 'None / Invalid' or 'Unknown' with other labels.
         """
         if not isinstance(incident_types, list) or not incident_types:
             return False, "incident_types must be a non-empty list"
@@ -84,6 +113,8 @@ class IncidentValidator:
             invalid_mix = {"None / Invalid", "None / False Report", "Unknown"}
             if any(t in invalid_mix for t in incident_types):
                 return False, "incident_types with multiple entries cannot include None/Invalid/Unknown buckets"
+            if any(t in IncidentValidator.COMMUNITY_REPORT_TYPES for t in incident_types):
+                return False, "incident_types cannot mix community report types with other labels"
 
         return True, None
     
@@ -103,6 +134,17 @@ class IncidentValidator:
         if risk_percentage < 0 or risk_percentage > 100:
             return False, "Risk percentage must be between 0 and 100"
         
+        return True, None
+
+    @staticmethod
+    def validate_barangay_category(category: str) -> tuple[bool, Optional[str]]:
+        """Validate barangay blotter category"""
+        if category not in IncidentValidator.BARANGAY_CATEGORIES:
+            return (
+                False,
+                "Invalid barangay_category. Must be one of: "
+                + ", ".join(IncidentValidator.BARANGAY_CATEGORIES),
+            )
         return True, None
     
     @staticmethod
@@ -160,5 +202,41 @@ class IncidentValidator:
         
         if analysis['confidence_score'] < 0 or analysis['confidence_score'] > 100:
             return False, "confidence_score must be between 0 and 100"
+
+        if "incident_tip" in analysis and (
+            not isinstance(analysis["incident_tip"], str) or not analysis["incident_tip"].strip()
+        ):
+            return False, "incident_tip must be a non-empty string"
+
+        if "allow_submission" in analysis and not isinstance(analysis["allow_submission"], bool):
+            return False, "allow_submission must be a boolean"
+
+        if "submission_decision" in analysis:
+            if not isinstance(analysis["submission_decision"], str) or not analysis["submission_decision"].strip():
+                return False, "submission_decision must be a non-empty string"
+            if analysis["submission_decision"] not in {"ALLOW", "BLOCKED"}:
+                return False, "submission_decision must be ALLOW or BLOCKED"
+
+        if "validation_reason" in analysis and (
+            not isinstance(analysis["validation_reason"], str) or not analysis["validation_reason"].strip()
+        ):
+            return False, "validation_reason must be a non-empty string"
+
+        if "barangay_category" in analysis:
+            if not isinstance(analysis["barangay_category"], str) or not analysis["barangay_category"].strip():
+                return False, "barangay_category must be a non-empty string"
+            valid, error = IncidentValidator.validate_barangay_category(analysis["barangay_category"])
+            if not valid:
+                return False, error
+
+        if "barangay_category_confidence" in analysis:
+            val = analysis["barangay_category_confidence"]
+            if not isinstance(val, (int, float)):
+                return False, "barangay_category_confidence must be a number"
+            if val < 0 or val > 100:
+                return False, "barangay_category_confidence must be between 0 and 100"
+
+        if "abuse_related" in analysis and not isinstance(analysis["abuse_related"], bool):
+            return False, "abuse_related must be a boolean"
         
         return True, None

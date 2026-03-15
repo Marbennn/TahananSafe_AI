@@ -16,6 +16,12 @@ from inference.analyzer import IncidentAnalyzer
 def run_cli():
     """Interactive CLI for testing the incident analyzer."""
     print("Initializing Incident Analyzer...")
+    print(f"Python executable: {sys.executable}")
+    if ".venv" not in sys.executable.lower():
+        print(
+            "Warning: project virtual environment is not active. "
+            "Use .\\.venv\\Scripts\\python.exe for consistent dependencies."
+        )
     analyzer = IncidentAnalyzer()
 
     # Try to load model (will fall back to rule-based if not available)
@@ -54,6 +60,9 @@ def run_cli():
         print(f"Children Involved : {'Yes' if result.get('children_involved') else 'No'}")
         print(f"Weapon Mentioned  : {'Yes' if result.get('weapon_mentioned') else 'No'}")
         print(f"Confidence Score  : {result.get('confidence_score')}%")
+        print(f"Submission Status : {result.get('submission_decision')} ({'Allow' if result.get('allow_submission') else 'Blocked'})")
+        print(f"Validation Reason : {result.get('validation_reason')}")
+        print(f"Incident Tip      : {result.get('incident_tip')}")
         print(f"Response Time     : {elapsed_ms:.2f} ms")
 
 

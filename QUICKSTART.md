@@ -76,6 +76,37 @@ git pull
 python -m pip install -r requirements.txt
 ```
 
+## 10. Full retrain + full test flow
+
+From project root with `.venv` active:
+
+```powershell
+# 1) Prepare processed dataset
+python -c "from training.data_preparation import DataPreparator; DataPreparator('config_retrain.yaml').prepare_datasets()"
+
+# 2) Retrain adapter
+python training/run_retrain.py --config config_retrain.yaml
+
+# 3) Evaluate
+python training/evaluate_analyzer.py --output training/evaluation_report.json
+
+# 4) Optional: fit confidence calibrator
+python training/fit_confidence_calibrator.py --main-csv datasets/Main_Dataset.csv --negative-csv datasets/Negative_Dataset.csv --load-model --output models/confidence_calibrator.json
+
+# 5) End-to-end CLI test
+python test_analyzer.py
+```
+
+Quick validation prompts to run in CLI:
+- `Sinuntok ako ng asawa ko sa mukha`
+- `Palagi niya akong tinatakot na ipapahiya niya ako`
+- `Kinukuha niya lahat ng sweldo ko`
+- `Pinilit niya akong makipagtalik kahit ayaw ko`
+- `The son pushed his elderly mother during an argument`
+- `Hindi binibigyan ng pagkain ang bata kapag galit ang magulang`
+- `Nagkaroon lang kami ng pagtatalo pero walang pananakit`
+- `Sinampal ako ng refrigerator sa kusina`
+
 ## Quick Fixes
 
 - `alora_invocation_tokens` load error:

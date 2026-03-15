@@ -1,0 +1,180 @@
+{
+  "num_examples": 200,
+  "accuracy": 0.02,
+  "macro_precision": 0.4286,
+  "macro_recall": 0.0895,
+  "macro_f1": 0.1282,
+  "brier_score": 0.4516,
+  "ece_10_bins": 0.649,
+  "calibration_applied": false,
+  "calibrated_brier_score": null,
+  "calibrated_ece_10_bins": null,
+  "labels": [
+    "Physical Abuse",
+    "Sexual Abuse",
+    "Psychological Abuse",
+    "Economic Abuse",
+    "Elder Abuse",
+    "Neglect / Acts of Omission",
+    "None / Invalid",
+    "None / False Report",
+    "Unknown"
+  ],
+  "per_class": {
+    "Physical Abuse": {
+      "precision": 1.0,
+      "recall": 0.0155,
+      "f1": 0.0305,
+      "support": 129
+    },
+    "Sexual Abuse": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 28
+    },
+    "Psychological Abuse": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 23
+    },
+    "Economic Abuse": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 9
+    },
+    "Elder Abuse": {
+      "precision": 1.0,
+      "recall": 0.1111,
+      "f1": 0.2,
+      "support": 9
+    },
+    "Neglect / Acts of Omission": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 2
+    },
+    "None / Invalid": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "None / False Report": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "Unknown": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    }
+  },
+  "confusion_matrix": [
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      127,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      23,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      9,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ]
+}

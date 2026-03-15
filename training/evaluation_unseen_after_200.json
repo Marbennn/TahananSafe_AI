@@ -1,11 +1,11 @@
 {
-  "num_examples": 120,
-  "accuracy": 1.0,
-  "macro_precision": 1.0,
-  "macro_recall": 1.0,
-  "macro_f1": 1.0,
-  "brier_score": 0.0016,
-  "ece_10_bins": 0.04,
+  "num_examples": 200,
+  "accuracy": 0.555,
+  "macro_precision": 0.6224,
+  "macro_recall": 0.4705,
+  "macro_f1": 0.5022,
+  "brier_score": 0.2798,
+  "ece_10_bins": 0.2426,
   "calibration_applied": false,
   "calibrated_brier_score": null,
   "calibrated_ece_10_bins": null,
@@ -22,40 +22,40 @@
   ],
   "per_class": {
     "Physical Abuse": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "support": 20
+      "precision": 0.9302,
+      "recall": 0.6202,
+      "f1": 0.7442,
+      "support": 129
     },
     "Sexual Abuse": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "support": 20
+      "precision": 0.9091,
+      "recall": 0.3571,
+      "f1": 0.5128,
+      "support": 28
     },
     "Psychological Abuse": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "support": 20
+      "precision": 0.3,
+      "recall": 0.2609,
+      "f1": 0.2791,
+      "support": 23
     },
     "Economic Abuse": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "support": 20
+      "precision": 0.2174,
+      "recall": 0.5556,
+      "f1": 0.3125,
+      "support": 9
     },
     "Elder Abuse": {
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "support": 20
+      "support": 9
     },
     "Neglect / Acts of Omission": {
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "support": 20
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 2
     },
     "None / Invalid": {
       "precision": 0.0,
@@ -78,57 +78,46 @@
   },
   "confusion_matrix": [
     [
-      20,
+      80,
+      0,
+      10,
+      18,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      20,
-      0,
-      0,
-      0,
-      0,
-      0,
+      21,
       0,
       0
     ],
     [
       0,
-      0,
-      20,
-      0,
-      0,
+      10,
+      2,
       0,
       0,
       0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      20,
-      0,
-      0,
-      0,
+      16,
       0,
       0
     ],
     [
+      5,
+      0,
+      6,
       0,
       0,
       0,
+      12,
       0,
-      20,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      5,
       0,
       0,
+      1,
       0,
       0
     ],
@@ -137,8 +126,19 @@
       0,
       0,
       0,
+      9,
       0,
-      20,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
       0,
       0,
       0

@@ -32,6 +32,8 @@ checkpoints/
 *.safetensors
 wandb/
 mlruns/
+processed_retrain/
+retrain_output/
 *.h5
 
 # Datasets

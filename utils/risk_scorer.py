@@ -21,17 +21,20 @@ class RiskScorer:
         'threaten': 15, 'threat': 15, 'kill you': 30,
         'stab': 25, 'stabbed': 28, 'stabbing': 28,
         'shoot': 24, 'shot': 24, 'shooting': 24,
+        'burned': 22, 'burnt': 22, 'scalded': 22,
+        'forced sex': 28, 'sexual assault': 28, 'rape': 30, 'nirape': 30, 'ni-rape': 30,
     }
     
     HIGH_RISK_KEYWORDS = {
         'violence': 15, 'violent': 15, 'attack': 15, 'assault': 15,
         'hurt': 12, 'injured': 12, 'injury': 12, 'wound': 12,
-        'beat': 15, 'beating': 15, 'hit': 10, 'punch': 12,
+        'beat': 15, 'beating': 15, 'hit': 10, 'punch': 12, 'binubugbog': 18,
         'drag': 14, 'dragged': 16, 'hair': 12,
         'strangle': 20, 'choke': 20, 'suffocate': 20,
-        'rape': 25, 'sexual': 15, 'molest': 20,
+        'rape': 25, 'sexual': 15, 'molest': 20, 'groped': 18, 'fondled': 18,
         'children': 15, 'child': 15, 'kid': 15, 'minor': 15,
-        'fear': 10, 'afraid': 10, 'scared': 10, 'terrified': 12
+        'fear': 10, 'afraid': 10, 'scared': 10, 'terrified': 12,
+        'blackmail': 12, 'gaslighting': 10, 'stalking': 12
     }
     
     MEDIUM_RISK_KEYWORDS = {
@@ -53,17 +56,33 @@ class RiskScorer:
         # Stabbing / cutting (implies weapon + serious violence)
         'sinaksak': 28, 'saksak': 28, 'tinaga': 22,
         'binaril': 28, 'barilin': 28, 'pinagbabaril': 30,
+        'ginahasa': 30, 'hinalay': 30, 'nirape': 30, 'ni-rape': 30, 'ni rape': 30,
+        'pinilit makipagtalik': 30, 'pinipilit makipagtalik': 30, 'pinipilit akong makipagtalik': 30,
     }
     
     TAGALOG_HIGH = {
         'karahasan': 15, 'saktan': 12, 'bugbog': 15,
-        'suntok': 12, 'sinuntok': 15, 'sinusuntok': 18,
+        'suntok': 12, 'sinuntok': 15, 'sinusuntok': 18, 'sapak': 12, 'sinapak': 14, 'sinasapak': 16, 'tadyak': 12, 'tinadyakan': 16, 'tinandyakan': 16, 'binubugbog': 18, 'pinagbubugbog': 18,
+        'sinaktan': 16, 'sinasaktan': 18, 'nanakit': 16, 'nananakit': 18,
         'hila': 12, 'hinila': 14, 'kinaladkad': 16,
         'hampas': 14, 'hinampas': 16,
         'tulak': 12, 'tinulak': 16, 'itinulak': 16,
         'nahulog': 16, 'nalaglag': 16,
+        'sinagasaan': 24, 'sinasagasaan': 24, 'sagasaan': 20, 'binangga': 20, 'binanggaan': 22, 'inararo': 24,
         'bata': 15, 'anak': 12,
-        'takot': 10, 'natatakot': 12, 'tinatakot': 14
+        'takot': 10, 'natatakot': 12, 'tinatakot': 14,
+        'pinagbantaan': 16, 'pinagbabantaan': 16,
+        'minumura': 12, 'murahin': 12, 'sinisigawan': 10,
+        'pinapahiya': 10, 'pinahiya': 10, 'insulto': 8, 'insultuhin': 10, 'iniinsulto': 10,
+        'walang kwenta': 10, 'walang halaga': 10, 'wala akong halaga': 10,
+        'pinagbabawalan lumabas': 12, 'hindi pinapayagan lumabas': 12, 'hindi ako pinapayagan': 12,
+        'kinokontrol': 10, 'kinokontrol ang cellphone': 10,
+        'walang pagkain': 14, 'hindi pinapakain': 16, 'walang tubig': 14,
+        'hindi binibigyan ng pagkain': 18, 'di binibigyan ng pagkain': 18,
+        'not given food': 18, 'is not given food': 18, 'withheld food': 18, 'deprived of food': 18,
+        'walang gamot': 16, 'walang bantay': 16, 'iniwan mag-isa': 16,
+        'pinabayaan': 15, 'napabayaan': 15,
+        'kinuha ang pera': 12, 'kinuha ang sahod': 14, 'hindi nagbibigay ng panggastos': 14,
     }
 
     SAKSAK_TERMS = {"sinaksak", "saksak", "stab", "stabbed", "stabbing", "tinaga"}
@@ -73,9 +92,13 @@ class RiskScorer:
         "hit", "hits", "hitting", "punch", "punched", "punching",
         "slap", "slapped", "slapping", "kick", "kicked", "kicking",
         "drag", "dragged", "dragging", "pull", "pulled", "pulling",
-        "suntok", "sinuntok", "sinusuntok", "sampal", "sinampal",
+        "suntok", "sinuntok", "sinusuntok", "sapak", "sinapak", "sinasapak", "sampal", "sinampal",
         "hampas", "hinampas", "hinampasan", "sipa", "sinipa",
+        "bugbog", "binugbog", "binubugbog", "pinagbubugbog",
         "hila", "hinila", "kinaladkad", "kaladkad",
+        "saktan", "sinaktan", "sinasaktan", "nanakit", "nananakit",
+        "sinagasaan", "sinasagasaan", "sagasa", "sagasaan",
+        "binangga", "binanggaan", "inararo",
     }
     NON_VIOLENT_SAKSAK_TARGETS = {
         "phone", "cellphone", "cp", "charger", "charge", "charging",
@@ -324,6 +347,14 @@ class RiskScorer:
         ):
             boost += 25.0
 
+        # Intentional vehicular assault context.
+        if re.search(
+            r"(sinadya|sadya|intentionally|deliberate).{0,40}(sinagasaan|sagasaan|binangga|inararo)|"
+            r"(sinagasaan|sagasaan|binangga|inararo).{0,60}(ako|siya|me|him|her|biktima).{0,40}(asawa|partner|tatay|nanay|kapatid|stepfather|stepmother|driver)",
+            text_lower,
+        ):
+            boost += 35.0
+
         return boost
     
     def calculate_risk_percentage(self, incident_description: str) -> float:
@@ -467,8 +498,12 @@ class RiskScorer:
             risk = max(risk, 70.0)
         elif incident_type in {"Physical Abuse", "Elder Abuse"}:
             risk = max(risk, 50.0)
-        elif incident_type in {"Psychological Abuse", "Economic Abuse"}:
-            risk = max(risk, 35.0)
+        elif incident_type == "Psychological Abuse":
+            risk = max(risk, 40.0)
+        elif incident_type == "Economic Abuse":
+            risk = max(risk, 38.0)
+        elif incident_type == "Neglect / Acts of Omission":
+            risk = max(risk, 45.0)
 
         # Children increase urgency
         if children_involved:

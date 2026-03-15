@@ -42,6 +42,10 @@ class CaseRetriever:
         "invalid",
         "none",
     }
+    NON_ABUSE_REPORT_TYPES = {
+        str(x).strip().lower()
+        for x in IncidentValidator.COMMUNITY_REPORT_TYPES
+    }
 
     def __init__(
         self,
@@ -65,12 +69,13 @@ class CaseRetriever:
 
     def _default_candidate_paths(self) -> List[Path]:
         cwd = Path.cwd()
-        return [
+        paths = [
             cwd / "datasets" / "Main_Dataset.csv",
             cwd / "datasets" / "Negative_Dataset.csv",
             cwd / "datasets" / "sample_main_dataset.json",
             cwd / "datasets" / "sample_negative_dataset.json",
         ]
+        return paths
 
     def _resolve_dataset_paths(self) -> List[Path]:
         paths: List[Path] = []
@@ -398,7 +403,9 @@ class CaseRetriever:
         non_abuse_weight = sum(
             w
             for t, w in weights_by_type.items()
-            if t.lower() in self.NON_ABUSE_TYPES or t in {"None / Invalid", "None / False Report"}
+            if str(t).strip().lower() in self.NON_ABUSE_TYPES
+            or str(t).strip().lower() in self.NON_ABUSE_REPORT_TYPES
+            or t in {"None / Invalid", "None / False Report"}
         )
         type_distribution = {
             t: round(w / total_weight, 4)
@@ -442,7 +449,11 @@ class CaseRetriever:
                 weights_by_type[t] = weights_by_type.get(t, 0.0) + share
                 t_lower = str(t).lower().strip()
                 t_lower = re.sub(r"\s+", " ", t_lower).replace("non abuse", "non-abuse")
-                if t_lower in self.NON_ABUSE_TYPES or t in {"None / Invalid", "None / False Report"}:
+                if (
+                    t_lower in self.NON_ABUSE_TYPES
+                    or t_lower in self.NON_ABUSE_REPORT_TYPES
+                    or t in {"None / Invalid", "None / False Report"}
+                ):
                     non_abuse_weight += share
             weighted_risk += float(rec.get("risk_percentage", 0.0))
             matches.append(

@@ -26,6 +26,18 @@ Negative/non-abuse categories:
 - `None / Invalid`
 - `None / False Report`
 
+## Latest Analyzer Logic Updates
+
+Recent updates in `inference/analyzer.py` and `utils/risk_scorer.py`:
+- Per-type pattern alignment (each abuse type has its own context/action pattern checks)
+- Negation-aware physical detection (`hindi sinasaktan`, `doesn't hit`) to avoid false Physical Abuse
+- Elder-victim prioritization (`elderly/grandmother/lola` + abuse context => `Elder Abuse`)
+- Expanded neglect patterns:
+  - food deprivation (`hindi binibigyan ng pagkain`, `not given food`)
+  - medicine deprivation (`hindi binigyan ng gamot`, `not given medicine`)
+- Non-human/inanimate confusion handling (object/animal actor and non-human victim blocks)
+- Language arbitration to prevent false `English` on clearly Tagalog text
+
 ## Repository Structure
 
 ```text
@@ -134,13 +146,13 @@ curl -X POST "http://localhost:8000/analyze" `
 ### Prepare data
 
 ```powershell
-python training/data_preparation.py
+python -c "from training.data_preparation import DataPreparator; DataPreparator('config_retrain.yaml').prepare_datasets()"
 ```
 
 ### Train
 
 ```powershell
-python training/train.py
+python training/run_retrain.py --config config_retrain.yaml
 ```
 
 ### Evaluate
@@ -154,6 +166,22 @@ python training/evaluate_analyzer.py --output training/evaluation_report.json
 ```powershell
 python training/fit_confidence_calibrator.py --main-csv datasets/Main_Dataset.csv --negative-csv datasets/Negative_Dataset.csv --load-model --output models/confidence_calibrator.json
 ```
+
+### Full smoke test (CLI)
+
+```powershell
+python test_analyzer.py
+```
+
+Recommended quick manual checks after retrain:
+- clear physical abuse
+- clear psychological abuse
+- clear economic abuse
+- clear sexual abuse
+- clear elder abuse
+- clear neglect
+- explicit non-abuse/conflict-only report
+- nonsense report with inanimate/non-human actor
 
 ## `.env` Notes
 

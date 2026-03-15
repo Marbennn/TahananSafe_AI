@@ -4,9 +4,12 @@ Fine-tunes Qwen/Qwen2.5-0.5B-Instruct using supervised fine-tuning with LoRA.
 """
 
 import os
+import argparse
 
 # Force Transformers to use PyTorch-only (no TensorFlow/Keras imports)
 os.environ["TRANSFORMERS_NO_TF"] = "1"
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+os.environ.setdefault("OMP_NUM_THREADS", "1")
 
 import yaml
 import torch
@@ -26,7 +29,8 @@ class IncidentReportTrainer:
     
     def __init__(self, config_path: str = "training/config.yaml"):
         """Initialize trainer with configuration"""
-        with open(config_path, 'r') as f:
+        # Use utf-8-sig to safely read YAML files that may include BOM.
+        with open(config_path, 'r', encoding='utf-8-sig') as f:
             self.config = yaml.safe_load(f)
         
         self.model_config = self.config['model']
@@ -36,11 +40,17 @@ class IncidentReportTrainer:
     def load_model_and_tokenizer(self):
         """Load base model and tokenizer"""
         print(f"Loading model: {self.model_config['base_model']}")
+        use_4bit = bool(self.model_config.get('use_4bit', False))
+        use_8bit = bool(self.model_config.get('use_8bit', False))
+        local_files_only = bool(self.model_config.get('local_files_only', False))
+        has_cuda = torch.cuda.is_available()
+        train_device = torch.device("cuda:0" if has_cuda else "cpu")
         
         # Load tokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(
             self.model_config['base_model'],
-            trust_remote_code=True
+            trust_remote_code=True,
+            local_files_only=local_files_only,
         )
         
         # Add padding token if it doesn't exist
@@ -48,7 +58,7 @@ class IncidentReportTrainer:
             self.tokenizer.pad_token = self.tokenizer.eos_token
         
         # Load model with quantization if specified
-        if self.model_config.get('use_4bit', False):
+        if use_4bit:
             from transformers import BitsAndBytesConfig
             quantization_config = BitsAndBytesConfig(
                 load_in_4bit=True,
@@ -62,27 +72,41 @@ class IncidentReportTrainer:
                 quantization_config=quantization_config,
                 device_map=self.model_config.get('device_map', 'auto'),
                 trust_remote_code=True,
-                torch_dtype=torch.float16
+                torch_dtype=torch.float16,
+                local_files_only=local_files_only,
             )
-        elif self.model_config.get('use_8bit', False):
+        elif use_8bit:
             self.model = AutoModelForCausalLM.from_pretrained(
                 self.model_config['base_model'],
                 load_in_8bit=True,
                 device_map=self.model_config.get('device_map', 'auto'),
-                trust_remote_code=True
+                trust_remote_code=True,
+                local_files_only=local_files_only,
             )
         else:
-            # Default path: let Transformers/Accelerate place the model on GPU if available.
+            # Default path for full-precision/fp16 LoRA:
+            # do not use device_map="auto" because it can offload params to meta/cpu,
+            # which breaks backward pass in Trainer.
             self.model = AutoModelForCausalLM.from_pretrained(
                 self.model_config['base_model'],
-                device_map=self.model_config.get("device_map", "auto"),
                 trust_remote_code=True,
                 torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+                local_files_only=local_files_only,
             )
+            self.model.to(train_device)
         
         # Prepare model for k-bit training
-        if self.model_config.get('use_4bit', False) or self.model_config.get('use_8bit', False):
+        if use_4bit or use_8bit:
             self.model = prepare_model_for_kbit_training(self.model)
+
+        # Guard against accidental meta tensors that cause invalid-gradient runtime errors.
+        meta_params = [name for name, param in self.model.named_parameters() if param.device.type == "meta"]
+        if meta_params:
+            raise RuntimeError(
+                "Model has parameters on meta device after loading. "
+                "Disable auto offload/device_map for non-quantized training. "
+                f"Example param: {meta_params[0]}"
+            )
         
         # Configure LoRA
         lora_config = LoraConfig(
@@ -96,6 +120,14 @@ class IncidentReportTrainer:
         
         # Apply LoRA
         self.model = get_peft_model(self.model, lora_config)
+
+        # Reduce activation memory pressure on small GPUs.
+        if self.training_config.get("gradient_checkpointing", True):
+            if hasattr(self.model, "gradient_checkpointing_enable"):
+                self.model.gradient_checkpointing_enable()
+            if hasattr(self.model, "enable_input_require_grads"):
+                self.model.enable_input_require_grads()
+        self.model.config.use_cache = False
         self.model.print_trainable_parameters()
         
         print("Model and tokenizer loaded successfully!")
@@ -135,15 +167,18 @@ class IncidentReportTrainer:
         
         # Tokenize datasets
         print("Tokenizing datasets...")
+        tokenize_batch_size = int(self.config['dataset'].get('tokenize_batch_size', 64))
         tokenized_train = self.datasets['train'].map(
             self.tokenize_function,
             batched=True,
+            batch_size=tokenize_batch_size,
             remove_columns=self.datasets['train'].column_names
         )
         
         tokenized_val = self.datasets['validation'].map(
             self.tokenize_function,
             batched=True,
+            batch_size=tokenize_batch_size,
             remove_columns=self.datasets['validation'].column_names
         )
         
@@ -162,7 +197,8 @@ class IncidentReportTrainer:
             logging_steps=self.training_config['logging_steps'],
             save_steps=self.training_config['save_steps'],
             save_total_limit=self.training_config['save_total_limit'],
-            fp16=self.training_config.get('fp16', True),
+            fp16=bool(self.training_config.get('fp16', True) and torch.cuda.is_available()),
+            gradient_checkpointing=bool(self.training_config.get("gradient_checkpointing", True)),
             optim=self.training_config.get('optim', 'adamw_torch'),
             lr_scheduler_type=self.training_config['lr_scheduler_type']
         )
@@ -198,6 +234,7 @@ class IncidentReportTrainer:
         tokenized_test = self.datasets['test'].map(
             self.tokenize_function,
             batched=True,
+            batch_size=tokenize_batch_size,
             remove_columns=self.datasets['test'].column_names
         )
         
@@ -206,5 +243,12 @@ class IncidentReportTrainer:
 
 
 if __name__ == "__main__":
-    trainer = IncidentReportTrainer()
+    parser = argparse.ArgumentParser(description="Train TahananSafe AI model.")
+    parser.add_argument(
+        "--config",
+        default="training/config.yaml",
+        help="Path to YAML training config file.",
+    )
+    args = parser.parse_args()
+    trainer = IncidentReportTrainer(config_path=args.config)
     trainer.train()

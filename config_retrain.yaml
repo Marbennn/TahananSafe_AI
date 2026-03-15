@@ -1,0 +1,81 @@
+﻿model:
+  base_model: C:/Users/Xeium/.cache/huggingface/hub/models--Qwen--Qwen2.5-0.5B-Instruct/snapshots/7ae557604adf67be50417f59c2c2f167def9a775
+  local_files_only: true
+  use_4bit: false
+  use_8bit: false
+  # Keep null for normal training; "auto" is only safe for 4bit/8bit paths.
+  device_map: null
+lora:
+  r: 16
+  lora_alpha: 32
+  target_modules:
+  - q_proj
+  - v_proj
+  - k_proj
+  - o_proj
+  lora_dropout: 0.05
+  bias: none
+  task_type: CAUSAL_LM
+training:
+  output_dir: ./retrain_output/fine_tuned
+  num_train_epochs: 3
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 4
+  gradient_checkpointing: true
+  learning_rate: 2e-4
+  warmup_steps: 100
+  logging_steps: 10
+  save_steps: 1000
+  eval_steps: 500
+  save_total_limit: 3
+  fp16: true
+  optim: adamw_torch
+  lr_scheduler_type: cosine
+dataset:
+  main_dataset_path: ./datasets/Main_Dataset.csv
+  negative_dataset_path: ./datasets/Negative_Dataset.csv
+  extra_negative_dataset_paths: []
+  ambiguous_pairs_path: ./datasets/Ambiguous_Pairs.csv
+  unseen_main_path: ./datasets/Unseen_Main.csv
+  unseen_negative_path: ./datasets/Unseen_Negative.csv
+  exclude_unseen_from_training: true
+  class_balance_enabled: true
+  class_balance_target_ratio: 3.0
+  class_balance_seed: 42
+  quality_filters_enabled: true
+  min_description_length: 12
+  drop_obvious_noise_rows: true
+  max_duplicates_per_type_description: 1
+  domestic_scope_filter_enabled: true
+  drop_negative_abuse_rows: true
+  processed_path: ./processed_retrain
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  # 192 is safer on 4GB VRAM during LoRA training.
+  max_length: 192
+  tokenize_batch_size: 64
+abuse_types:
+- Physical Abuse
+- Sexual Abuse
+- Psychological Abuse
+- Economic Abuse
+- Elder Abuse
+- Neglect / Acts of Omission
+languages:
+- English
+- Tagalog
+- Ilocano
+- Pangasinan
+- Mixed Language
+risk_levels:
+- Low
+- Medium
+- High
+- Critical
+priority_levels:
+- First Priority (P1)
+- Second Priority (P2)
+- Third Priority (P3)
+
+

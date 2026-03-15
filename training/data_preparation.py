@@ -8,6 +8,7 @@ import os
 import math
 import random
 import re
+import shutil
 import yaml
 from pathlib import Path
 from typing import List, Dict, Any
@@ -21,7 +22,8 @@ class DataPreparator:
     
     def __init__(self, config_path: str = "training/config.yaml"):
         """Initialize with configuration"""
-        with open(config_path, 'r') as f:
+        # Use utf-8-sig to safely read YAML files that may include BOM.
+        with open(config_path, 'r', encoding='utf-8-sig') as f:
             self.config = yaml.safe_load(f)
         
         self.abuse_types = self.config['abuse_types']
@@ -39,13 +41,223 @@ class DataPreparator:
             "none",
             "unknown",
         }
+        self.community_report_types = [
+            "Theft / Robbery",
+            "Physical Altercation / Assault",
+            "Community or Neighbor Disputes",
+            "Public Disturbance",
+            "Missing Person",
+            "Property Damage / Vandalism",
+            "Fraud / Scams",
+            "Suspicious Activity",
+            "Out-of-Scope Reports",
+        ]
+        self.community_report_types_lower = {x.lower() for x in self.community_report_types}
+        # Domestic-only scope signals used to filter abuse rows before retraining.
+        self.domestic_relationship_terms = {
+            "asawa", "husband", "wife", "partner", "boyfriend", "girlfriend", "kinakasama",
+            "live-in", "live in", "mag-asawa", "mag asawa", "pamilya", "family",
+            "tatay", "nanay", "ama", "ina", "magulang", "parent", "parents",
+            "anak", "child", "children", "minor", "stepfather", "stepmother",
+            "lolo", "lola", "elder", "elderly", "senior", "senior citizen",
+            "kapatid", "kuya", "ate", "brother", "sister", "tiyo", "tiya", "tiyuhin", "tiyahin",
+        }
+        self.household_context_terms = {
+            "bahay", "loob ng bahay", "sa bahay", "bahay namin", "bahay nila",
+            "kwarto", "tahanan", "home", "inside the house", "household",
+        }
+        self.child_terms = {
+            "bata", "mga bata", "child", "children", "minor", "menor de edad", "sanggol", "baby", "anak",
+        }
+        self.elder_terms = {
+            "lolo", "lola", "elder", "elderly", "senior", "senior citizen", "matanda", "bedridden",
+        }
+        self.abuse_action_terms = {
+            "sinaktan", "sinasaktan", "nanakit", "nananakit",
+            "sinuntok", "sinipa", "binugbog", "sinakal", "tinulak", "hinampas", "sinampal",
+            "pinilit", "ginahasa", "nirape", "rape", "raped", "sexual",
+            "pinagbantaan", "binantaan", "threat", "threatened",
+            "pinapabayaan", "pinabayaan", "neglect", "neglected",
+            "kinuha ang pera", "walang sustento", "hindi nagbibigay ng pera", "economic abuse",
+        }
+
+    @staticmethod
+    def _normalize_whitespace(text: Any) -> str:
+        if text is None:
+            return ""
+        return re.sub(r"\s+", " ", str(text).strip())
+
+    def _looks_like_noise_text(self, text: str) -> bool:
+        """
+        Detect low-information/noisy descriptions that can hurt training.
+        Keep this conservative to avoid deleting valid reports.
+        """
+        t = self._normalize_whitespace(text).lower()
+        if not t:
+            return True
+
+        # Single-char spam: "aaaaaaa", "kkkkkk", etc.
+        if re.fullmatch(r"(.)\1{5,}", t):
+            return True
+
+        # Laughter/noise-only fragments.
+        if re.fullmatch(r"(ha|he|hi|ho|hu|ah|oh|lol|lmao|h)+", re.sub(r"[^a-z]", "", t)):
+            return True
+
+        # Too little lexical signal after removing punctuation/digits.
+        letters_only = re.sub(r"[^a-zA-Z\s]", " ", t)
+        tokens = [tok for tok in letters_only.split() if tok]
+        if len(tokens) <= 1 and len("".join(tokens)) <= 8:
+            return True
+
+        return False
+
+    @staticmethod
+    def _contains_keyword(text: str, keyword: str) -> bool:
+        if not text or not keyword:
+            return False
+        pattern = rf"(?<!\w){re.escape(keyword.lower())}(?!\w)"
+        return re.search(pattern, text.lower()) is not None
+
+    def _count_keyword_hits(self, text: str, keywords: set[str]) -> int:
+        if not text:
+            return 0
+        return sum(1 for kw in keywords if self._contains_keyword(text, kw))
+
+    def _has_domestic_relationship_context(self, text: Any) -> bool:
+        """
+        Domestic scope check for abuse-labeled rows.
+        A row is considered in-scope when it has clear family/intimate/household
+        relationship context, including child/elder protection contexts.
+        """
+        t = self._normalize_whitespace(text).lower()
+        if not t:
+            return False
+
+        rel_hits = self._count_keyword_hits(t, self.domestic_relationship_terms)
+        household_hits = self._count_keyword_hits(t, self.household_context_terms)
+        child_hits = self._count_keyword_hits(t, self.child_terms)
+        elder_hits = self._count_keyword_hits(t, self.elder_terms)
+        abuse_hits = self._count_keyword_hits(t, self.abuse_action_terms)
+
+        if rel_hits > 0:
+            return True
+        if child_hits > 0 and (household_hits > 0 or abuse_hits > 0):
+            return True
+        if elder_hits > 0 and (household_hits > 0 or abuse_hits > 0):
+            return True
+        return False
+
+    def _apply_domestic_scope_filters(
+        self,
+        main_data: List[Dict[str, Any]],
+        negative_data: List[Dict[str, Any]],
+    ) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+        """
+        Enforce domestic-only training scope:
+        - Main dataset: drop abuse-labeled rows without domestic/household context.
+        - Negative dataset: optionally drop rows that are still abuse-labeled.
+        """
+        ds_cfg = self.config.get("dataset", {})
+        enabled = self._to_bool(ds_cfg.get("domestic_scope_filter_enabled", True), default=True)
+        if not enabled:
+            return main_data, negative_data
+
+        drop_negative_abuse_rows = self._to_bool(ds_cfg.get("drop_negative_abuse_rows", True), default=True)
+
+        filtered_main: List[Dict[str, Any]] = []
+        removed_main_non_domestic = 0
+        for row in main_data:
+            label = self._canonical_abuse_type(row.get("incident_type"))
+            if label in self.abuse_types:
+                if not self._has_domestic_relationship_context(row.get("incident_description")):
+                    removed_main_non_domestic += 1
+                    continue
+            filtered_main.append(row)
+
+        filtered_negative: List[Dict[str, Any]] = []
+        removed_negative_abuse = 0
+        for row in negative_data:
+            label = self._canonical_abuse_type(row.get("incident_type"))
+            if drop_negative_abuse_rows and label in self.abuse_types:
+                removed_negative_abuse += 1
+                continue
+            filtered_negative.append(row)
+
+        print(
+            "Domestic scope filter: "
+            f"removed main_non_domestic_abuse={removed_main_non_domestic}, "
+            f"removed_negative_abuse_labels={removed_negative_abuse}; "
+            f"kept_main={len(filtered_main)}, kept_negative={len(filtered_negative)}"
+        )
+        return filtered_main, filtered_negative
+
+    def _apply_data_quality_guards(
+        self,
+        data: List[Dict[str, Any]],
+        source_name: str,
+    ) -> List[Dict[str, Any]]:
+        """
+        Apply conservative safeguards to reduce overfitting and false confidence:
+        - drop empty/too-short/noisy descriptions
+        - cap duplicate rows by (incident_type, normalized_description)
+        """
+        ds_cfg = self.config.get("dataset", {})
+        enabled = self._to_bool(ds_cfg.get("quality_filters_enabled", True), default=True)
+        if not enabled:
+            return data
+
+        min_len = max(1, int(ds_cfg.get("min_description_length", 12)))
+        drop_noise = self._to_bool(ds_cfg.get("drop_obvious_noise_rows", True), default=True)
+        max_dup = max(1, int(ds_cfg.get("max_duplicates_per_type_description", 1)))
+
+        filtered: List[Dict[str, Any]] = []
+        removed_empty = 0
+        removed_short = 0
+        removed_noise = 0
+
+        for row in data:
+            desc = self._normalize_whitespace(row.get("incident_description"))
+            if not desc:
+                removed_empty += 1
+                continue
+            if len(desc) < min_len:
+                removed_short += 1
+                continue
+            if drop_noise and self._looks_like_noise_text(desc):
+                removed_noise += 1
+                continue
+
+            updated = dict(row)
+            updated["incident_description"] = desc
+            filtered.append(updated)
+
+        counts: Dict[tuple[str, str], int] = defaultdict(int)
+        deduped: List[Dict[str, Any]] = []
+        removed_dups = 0
+        for row in filtered:
+            incident_type = self._canonical_abuse_type(row.get("incident_type"))
+            desc_key = self._normalize_description_for_leakage(row.get("incident_description"))
+            key = (incident_type, desc_key)
+            counts[key] += 1
+            if counts[key] > max_dup:
+                removed_dups += 1
+                continue
+            deduped.append(row)
+
+        print(
+            f"Quality filter ({source_name}): "
+            f"removed empty={removed_empty}, short={removed_short}, noise={removed_noise}, duplicates={removed_dups}; "
+            f"kept={len(deduped)}"
+        )
+        return deduped
 
     def _is_non_abuse_type(self, incident_type: Any) -> bool:
         """Check whether a label should be treated as non-abuse/negative."""
         if incident_type is None:
             return True
         text = str(incident_type).strip().lower()
-        return text in self.non_abuse_labels
+        return text in self.non_abuse_labels or text in self.community_report_types_lower
 
     def _canonical_abuse_type(self, incident_type: Any) -> str:
         """Map raw incident type text into known core abuse labels when possible."""
@@ -59,6 +271,13 @@ class DataPreparator:
 
         if lower in self.non_abuse_labels:
             return "None / Invalid"
+
+        for label in self.community_report_types:
+            if lower == label.lower():
+                return label
+        for label in self.community_report_types:
+            if label.lower() in lower:
+                return label
 
         for label in self.abuse_types:
             if lower == label.lower():
@@ -340,7 +559,8 @@ Analysis complete."""
                 # Keep negative rows realistic/varied so the model learns robust
                 # non-abuse behavior instead of one rigid template.
                 incident_type = self._canonical_abuse_type(example.get("incident_type"))
-                if incident_type not in {"None / Invalid", "None / False Report"}:
+                allowed_negative_types = set(self.community_report_types) | {"None / Invalid", "None / False Report"}
+                if incident_type not in allowed_negative_types:
                     incident_type = "None / Invalid"
                 language = example.get("language", "English")
                 risk_level = example.get("risk_level", "Low")
@@ -401,6 +621,22 @@ AI Confidence Score: {confidence_score}%"""
         negative_data = self.load_dataset_files(self.config['dataset']['negative_dataset_path'])
         print(f"Loaded {len(negative_data)} examples from negative dataset")
 
+        extra_negative_paths = self.config.get("dataset", {}).get("extra_negative_dataset_paths", [])
+        if isinstance(extra_negative_paths, str):
+            extra_negative_paths = [extra_negative_paths]
+        if isinstance(extra_negative_paths, list):
+            for raw_path in extra_negative_paths:
+                path = str(raw_path).strip()
+                if not path:
+                    continue
+                p = Path(path)
+                if not p.exists():
+                    print(f"Warning: extra_negative_dataset_paths file not found: {path}")
+                    continue
+                extra_rows = self.load_dataset_files(path)
+                negative_data.extend(extra_rows)
+                print(f"Loaded {len(extra_rows)} extra negative/community examples from {path}")
+
         # Optional hard contrastive dataset for ambiguous wording.
         ambiguous_path = self.config["dataset"].get("ambiguous_pairs_path", "").strip()
         if ambiguous_path:
@@ -424,6 +660,11 @@ AI Confidence Score: {confidence_score}%"""
         if unseen_descs:
             main_data = self._exclude_by_unseen_descriptions(main_data, unseen_descs, "main")
             negative_data = self._exclude_by_unseen_descriptions(negative_data, unseen_descs, "negative")
+
+        # Data quality safeguards to prevent overfitting on repeated/noisy rows.
+        main_data = self._apply_data_quality_guards(main_data, "main")
+        negative_data = self._apply_data_quality_guards(negative_data, "negative")
+        main_data, negative_data = self._apply_domestic_scope_filters(main_data, negative_data)
 
         # Step 3: rebalance core abuse classes before formatting/splitting.
         main_data = self._apply_class_balancing(main_data)
@@ -460,6 +701,10 @@ AI Confidence Score: {confidence_score}%"""
         
         # Save processed dataset
         output_path = Path(self.config['dataset']['processed_path'])
+        # Windows can throw OSError 22 when save_to_disk overwrites an existing
+        # dataset directory in place. Remove previous generated artifacts first.
+        if output_path.exists():
+            shutil.rmtree(output_path)
         output_path.mkdir(parents=True, exist_ok=True)
         
         print(f"Saving processed dataset to {output_path}...")

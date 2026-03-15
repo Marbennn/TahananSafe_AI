@@ -9,7 +9,8 @@ model:
   # No 4bit/8bit quantization during training to reduce complexity.
   use_4bit: false
   use_8bit: false
-  device_map: "auto"
+  # Keep null for normal training; "auto" is only safe for 4bit/8bit paths.
+  device_map: null
   
 # LoRA Configuration
 lora:
@@ -22,11 +23,12 @@ lora:
 
 # Training Parameters
 training:
-  output_dir: "./models/fine_tuned"
-  num_train_epochs: 3
+  output_dir: "./retrain_output/fine_tuned_abuse_only"
+  num_train_epochs: 1
   # Very small batch size so it fits on 4GB VRAM
   per_device_train_batch_size: 1
   gradient_accumulation_steps: 4
+  gradient_checkpointing: true
   learning_rate: 2e-4
   warmup_steps: 100
   logging_steps: 10
@@ -46,6 +48,8 @@ dataset:
   # - a single CSV file (like Main_Dataset.csv / Negative_Dataset.csv)
   main_dataset_path: "./datasets/Main_Dataset.csv"
   negative_dataset_path: "./datasets/Negative_Dataset.csv"
+  # Optional: additional negative CSV files to append into negative set.
+  extra_negative_dataset_paths: []
   # Optional: hard contrastive samples for confusing words/contexts.
   ambiguous_pairs_path: "./datasets/Ambiguous_Pairs.csv"
   # Step 4: strict unseen holdout CSVs (excluded from training if present).
@@ -56,11 +60,22 @@ dataset:
   class_balance_enabled: true
   class_balance_target_ratio: 3.0
   class_balance_seed: 42
+  # Data quality safeguards (recommended).
+  quality_filters_enabled: true
+  min_description_length: 12
+  drop_obvious_noise_rows: true
+  max_duplicates_per_type_description: 1
+  # Enforce domestic-only scope before retraining.
+  domestic_scope_filter_enabled: true
+  # Safety guard: negative set should not contain abuse-labeled rows.
+  drop_negative_abuse_rows: true
   processed_path: "./datasets/processed"
   train_split: 0.8
   val_split: 0.1
   test_split: 0.1
-  max_length: 512
+  # 192 is safer on 4GB VRAM during LoRA training.
+  max_length: 192
+  tokenize_batch_size: 64
 
 # Abuse Types
 abuse_types:
