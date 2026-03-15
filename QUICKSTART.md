@@ -50,6 +50,8 @@ Expected: `sys.executable` points to `.venv\Scripts\python.exe`.
 python test_analyzer.py
 ```
 
+If trained artifacts are already in the repo (`models/`, `processed_retrain/`, `retrain_output/`), you can skip retraining and test immediately.
+
 ## 7. Run API
 
 ```powershell

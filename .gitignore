@@ -24,16 +24,9 @@ wheels/
 *.egg
 
 # ML/AI
-models/
 checkpoints/
-*.pt
-*.pth
-*.bin
-*.safetensors
 wandb/
 mlruns/
-processed_retrain/
-retrain_output/
 *.h5
 
 # Datasets
@@ -74,3 +67,11 @@ Thumbs.db
 # Logs
 logs/
 *.log
+
+# Keep trained artifacts versioned so teammates can run inference without retraining.
+!models/
+!models/**
+!processed_retrain/
+!processed_retrain/**
+!retrain_output/
+!retrain_output/**

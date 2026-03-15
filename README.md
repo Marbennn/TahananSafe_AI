@@ -38,6 +38,10 @@ Recent updates in `inference/analyzer.py` and `utils/risk_scorer.py`:
 - Non-human/inanimate confusion handling (object/animal actor and non-human victim blocks)
 - Language arbitration to prevent false `English` on clearly Tagalog text
 
+## Team Runtime Note
+
+The repository can include trained runtime artifacts (`models/`, `processed_retrain/`, `retrain_output/`) so teammates can run analyzer/API without running retraining first.
+
 ## Repository Structure
 
 ```text

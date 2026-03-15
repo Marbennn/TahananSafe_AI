@@ -1,0 +1,22 @@
+{
+  "x_thresholds": [
+    0.6957,
+    0.7993000000000001,
+    1.0
+  ],
+  "y_thresholds": [
+    0.6701030927835051,
+    1.0,
+    1.0
+  ],
+  "metadata": {
+    "num_examples": 100,
+    "raw_brier_score": 0.215471,
+    "calibrated_brier_score": 0.214433,
+    "raw_ece_10_bins": 0.026836,
+    "calibrated_ece_10_bins": 0.0,
+    "load_model": false,
+    "main_csv": "datasets\\Main_Dataset.csv",
+    "negative_csv": "datasets\\Negative_Dataset.csv"
+  }
+}
